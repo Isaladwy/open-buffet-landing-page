@@ -3,6 +3,7 @@ import React from 'react';
 // Import all components
 import Header from './components/Header';
 import Hero from './components/Hero';
+import SpecialOccasion from './components/SpecialOccasion';
 import Services from './components/Services';
 import SpecialBuffet from './components/SpecialBuffet';
 import PopularRestaurants from './components/PopularRestaurants';
@@ -19,6 +20,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#FFF9FE]">
       <Header />
       <Hero />
+      <SpecialOccasion />
       <Services />
       <SpecialBuffet />
       <PopularRestaurants />
