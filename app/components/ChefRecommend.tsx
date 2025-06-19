@@ -7,13 +7,13 @@ export default function ChefRecommend() {
     <section className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12">
       {/* Text Content */}
       <div className="md:w-1/2 w-full flex flex-col items-center text-center justify-center mb-8 md:mb-0">
-        <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2">
+        <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
           استمتع بكل لقمة
         </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl font-[var(--font-cairo)] text-right">
           الشيف <span className="text-[var(--accent)]">يوصي</span>
         </h2>
-        <p className="text-base md:text-lg text-white/80 mb-8 max-w-md">
+        <p className="text-base md:text-lg text-white/80 mb-8 max-w-md font-[var(--font-cairo)] text-right">
           نص تجريبي عن وصف الشيف للأطباق المميزة. يمكنك تخصيص هذا النص ليعبر عن
           جودة وتنوع الأطباق المقدمة في البوفيه.
         </p>

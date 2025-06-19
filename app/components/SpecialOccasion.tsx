@@ -22,10 +22,10 @@ export default function SpecialOccasion() {
       </div>
       {/* Text Content */}
       <div className="md:w-2/3 w-full flex flex-col items-start justify-center z-10">
-        <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2">
+        <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
           وجهتك للمناسبات الخاصة
         </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl font-[var(--font-cairo)] text-right">
           بوفيه ويلما هو الطعم الفاخر الذي يستحق أن{' '}
           <span className="italic text-[var(--accent)]">يُتذوق</span>، لحم بقري
           طازج بين <span className="italic">أسنانك</span>

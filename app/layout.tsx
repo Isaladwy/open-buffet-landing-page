@@ -35,7 +35,12 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} bg-[var(--background)] text-[var(--foreground)] min-h-screen antialiased`}
+        style={{
+          letterSpacing: '0.01em',
+          textAlign: 'right',
+          fontFamily: 'var(--font-cairo), Arial, Helvetica, sans-serif',
+        }}
       >
         {children}
       </body>

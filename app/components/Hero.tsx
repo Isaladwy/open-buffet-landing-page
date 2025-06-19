@@ -16,10 +16,10 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60 z-10" />
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center px-6 flex-1 justify-center w-full">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg font-[var(--font-cairo)] font-bold text-right">
           تذوق الفرق
         </h1>
-        <p className="text-lg md:text-xl text-[var(--accent)] mb-8 font-medium">
+        <p className="text-lg md:text-xl text-[var(--accent)] mb-8 font-medium font-[var(--font-cairo)] text-right">
           عندما تشتد الأمور، يبدأ الشواء الحقيقي. نقدم لك أشهى اللحوم الطازجة.
           لا أحد ينافسنا في جودة اللحوم.
         </p>

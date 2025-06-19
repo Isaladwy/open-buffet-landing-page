@@ -5,17 +5,17 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex flex-col items-center justify-center border-2 border-[rgba(224,185,106,0.15)] bg-black transition-colors duration-300">
+    <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex flex-col items-center justify-between border-2 border-[rgba(224,185,106,0.15)] bg-black transition-colors duration-300">
       <div className="flex flex-col md:flex-row items-center w-full justify-center gap-4">
         <div className="flex flex-col leading-tight items-center">
           <span className="text-2xl font-bold text-white tracking-wide">
-            ويلما
+            بوفيه
           </span>
           <span
             className="text-xs text-[var(--accent)] tracking-widest uppercase"
-            style={{ letterSpacing: '0.2em' }}
+            style={{ letterSpacing: '0.1em', fontSize: '1em' }}
           >
-            مطعم
+            خان الريحان
           </span>
         </div>
         {/* Desktop Nav */}
