@@ -1,13 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #8B5CF6;
-  --primary-dark: #7C3AED;
-  --primary-light: #EDE9FE;
-  --secondary: #FFF0FB;
-  --accent: #F59E0B;
+  --background: #181c1b;
+  --foreground: #f5f3e7;
+  --primary: #8b5cf6;
+  --primary-dark: #7c3aed;
+  --primary-light: #ede9fe;
+  --secondary: #232a28;
+  --accent: #e0b96a;
 }
 
 @theme inline {
@@ -26,7 +26,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --secondary: #2D1A45;
+    --secondary: #2d1a45;
   }
 }
 
@@ -34,11 +34,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  letter-spacing: 0.01em;
 }
 
 /* Custom styles for food ordering template */
 .star-rating {
-  color: #F59E0B;
+  color: #f59e0b;
 }
 
 .section-title {
