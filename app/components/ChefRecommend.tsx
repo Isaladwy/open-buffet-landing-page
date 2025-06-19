@@ -8,20 +8,20 @@ export default function ChefRecommend() {
       {/* Text Content */}
       <div className="md:w-1/2 w-full flex flex-col items-center text-center justify-center mb-8 md:mb-0">
         <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2">
-          Delight in every bite
+          استمتع بكل لقمة
         </span>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl">
-          Our Chef <span className="text-[var(--accent)]">Recommend</span>
+          الشيف <span className="text-[var(--accent)]">يوصي</span>
         </h2>
         <p className="text-base md:text-lg text-white/80 mb-8 max-w-md">
-          Exerci tation photo booth stumptown tote bag Banksy, elit small batch
-          freegan sed. Craft beer elit seitan exercitation.
+          نص تجريبي عن وصف الشيف للأطباق المميزة. يمكنك تخصيص هذا النص ليعبر عن
+          جودة وتنوع الأطباق المقدمة في البوفيه.
         </p>
         <Button
           variant="primary"
           className="bg-[var(--accent)] text-[#181c1b] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors"
         >
-          View Menus
+          تصفح القوائم
         </Button>
       </div>
       {/* Food Photo */}
@@ -31,7 +31,7 @@ export default function ChefRecommend() {
             width={500}
             height={500}
             src="/images/photo-1547573854-74d2a71d0826.png"
-            alt="Chef Recommended Dish"
+            alt="طبق من اختيار الشيف"
             className="w-full h-auto object-cover"
           />
         </div>

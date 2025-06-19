@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden">
       {/* Full-page background image */}
       <Image
         fill
@@ -15,20 +15,19 @@ export default function Hero() {
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-black/60 z-10" />
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center text-center px-6">
+      <div className="relative z-20 flex flex-col items-center text-center px-6 flex-1 justify-center w-full">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
-          Taste The <br className="hidden md:block" />
-          Difference
+          تذوق الفرق
         </h1>
         <p className="text-lg md:text-xl text-[var(--accent)] mb-8 font-medium">
-          When the going gets tough, the tough get grilling. Bringing heat to
-          your meat. No one can compete with our meat
+          عندما تشتد الأمور، يبدأ الشواء الحقيقي. نقدم لك أشهى اللحوم الطازجة.
+          لا أحد ينافسنا في جودة اللحوم.
         </p>
         <Button
           variant="primary"
           className="bg-[var(--accent)] text-[#181c1b] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors"
         >
-          Our Menus
+          قوائم الطعام
         </Button>
       </div>
     </section>

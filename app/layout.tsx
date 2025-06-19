@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { Montserrat } from 'next/font/google';
+import { Cairo } from 'next/font/google';
 import './globals.css';
 
 const geistSans = Geist({
@@ -13,18 +13,18 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const montserrat = Montserrat({
-  variable: '--font-montserrat',
-  subsets: ['latin'],
+const cairo = Cairo({
+  variable: '--font-cairo',
+  subsets: ['arabic', 'latin'],
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Open Buffet - Order Fresh Food Any Time',
+  title: 'بوفيه مفتوح - اطلب طعامك الطازج في أي وقت',
   description:
-    'Discover delicious meals from top restaurants in your area. Order online for delivery or book a table for special occasions.',
-  keywords: 'buffet, restaurant, food delivery, online ordering, table booking',
+    'اكتشف أشهى الأطباق من أفضل المطاعم في منطقتك. اطلب أونلاين أو احجز طاولة للمناسبات الخاصة.',
+  keywords: 'بوفيه, مطعم, توصيل طعام, طلب أونلاين, حجز طاولة',
 };
 
 export default function RootLayout({
@@ -33,9 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} antialiased`}
       >
         {children}
       </body>

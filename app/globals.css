@@ -33,9 +33,10 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-family: var(--font-cairo), Arial, Helvetica, sans-serif;
   min-height: 100vh;
   letter-spacing: 0.01em;
+  text-align: right;
 }
 
 h1,
@@ -43,8 +44,9 @@ h2,
 h3,
 h4,
 .section-title {
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-family: var(--font-cairo), Arial, Helvetica, sans-serif;
   font-weight: 700;
+  text-align: right;
 }
 
 /* Custom styles for food ordering template */

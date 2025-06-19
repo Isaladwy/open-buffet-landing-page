@@ -5,50 +5,50 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex items-center justify-between border-b border-[rgba(224,185,106,0.15)] bg-black transition-colors duration-300">
-      <div className="flex items-center w-full justify-between">
-        <div className="flex flex-col leading-tight">
+    <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex flex-col items-center justify-center border-2 border-[rgba(224,185,106,0.15)] bg-black transition-colors duration-300">
+      <div className="flex flex-col md:flex-row items-center w-full justify-center gap-4">
+        <div className="flex flex-col leading-tight items-center">
           <span className="text-2xl font-bold text-white tracking-wide">
-            Wilma
+            ويلما
           </span>
           <span
             className="text-xs text-[var(--accent)] tracking-widest uppercase"
             style={{ letterSpacing: '0.2em' }}
           >
-            Restaurant
+            مطعم
           </span>
         </div>
         {/* Desktop Nav */}
-        <nav className="hidden md:flex ml-16 space-x-8">
+        <nav className="hidden md:flex ml-0 md:ml-16 space-x-8 space-x-reverse">
           <a
             href="#"
             className="text-white hover:text-[var(--accent)] transition-colors"
           >
-            Home
+            الرئيسية
           </a>
           <a
             href="#"
             className="text-white hover:text-[var(--accent)] transition-colors"
           >
-            About
+            من نحن
           </a>
           <a
             href="#"
             className="text-white hover:text-[var(--accent)] transition-colors"
           >
-            Our Menus
+            قوائم الطعام
           </a>
           <a
             href="#"
             className="text-white hover:text-[var(--accent)] transition-colors"
           >
-            Reservations
+            الحجوزات
           </a>
           <a
             href="#"
             className="text-white hover:text-[var(--accent)] transition-colors"
           >
-            Contact
+            تواصل معنا
           </a>
         </nav>
         {/* Hamburger Icon for Mobile */}
@@ -83,35 +83,35 @@ export default function Header() {
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              Home
+              الرئيسية
             </a>
             <a
               href="#"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              About
+              من نحن
             </a>
             <a
               href="#"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              Our Menus
+              قوائم الطعام
             </a>
             <a
               href="#"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              Reservations
+              الحجوزات
             </a>
             <a
               href="#"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              Contact
+              تواصل معنا
             </a>
           </nav>
         </div>

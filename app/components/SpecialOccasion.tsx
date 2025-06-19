@@ -15,7 +15,7 @@ export default function SpecialOccasion() {
           {/* Replace src with your own image if desired */}
           <img
             src="/images/restaurant1.svg"
-            alt="Restaurant Interior"
+            alt="مطعم ويلما"
             className="w-full h-auto object-cover"
           />
         </div>
@@ -23,12 +23,12 @@ export default function SpecialOccasion() {
       {/* Text Content */}
       <div className="md:w-2/3 w-full flex flex-col items-start justify-center z-10">
         <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2">
-          Your Special Occasion Destination
+          وجهتك للمناسبات الخاصة
         </span>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl">
-          The Wilma is a premium taste that yearns to be{' '}
-          <span className="italic text-[var(--accent)]">savored</span>, ground
-          beef between your <span className="italic">teeth</span>
+          بوفيه ويلما هو الطعم الفاخر الذي يستحق أن{' '}
+          <span className="italic text-[var(--accent)]">يُتذوق</span>، لحم بقري
+          طازج بين <span className="italic">أسنانك</span>
         </h2>
         {/* Decorative Swirl */}
         <div className="my-6">
