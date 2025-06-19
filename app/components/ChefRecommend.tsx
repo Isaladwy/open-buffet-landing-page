@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import Image from 'next/image';
 
 export default function ChefRecommend() {
   return (
@@ -26,8 +27,10 @@ export default function ChefRecommend() {
       {/* Food Photo */}
       <div className="md:w-1/2 w-full flex justify-center z-10">
         <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-[var(--accent)] max-w-xs">
-          <img
-            src="/images/buffet1.png"
+          <Image
+            width={500}
+            height={500}
+            src="/images/photo-1547573854-74d2a71d0826.png"
             alt="Chef Recommended Dish"
             className="w-full h-auto object-cover"
           />
