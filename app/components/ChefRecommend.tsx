@@ -6,7 +6,7 @@ export default function ChefRecommend() {
   return (
     <section className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12">
       {/* Text Content */}
-      <div className="md:w-1/2 w-full flex flex-col items-start justify-center mb-8 md:mb-0">
+      <div className="md:w-1/2 w-full flex flex-col items-center text-center justify-center mb-8 md:mb-0">
         <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2">
           Delight in every bite
         </span>
