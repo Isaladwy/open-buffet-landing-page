@@ -4,6 +4,7 @@ import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import SpecialOccasion from './components/SpecialOccasion';
+import ChefRecommend from './components/ChefRecommend';
 import Services from './components/Services';
 import SpecialBuffet from './components/SpecialBuffet';
 import PopularRestaurants from './components/PopularRestaurants';
@@ -21,6 +22,7 @@ export default function Home() {
       <Header />
       <Hero />
       <SpecialOccasion />
+      <ChefRecommend />
       <Services />
       <SpecialBuffet />
       <PopularRestaurants />
