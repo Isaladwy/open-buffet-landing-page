@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Open Buffet - Order Fresh Food Any Time",
+  title: "بوفيه خان الريحان",
   description: "Discover delicious meals from top restaurants in your area. Order online for delivery or book a table for special occasions.",
-  keywords: "buffet, restaurant, food delivery, online ordering, table booking",
+  keywords: "بوفيه, مطعم, توصيل طعام, حجز اونلاين, حجز طاولات , حفلات , افراح",
 };
 
 export default function RootLayout({

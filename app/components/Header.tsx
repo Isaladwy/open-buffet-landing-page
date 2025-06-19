@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex items-center justify-between border-b border-[rgba(224,185,106,0.15)] backdrop-blur-md transition-colors duration-300
-        ${scrolled ? 'bg-black/90' : 'bg-transparent'}`}
+        ${scrolled ? 'bg-black/10' : 'bg-black/10'}`}
     >
       <div className="flex items-center">
         <div className="flex flex-col leading-tight">
