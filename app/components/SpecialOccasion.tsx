@@ -1,20 +1,19 @@
+import Image from 'next/image';
 import React from 'react';
 
 export default function SpecialOccasion() {
   return (
     <section className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden">
       {/* Decorative Leaf */}
-      <img
-        src="/images/party-buffet.svg"
-        alt="Leaf Decor"
-        className="hidden md:block absolute -top-16 right-0 w-40 opacity-70 z-0"
-      />
+
       {/* Restaurant Image */}
       <div className="md:w-1/3 w-full flex justify-center mb-8 md:mb-0 z-10">
         <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-[var(--accent)] max-w-xs">
           {/* Replace src with your own image if desired */}
-          <img
-            src="/images/restaurant1.svg"
+          <Image
+            width={500}
+            height={500}
+            src="/images/photo-1617201835781-615e57a8b71d.png"
             alt="مطعم ويلما"
             className="w-full h-auto object-cover"
           />
