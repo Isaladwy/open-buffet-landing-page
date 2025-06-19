@@ -1,11 +1,13 @@
 import React from 'react';
 import Button from './Button';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Full-page background image */}
-      <img
+      <Image
+        fill
         src="/images/buffet1.png"
         alt="Buffet Food"
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
