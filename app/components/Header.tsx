@@ -9,13 +9,13 @@ export default function Header() {
       {/* Logo */}
       <div className="flex flex-col leading-tight items-center">
         <span className="text-2xl font-bold text-white tracking-wide">
-          بوفيه
+          بوفيه مفتوح
         </span>
         <span
           className="text-xs text-[var(--accent)] tracking-widest uppercase"
           style={{ letterSpacing: '0.1em', fontSize: '1em' }}
         >
-          خان الريحان
+          الذوق الرفيع
         </span>
       </div>
       {/* Desktop Nav */}
@@ -30,25 +30,25 @@ export default function Header() {
           href="#"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
-          من نحن
+          عن البوفيه
         </a>
         <a
           href="#"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
-          قوائم الطعام
+          قائمة البوفيه
         </a>
         <a
           href="#"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
-          الحجوزات
+          الحفلات والأعراس
         </a>
         <a
           href="#"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
-          تواصل معنا
+          احجز طاولتك
         </a>
       </nav>
       {/* Hamburger Icon for Mobile */}
@@ -89,28 +89,28 @@ export default function Header() {
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              من نحن
+              عن البوفيه
             </a>
             <a
               href="#"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              قوائم الطعام
+              قائمة البوفيه
             </a>
             <a
               href="#"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              الحجوزات
+              الحفلات والأعراس
             </a>
             <a
               href="#"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              تواصل معنا
+              احجز طاولتك
             </a>
           </nav>
         </div>

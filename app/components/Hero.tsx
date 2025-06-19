@@ -17,17 +17,17 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center px-6 flex-1 justify-center w-full">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg font-[var(--font-cairo)] font-bold text-right">
-          تذوق الفرق
+          استمتع بتجربة البوفيه المفتوح
         </h1>
         <p className="text-lg md:text-xl text-[var(--accent)] mb-8 font-medium font-[var(--font-cairo)] text-right">
-          عندما تشتد الأمور، يبدأ الشواء الحقيقي. نقدم لك أشهى اللحوم الطازجة.
-          لا أحد ينافسنا في جودة اللحوم.
+          تشكيلة واسعة من الأطباق الطازجة يومياً. مثالي للحفلات، الأعراس، وجميع
+          المناسبات.
         </p>
         <Button
           variant="primary"
           className="bg-[var(--accent)] text-[#181c1b] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors"
         >
-          قوائم الطعام
+          استعرض القائمة
         </Button>
       </div>
     </section>

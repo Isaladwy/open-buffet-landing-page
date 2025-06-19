@@ -8,20 +8,20 @@ export default function ChefRecommend() {
       {/* Text Content */}
       <div className="md:w-1/2 w-full flex flex-col items-center text-center justify-center mb-8 md:mb-0">
         <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
-          استمتع بكل لقمة
+          طبق اليوم
         </span>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl font-[var(--font-cairo)] text-right">
-          الشيف <span className="text-[var(--accent)]">يوصي</span>
+          الشيف يرشح لك
         </h2>
         <p className="text-base md:text-lg text-white/80 mb-8 max-w-md font-[var(--font-cairo)] text-right">
-          نص تجريبي عن وصف الشيف للأطباق المميزة. يمكنك تخصيص هذا النص ليعبر عن
-          جودة وتنوع الأطباق المقدمة في البوفيه.
+          جرب طبق اليوم المختار بعناية من الشيف، يجمع بين النكهات الأصيلة
+          والمكونات الطازجة.
         </p>
         <Button
           variant="primary"
           className="bg-[var(--accent)] text-[#181c1b] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors"
         >
-          تصفح القوائم
+          اكتشف المزيد
         </Button>
       </div>
       {/* Food Photo */}
