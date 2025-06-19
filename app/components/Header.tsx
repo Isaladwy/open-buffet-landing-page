@@ -1,24 +1,10 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    // Check scroll position on mount
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  // No need to track scroll for background anymore
   return (
-    <header
-      className={`sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex items-center justify-between border-b border-[rgba(224,185,106,0.15)] backdrop-blur-md transition-colors duration-300
-        ${scrolled ? 'bg-black/10' : 'bg-black/10'}`}
-    >
+    <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex items-center justify-between border-b border-[rgba(224,185,106,0.15)] bg-black transition-colors duration-300">
       <div className="flex items-center">
         <div className="flex flex-col leading-tight">
           <span className="text-2xl font-bold text-white tracking-wide">
