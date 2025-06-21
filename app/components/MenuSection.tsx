@@ -8,6 +8,11 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import { buffetPackages, buffetCategories } from './menuData';
 
+interface MenuItem {
+  name: string;
+  imageUrl: string;
+}
+
 const MenuSection = () => {
   return (
     <section id="menu" className="py-20 px-6 md:px-12 bg-[var(--background)]">
@@ -90,25 +95,23 @@ const MenuSection = () => {
                   }}
                   className="w-full"
                 >
-                  {(category.items as any[]).map(
-                    (item: any, itemIndex: number) => (
-                      <SwiperSlide key={itemIndex}>
-                        <div className="h-48 w-full rounded-lg relative">
-                          <Image
-                            src={item.imageUrl}
-                            alt={item.name}
-                            fill
-                            className="object-cover rounded-lg"
-                          />
-                          <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
-                            <span className="text-white text-lg font-bold text-center font-[var(--font-cairo)] p-4">
-                              {item.name}
-                            </span>
-                          </div>
+                  {category.items.map((item: MenuItem, itemIndex: number) => (
+                    <SwiperSlide key={itemIndex}>
+                      <div className="h-48 w-full rounded-lg relative">
+                        <Image
+                          src={item.imageUrl}
+                          alt={item.name}
+                          fill
+                          className="object-cover rounded-lg"
+                        />
+                        <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+                          <span className="text-white text-lg font-bold text-center font-[var(--font-cairo)] p-4">
+                            {item.name}
+                          </span>
                         </div>
-                      </SwiperSlide>
-                    )
-                  )}
+                      </div>
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
               </div>
             ))}
