@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 const MenuSection = () => {
   const buffetPackages = [
@@ -161,44 +161,34 @@ const MenuSection = () => {
           <h3 className="text-2xl font-bold text-white mb-8 text-center font-[var(--font-cairo)]">
             تشكيلة الأطباق المتوفرة
           </h3>
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            breakpoints={{
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 1,
-                spaceBetween: 50,
-              },
-            }}
-            className="pb-12"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {buffetCategories.map((category, categoryIndex) => (
-              <SwiperSlide key={categoryIndex}>
-                <div className="bg-[#232a28] rounded-2xl p-6 border border-[var(--accent)]/30 h-full">
-                  <h4 className="text-xl font-bold text-[var(--accent)] mb-4 text-center font-[var(--font-cairo)]">
-                    {category.title}
-                  </h4>
-                  <div className="grid grid-cols-1 gap-2">
-                    {category.items.map((item, itemIndex) => (
-                      <div
-                        key={itemIndex}
-                        className="text-white/80 text-sm text-center font-[var(--font-cairo)]"
-                      >
+              <div
+                key={categoryIndex}
+                className="bg-[#232a28] rounded-2xl p-6 border border-[var(--accent)]/30"
+              >
+                <h4 className="text-xl font-bold text-[var(--accent)] mb-4 text-center font-[var(--font-cairo)]">
+                  {category.title}
+                </h4>
+                <Swiper
+                  modules={[Navigation]}
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  navigation
+                  loop={true}
+                  className="w-full"
+                >
+                  {category.items.map((item, itemIndex) => (
+                    <SwiperSlide key={itemIndex}>
+                      <div className="text-white/80 text-sm text-center font-[var(--font-cairo)] p-4">
                         {item}
                       </div>
-                    ))}
-                  </div>
-                </div>
-              </SwiperSlide>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             ))}
-          </Swiper>
+          </div>
         </div>
 
         {/* Special Offers */}

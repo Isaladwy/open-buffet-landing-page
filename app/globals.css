@@ -47,3 +47,7 @@ body {
 .swiper-pagination-bullet-active {
   background-color: var(--accent) !important;
 }
+
+.swiper-pagination {
+  bottom: 0px !important;
+}
