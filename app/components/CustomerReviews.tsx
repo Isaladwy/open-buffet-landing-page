@@ -1,21 +1,47 @@
 import React from 'react';
-import SectionTitle from './SectionTitle';
+
+const reviews = [
+  {
+    name: 'سارة الأحمد',
+    review: 'تجربة رائعة! تنوع الأطباق وجودة الخدمة جعلت الحفل مميزاً جداً.',
+    stars: 5,
+  },
+  {
+    name: 'محمد العتيبي',
+    review: 'بوفيه غني بالأصناف الطازجة. أنصح به للحفلات والأعراس.',
+    stars: 5,
+  },
+  {
+    name: 'ريم السبيعي',
+    review: 'الطعام لذيذ والأجواء راقية. شكراً لفريق العمل على التنظيم الرائع.',
+    stars: 5,
+  },
+];
 
 export default function CustomerReviews() {
   return (
-    <section className="py-12 px-6 md:px-12">
-      <SectionTitle title="What Customers Say" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[1, 2, 3].map((item) => (
-          <div key={item} className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
-              <div>
-                <h3 className="font-bold">Customer Name</h3>
-                <div className="text-yellow-500">★★★★★</div>
-              </div>
+    <section className="py-16 px-6 md:px-12 bg-[var(--background)]">
+      <h2 className="text-3xl font-bold mb-10 text-[var(--accent)] text-center font-[var(--font-cairo)]">
+        آراء العملاء
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {reviews.map((item, idx) => (
+          <div
+            key={idx}
+            className="bg-[#232a28] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)]"
+          >
+            <div className="w-16 h-16 rounded-full bg-[var(--accent)] flex items-center justify-center text-xl font-bold text-[#232a28] mb-4">
+              {item.name[0]}
             </div>
-            <p className="text-gray-600">&quot;The buffet selection was amazing! Fresh food and excellent service. Will definitely come back again.&quot;</p>
+            <h3 className="font-bold text-white mb-2 font-[var(--font-cairo)]">
+              {item.name}
+            </h3>
+            <div className="text-[var(--accent)] mb-2 text-lg">
+              {'★'.repeat(item.stars)}
+            </div>
+            <p className="text-white/80 font-[var(--font-cairo)]">
+              {item.review}
+            </p>
           </div>
         ))}
       </div>

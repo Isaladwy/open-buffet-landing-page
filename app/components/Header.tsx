@@ -9,13 +9,13 @@ export default function Header() {
       {/* Logo */}
       <div className="flex flex-col leading-tight items-center">
         <span className="text-2xl font-bold text-white tracking-wide">
-          بوفيه مفتوح
+          بوفيه
         </span>
         <span
           className="text-xs text-[var(--accent)] tracking-widest uppercase"
           style={{ letterSpacing: '0.1em', fontSize: '1em' }}
         >
-          الذوق الرفيع
+          خان الريحان
         </span>
       </div>
       {/* Desktop Nav */}
