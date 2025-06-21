@@ -1,153 +1,72 @@
-# Deployment Guide for Bluehost Server
+# Deployment Guide for Static Build
 
-## Method 1: Static Export (Recommended)
+## Quick Setup for Local Viewing and Deployment
 
-This method creates a static website that can be deployed to any web hosting service without requiring Node.js on the server.
-
-### Step 1: Build Static Files Locally
+### Step 1: Build Static Files
 
 ```bash
-# Install dependencies locally (on your development machine)
+# Install dependencies (if not already done)
 npm install
 
 # Build static files
 npm run static
 ```
 
-### Step 2: Locate Static Files
-
-After building, your static files will be in the `out/` directory. This directory contains:
-
-- HTML files
-- CSS files
-- JavaScript files
-- Images and other assets
-
-### Step 3: Upload to Bluehost
-
-1. **Via File Manager:**
-
-   - Log into your Bluehost cPanel
-   - Open File Manager
-   - Navigate to `public_html/` (or your domain's root directory)
-   - Upload all contents from the `out/` folder
-
-2. **Via FTP:**
-   - Use an FTP client (FileZilla, WinSCP, etc.)
-   - Connect to your Bluehost server
-   - Upload all contents from the `out/` folder to `public_html/`
-
-### Step 4: Configure Domain
-
-- Point your domain to the uploaded files
-- The site should now be accessible at your domain
-
-## Method 2: Using Bluehost's Node.js Support (Alternative)
-
-If Bluehost supports Node.js hosting:
-
-### Step 1: Prepare for Production
+### Step 2: Fix Paths for Local Viewing
 
 ```bash
-# Install dependencies
-npm install
-
-# Build for production
-npm run build
+# Convert absolute paths to relative paths
+node fix-paths.js
 ```
 
-### Step 2: Upload Files
+### Step 3: View Locally
 
-Upload these files/folders to your Bluehost server:
+After running the above commands, you can:
 
-- `.next/` (build files)
-- `public/` (static assets)
-- `package.json`
-- `next.config.ts`
-- `tsconfig.json`
+- Open `out/index.html` directly in your browser
+- All CSS, images, and JavaScript will work correctly
 
-### Step 3: Install Dependencies on Server
+### Step 4: Deploy to Web Server
 
-```bash
-npm install --production
+Upload the contents of the `out/` folder to your web server:
+
+**For Bluehost/Shared Hosting:**
+
+- Upload contents of `out/` to `public_html/` (root directory)
+- Your site will be accessible at your domain
+
+**For Subdirectory Deployment:**
+
+- Upload contents of `out/` to your desired subdirectory
+- The relative paths will work correctly
+
+## File Structure After Build
+
 ```
-
-### Step 4: Start the Server
-
-```bash
-npm start
+out/
+├── index.html          # Main page
+├── _next/              # CSS, JS, and assets
+├── images/             # Image files
+├── favicon.ico         # Site icon
+└── other static files
 ```
 
 ## Important Notes
 
-### For Static Export:
-
-- ✅ No Node.js required on server
-- ✅ Works with any web hosting
-- ✅ Faster loading times
-- ❌ No server-side features (API routes, dynamic rendering)
-- ❌ No server-side data fetching
-
-### For Node.js Hosting:
-
-- ✅ Full Next.js features
-- ✅ API routes work
-- ✅ Server-side rendering
-- ❌ Requires Node.js on server
-- ❌ More complex setup
+- **Always run `node fix-paths.js`** after building to ensure local viewing works
+- **Don't upload the `out` folder itself** - upload its contents
+- **Relative paths work everywhere** - no server configuration needed
+- **No Node.js required** on the server
 
 ## Troubleshooting
 
-### Static Export Issues:
+**If CSS/images don't load:**
 
-- If you get build errors, check that all components are compatible with static export
-- Remove any server-side only code (API routes, server components that can't be static)
-- Ensure all images are properly optimized or use `unoptimized: true`
+1. Make sure you ran `node fix-paths.js` after building
+2. Check that all files from `out/` are uploaded to the correct location
+3. Verify file permissions (644 for files, 755 for directories)
 
-### File Permissions:
+**For local viewing issues:**
 
-- Set proper file permissions (typically 644 for files, 755 for directories)
-- Ensure `.htaccess` is configured correctly if using Apache
-
-## Recommended Approach
-
-For Bluehost, **Method 1 (Static Export)** is recommended because:
-
-1. No Node.js installation required
-2. Works with shared hosting plans
-3. Better performance for static content
-4. Easier maintenance and updates
-
-## How to Properly View Your Static Site Locally
-
-You need to serve the `out/` directory with a local web server.  
-Here's how you can do it:
-
-### 1. Install `serve` (if you don't have it)
-
-```bash
-npm install -g serve
-```
-
-### 2. Serve the `out/` directory
-
-```bash
-serve out
-```
-
-### 3. Open your browser and go to:
-
-```
-http://localhost:5000
-```
-
-(or whatever port `serve` tells you)
-
-**Now your CSS, images, and JS will work as expected!**
-
-### Why is this necessary?
-
-- Browsers block many features (like JS modules, fetch, and absolute paths) when opening files directly with `file://`.
-- A local server simulates a real web environment, so all paths resolve correctly.
-
-Would you like me to provide a command to run this for you? Or do you want more details on how to use a local server?
+- Use a local server: `npx serve out`
+- Then visit `http://localhost:5000`
