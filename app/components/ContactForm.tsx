@@ -13,7 +13,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-16 px-6 md:px-0 flex flex-col items-center bg-[#232a28]">
+    <section
+      id="booking"
+      className="py-16 px-6 md:px-0 flex flex-col items-center bg-[#232a28]"
+    >
       <h2 className="text-3xl font-bold mb-8 text-[var(--accent)] text-center font-[var(--font-cairo)]">
         دعنا نتواصل معك
       </h2>

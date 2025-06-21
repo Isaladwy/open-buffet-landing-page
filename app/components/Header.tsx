@@ -21,31 +21,31 @@ export default function Header() {
       {/* Desktop Nav */}
       <nav className="hidden md:flex space-x-8 ">
         <a
-          href="#"
+          href="#home"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
           الرئيسية
         </a>
         <a
-          href="#"
+          href="#about"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
           عن البوفيه
         </a>
         <a
-          href="#"
+          href="#menu"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
           قائمة البوفيه
         </a>
         <a
-          href="#"
+          href="#about"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
           الحفلات والأعراس
         </a>
         <a
-          href="#"
+          href="#booking"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
           احجز طاولتك
@@ -78,35 +78,35 @@ export default function Header() {
         <div className="fixed inset-0 bg-black/90 z-30 flex flex-col items-center justify-center md:hidden transition-all">
           <nav className="flex flex-col space-y-8 text-2xl">
             <a
-              href="#"
+              href="#home"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               الرئيسية
             </a>
             <a
-              href="#"
+              href="#about"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               عن البوفيه
             </a>
             <a
-              href="#"
+              href="#menu"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               قائمة البوفيه
             </a>
             <a
-              href="#"
+              href="#about"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               الحفلات والأعراس
             </a>
             <a
-              href="#"
+              href="#booking"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >

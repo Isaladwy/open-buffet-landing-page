@@ -4,7 +4,10 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden"
+    >
       {/* Full-page background image */}
       <Image
         fill

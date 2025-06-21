@@ -3,7 +3,10 @@ import React from 'react';
 
 export default function SpecialOccasion() {
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden">
+    <section
+      id="about"
+      className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden"
+    >
       {/* Decorative Leaf */}
 
       {/* Restaurant Image */}
