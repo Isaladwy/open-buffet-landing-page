@@ -7,7 +7,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex flex-row items-center justify-between border-2 border-[rgba(224,185,106,0.15)] bg-black transition-colors duration-300">
       {/* Logo */}
-      <div className="flex flex-col leading-tight items-center">
+      <div
+        className="flex flex-col leading-tight items-center cursor-pointer"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
         <span className="text-2xl font-bold text-white tracking-wide">
           بوفيه
         </span>
@@ -21,12 +24,6 @@ export default function Header() {
       {/* Desktop Nav */}
       <nav className="hidden md:flex space-x-8 ">
         <a
-          href="#home"
-          className="text-white hover:text-[var(--accent)] transition-colors"
-        >
-          الرئيسية
-        </a>
-        <a
           href="#about"
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
@@ -37,12 +34,6 @@ export default function Header() {
           className="text-white hover:text-[var(--accent)] transition-colors"
         >
           قائمة البوفيه
-        </a>
-        <a
-          href="#about"
-          className="text-white hover:text-[var(--accent)] transition-colors"
-        >
-          الحفلات والأعراس
         </a>
         <a
           href="#booking"
@@ -78,13 +69,6 @@ export default function Header() {
         <div className="fixed inset-0 bg-black/90 z-30 flex flex-col items-center justify-center md:hidden transition-all">
           <nav className="flex flex-col space-y-8 text-2xl">
             <a
-              href="#home"
-              className="text-white hover:text-[var(--accent)] transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              الرئيسية
-            </a>
-            <a
               href="#about"
               className="text-white hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
@@ -97,13 +81,6 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
             >
               قائمة البوفيه
-            </a>
-            <a
-              href="#about"
-              className="text-white hover:text-[var(--accent)] transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              الحفلات والأعراس
             </a>
             <a
               href="#booking"

@@ -1,105 +1,96 @@
 import React from 'react';
 
 const MenuSection = () => {
-  const menuCategories = [
+  const buffetPackages = [
     {
-      title: 'المقبلات',
+      title: 'البوفيه الأساسي',
+      description: 'تشكيلة متنوعة من الأطباق العربية التقليدية',
+      price: '75 ريال',
+      perPerson: 'للشخص الواحد',
+      includes: [
+        'مقبلات متنوعة (حمص، تبولة، سلطات)',
+        'أطباق رئيسية (كباب، دجاج مشوي، سمك)',
+        'أرز وخبز طازج',
+        'حلويات عربية تقليدية',
+        'مشروبات ساخنة وباردة',
+      ],
+      minGuests: 'الحد الأدنى: 10 أشخاص',
+    },
+    {
+      title: 'البوفيه المميز',
+      description: 'بوفيه فاخر مع أطباق إضافية ومشويات متنوعة',
+      price: '95 ريال',
+      perPerson: 'للشخص الواحد',
+      includes: [
+        'جميع أطباق البوفيه الأساسي',
+        'مشويات إضافية (لحم ضأن، دجاج، سمك)',
+        'أطباق شرقية وغربية متنوعة',
+        'حلويات متنوعة (عربية وغربية)',
+        'عصائر طازجة ومشروبات غازية',
+        'قهوة تركية وشاي بالنعناع',
+      ],
+      minGuests: 'الحد الأدنى: 8 أشخاص',
+    },
+    {
+      title: 'البوفيه الفاخر',
+      description: 'تجربة بوفيه استثنائية مع أطباق فاخرة ومتنوعة',
+      price: '125 ريال',
+      perPerson: 'للشخص الواحد',
+      includes: [
+        'جميع أطباق البوفيه المميز',
+        'أطباق بحرية فاخرة',
+        'مشويات على الفحم',
+        'حلويات فاخرة متنوعة',
+        'عصائر طبيعية ومشروبات متنوعة',
+        'قهوة عربية وتركية',
+        'خدمة راقية ومميزة',
+      ],
+      minGuests: 'الحد الأدنى: 6 أشخاص',
+    },
+  ];
+
+  const buffetCategories = [
+    {
+      title: 'المقبلات والسلطات',
       items: [
-        {
-          name: 'سلطة يونانية',
-          description: 'طماطم، خيار، زيتون، جبنة فيتا',
-          price: '25 ريال',
-        },
-        {
-          name: 'حمص بالطحينة',
-          description: 'حمص مطحون مع طحينة وليمون',
-          price: '20 ريال',
-        },
-        {
-          name: 'تبولة',
-          description: 'برغل مع بقدونس ونعناع طازج',
-          price: '22 ريال',
-        },
-        {
-          name: 'متبل باذنجان',
-          description: 'باذنجان مشوي مع طماطم وثوم',
-          price: '18 ريال',
-        },
+        'حمص بالطحينة',
+        'تبولة',
+        'سلطة يونانية',
+        'متبل باذنجان',
+        'سلطة خضراء طازجة',
+        'سلطة فتوش',
       ],
     },
     {
       title: 'الأطباق الرئيسية',
       items: [
-        {
-          name: 'كباب لحم',
-          description: 'لحم ضأن مشوي على الفحم مع أرز',
-          price: '45 ريال',
-        },
-        {
-          name: 'دجاج مشوي',
-          description: 'دجاج مشوي مع خضار وأرز بسمتي',
-          price: '40 ريال',
-        },
-        {
-          name: 'سمك مشوي',
-          description: 'سمك طازج مشوي مع صلصة ليمون',
-          price: '50 ريال',
-        },
-        {
-          name: 'مقلوبة لحم',
-          description: 'أرز مع لحم وخضار مطبوخة',
-          price: '42 ريال',
-        },
+        'كباب لحم ضأن',
+        'دجاج مشوي',
+        'سمك مشوي',
+        'مقلوبة لحم',
+        'مندي لحم',
+        'أرز بسمتي مع توابل',
+      ],
+    },
+    {
+      title: 'المشويات',
+      items: [
+        'كباب دجاج',
+        'كباب لحم',
+        'شرائح لحم مشوية',
+        'دجاج مشوي على الفحم',
+        'سمك مشوي',
       ],
     },
     {
       title: 'الحلويات',
       items: [
-        {
-          name: 'كنافة',
-          description: 'كنافة نابلسية مع جبنة وجوز',
-          price: '30 ريال',
-        },
-        {
-          name: 'بقلاوة',
-          description: 'بقلاوة تركية مع عسل وجوز',
-          price: '28 ريال',
-        },
-        {
-          name: 'أم علي',
-          description: 'خبز محمص مع حليب ومكسرات',
-          price: '25 ريال',
-        },
-        {
-          name: 'قطايف',
-          description: 'قطايف محشوة بالجوز أو الجبنة',
-          price: '32 ريال',
-        },
-      ],
-    },
-    {
-      title: 'المشروبات',
-      items: [
-        {
-          name: 'عصير برتقال طازج',
-          description: 'عصير برتقال طبيعي 100%',
-          price: '15 ريال',
-        },
-        {
-          name: 'عصير ليمون بالنعناع',
-          description: 'ليمون طازج مع نعناع',
-          price: '12 ريال',
-        },
-        {
-          name: 'قهوة تركية',
-          description: 'قهوة تركية تقليدية',
-          price: '18 ريال',
-        },
-        {
-          name: 'شاي بالنعناع',
-          description: 'شاي أخضر مع نعناع طازج',
-          price: '10 ريال',
-        },
+        'كنافة نابلسية',
+        'بقلاوة تركية',
+        'أم علي',
+        'قطايف',
+        'حلاوة طحينية',
+        'فواكه طازجة',
       ],
     },
   ];
@@ -110,64 +101,109 @@ const MenuSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)]">
-            قائمة الطعام
+            بوفيه مفتوح
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-[var(--font-cairo)]">
-            قائمة البوفيه المفتوح
+            باقات البوفيه المفتوح
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto font-[var(--font-cairo)]">
-            اكتشف تشكيلة واسعة من الأطباق الطازجة والمشوية يومياً. نقدم لك أفضل
-            النكهات العربية والأجنبية
+            اختر الباقة المناسبة لمناسبتك. جميع الباقات تشمل أطباق متنوعة
+            ومشروبات مع خدمة راقية ومميزة
           </p>
         </div>
 
-        {/* Menu Categories */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {menuCategories.map((category, categoryIndex) => (
+        {/* Buffet Packages */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {buffetPackages.map((package_, index) => (
             <div
-              key={categoryIndex}
-              className="bg-[#232a28] rounded-2xl p-8 border border-[var(--accent)]"
+              key={index}
+              className="bg-[#232a28] rounded-2xl p-8 border border-[var(--accent)] hover:border-[var(--accent)]/60 transition-all duration-300"
             >
-              <h3 className="text-2xl font-bold text-[var(--accent)] mb-6 text-center font-[var(--font-cairo)]">
-                {category.title}
+              <h3 className="text-2xl font-bold text-[var(--accent)] mb-2 text-center font-[var(--font-cairo)]">
+                {package_.title}
               </h3>
-
-              <div className="space-y-6">
-                {category.items.map((item, itemIndex) => (
-                  <div
-                    key={itemIndex}
-                    className="flex justify-between items-start border-b border-[var(--accent)]/20 pb-4 last:border-b-0"
-                  >
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-white mb-1 font-[var(--font-cairo)]">
-                        {item.name}
-                      </h4>
-                      <p className="text-sm text-white/70 font-[var(--font-cairo)]">
-                        {item.description}
-                      </p>
-                    </div>
-                    <span className="text-lg font-bold text-[var(--accent)] font-[var(--font-cairo)]">
-                      {item.price}
-                    </span>
-                  </div>
-                ))}
+              <p className="text-white/70 text-center mb-4 font-[var(--font-cairo)]">
+                {package_.description}
+              </p>
+              <div className="text-center mb-6">
+                <span className="text-3xl font-bold text-white font-[var(--font-cairo)]">
+                  {package_.price}
+                </span>
+                <p className="text-sm text-[var(--accent)] font-[var(--font-cairo)]">
+                  {package_.perPerson}
+                </p>
               </div>
+              <ul className="space-y-3 mb-6">
+                {package_.includes.map((item, itemIndex) => (
+                  <li key={itemIndex} className="flex items-start">
+                    <span className="text-[var(--accent)] mr-2 mt-1">✓</span>
+                    <span className="text-white/80 text-sm font-[var(--font-cairo)]">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-[var(--accent)] text-center font-[var(--font-cairo)]">
+                {package_.minGuests}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Special Offer */}
-        <div className="mt-16 bg-gradient-to-r from-[var(--accent)] to-yellow-400 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-[#181c1b] mb-4 font-[var(--font-cairo)]">
-            عرض خاص للعائلات
+        {/* Buffet Categories */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center font-[var(--font-cairo)]">
+            تشكيلة الأطباق المتوفرة
           </h3>
-          <p className="text-lg text-[#181c1b] mb-6 font-[var(--font-cairo)]">
-            احصل على خصم 20% على البوفيه الكامل للعائلات المكونة من 4 أشخاص أو
-            أكثر
-          </p>
-          <button className="bg-[#181c1b] text-[var(--accent)] font-bold py-3 px-8 rounded-lg hover:bg-white transition-colors font-[var(--font-cairo)]">
-            احجز الآن
-          </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {buffetCategories.map((category, categoryIndex) => (
+              <div
+                key={categoryIndex}
+                className="bg-[#232a28] rounded-2xl p-6 border border-[var(--accent)]/30"
+              >
+                <h4 className="text-xl font-bold text-[var(--accent)] mb-4 text-center font-[var(--font-cairo)]">
+                  {category.title}
+                </h4>
+                <div className="grid grid-cols-1 gap-2">
+                  {category.items.map((item, itemIndex) => (
+                    <div
+                      key={itemIndex}
+                      className="text-white/80 text-sm text-center font-[var(--font-cairo)]"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Special Offers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-gradient-to-r from-[var(--accent)] to-yellow-400 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-[#181c1b] mb-4 font-[var(--font-cairo)]">
+              عرض العائلات
+            </h3>
+            <p className="text-lg text-[#181c1b] mb-6 font-[var(--font-cairo)]">
+              خصم 15% للعائلات المكونة من 15 شخص أو أكثر
+            </p>
+            <button className="bg-[#181c1b] text-[var(--accent)] font-bold py-3 px-8 rounded-lg hover:bg-white transition-colors font-[var(--font-cairo)]">
+              احجز الآن
+            </button>
+          </div>
+
+          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4 font-[var(--font-cairo)]">
+              عرض الأعراس
+            </h3>
+            <p className="text-lg text-white mb-6 font-[var(--font-cairo)]">
+              باقة خاصة للأعراس مع ديكورات إضافية وخدمة مميزة
+            </p>
+            <button className="bg-white text-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors font-[var(--font-cairo)]">
+              استفسر الآن
+            </button>
+          </div>
         </div>
 
         {/* Additional Info */}
@@ -175,10 +211,10 @@ const MenuSection = () => {
           <div className="bg-[#232a28] p-6 rounded-xl border border-[var(--accent)]">
             <div className="text-3xl mb-3">🍽️</div>
             <h4 className="font-bold text-white mb-2 font-[var(--font-cairo)]">
-              أطباق يومية
+              بوفيه مفتوح
             </h4>
             <p className="text-sm text-white/70 font-[var(--font-cairo)]">
-              قائمة متجددة كل يوم مع أفضل المكونات الطازجة
+              تناول ما تريد من الأطباق المتنوعة المتوفرة
             </p>
           </div>
 
@@ -198,7 +234,7 @@ const MenuSection = () => {
               مكونات طازجة
             </h4>
             <p className="text-sm text-white/70 font-[var(--font-cairo)]">
-              نستخدم أفضل المكونات الطازجة والمحلية
+              جميع المكونات طازجة ومختارة بعناية يومياً
             </p>
           </div>
         </div>
