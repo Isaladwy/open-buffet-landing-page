@@ -33,3 +33,17 @@ html {
     --secondary: #2d1a45;
   }
 }
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--accent) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--accent) !important;
+}
