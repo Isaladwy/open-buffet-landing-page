@@ -1,14 +1,26 @@
 import React from 'react';
 import Button from './Button';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[70vh] flex flex-col items-center justify-center overflow-hidden bg-[var(--theme-light-blue)]"
+      className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden"
     >
+      {/* Full-page background image */}
+      <Image
+        fill
+        src="/images/buffet1.png"
+        alt="Buffet Food"
+        className="absolute inset-0 w-full h-full object-cover object-center z-0"
+        priority
+      />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-[var(--theme-dark-teal)]/70 z-10" />
+
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 flex-1 justify-center w-full">
+      <div className="relative z-20 flex flex-col items-center text-center px-6 flex-1 justify-center w-full">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg font-[var(--font-cairo)] font-bold">
           استمتع بتجربة البوفيه المفتوح
         </h1>

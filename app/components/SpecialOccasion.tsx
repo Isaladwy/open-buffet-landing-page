@@ -11,7 +11,7 @@ export default function SpecialOccasion() {
 
       {/* Restaurant Image */}
       <div className="md:w-1/3 w-full flex justify-center mb-8 md:mb-0 z-10">
-        <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-[var(--theme-orange)] max-w-xs">
+        <div className="rounded-2xl overflow-hidden md:mr-4 shadow-lg border-4 border-[var(--theme-orange)] max-w-xs">
           {/* Replace src with your own image if desired */}
           <Image
             width={500}
