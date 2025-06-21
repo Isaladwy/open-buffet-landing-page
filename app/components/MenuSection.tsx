@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Autoplay } from 'swiper/modules';
+import Image from 'next/image';
 import { buffetPackages, buffetCategories } from './menuData';
 
 const MenuSection = () => {
@@ -89,20 +90,25 @@ const MenuSection = () => {
                   }}
                   className="w-full"
                 >
-                  {category.items.map((item, itemIndex) => (
-                    <SwiperSlide key={itemIndex}>
-                      <div
-                        className="h-48 w-full bg-cover bg-center rounded-lg relative"
-                        style={{ backgroundImage: `url(${item.imageUrl})` }}
-                      >
-                        <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-lg font-bold text-center font-[var(--font-cairo)] p-4">
-                            {item.name}
-                          </span>
+                  {(category.items as any[]).map(
+                    (item: any, itemIndex: number) => (
+                      <SwiperSlide key={itemIndex}>
+                        <div className="h-48 w-full rounded-lg relative">
+                          <Image
+                            src={item.imageUrl}
+                            alt={item.name}
+                            fill
+                            className="object-cover rounded-lg"
+                          />
+                          <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+                            <span className="text-white text-lg font-bold text-center font-[var(--font-cairo)] p-4">
+                              {item.name}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </SwiperSlide>
-                  ))}
+                      </SwiperSlide>
+                    )
+                  )}
                 </Swiper>
               </div>
             ))}
