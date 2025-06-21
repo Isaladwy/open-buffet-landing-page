@@ -161,7 +161,7 @@ const MenuSection = () => {
           <h3 className="text-2xl font-bold text-white mb-8 text-center font-[var(--font-cairo)]">
             تشكيلة الأطباق المتوفرة
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col gap-8">
             {buffetCategories.map((category, categoryIndex) => (
               <div
                 key={categoryIndex}
