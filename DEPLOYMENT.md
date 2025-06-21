@@ -117,3 +117,37 @@ For Bluehost, **Method 1 (Static Export)** is recommended because:
 2. Works with shared hosting plans
 3. Better performance for static content
 4. Easier maintenance and updates
+
+## How to Properly View Your Static Site Locally
+
+You need to serve the `out/` directory with a local web server.  
+Here's how you can do it:
+
+### 1. Install `serve` (if you don't have it)
+
+```bash
+npm install -g serve
+```
+
+### 2. Serve the `out/` directory
+
+```bash
+serve out
+```
+
+### 3. Open your browser and go to:
+
+```
+http://localhost:5000
+```
+
+(or whatever port `serve` tells you)
+
+**Now your CSS, images, and JS will work as expected!**
+
+### Why is this necessary?
+
+- Browsers block many features (like JS modules, fetch, and absolute paths) when opening files directly with `file://`.
+- A local server simulates a real web environment, so all paths resolve correctly.
+
+Would you like me to provide a command to run this for you? Or do you want more details on how to use a local server?
