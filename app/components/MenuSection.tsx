@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 const MenuSection = () => {
   const buffetPackages = [
@@ -59,45 +59,57 @@ const MenuSection = () => {
     {
       title: 'المقبلات والسلطات',
       items: [
-        'حمص بالطحينة',
-        'تبولة',
-        'سلطة يونانية',
-        'متبل باذنجان',
-        'سلطة خضراء طازجة',
-        'سلطة فتوش',
-      ],
+        { name: 'حمص بالطحينة', query: 'hummus' },
+        { name: 'تبولة', query: 'tabbouleh' },
+        { name: 'سلطة يونانية', query: 'greek,salad' },
+        { name: 'متبل باذنجان', query: 'eggplant,dip' },
+        { name: 'سلطة خضراء طازجة', query: 'green,salad' },
+        { name: 'سلطة فتوش', query: 'fattoush,salad' },
+      ].map((item) => ({
+        ...item,
+        imageUrl: `https://source.unsplash.com/random/800x600?${item.query}`,
+      })),
     },
     {
       title: 'الأطباق الرئيسية',
       items: [
-        'كباب لحم ضأن',
-        'دجاج مشوي',
-        'سمك مشوي',
-        'مقلوبة لحم',
-        'مندي لحم',
-        'أرز بسمتي مع توابل',
-      ],
+        { name: 'كباب لحم ضأن', query: 'lamb,kebab' },
+        { name: 'دجاج مشوي', query: 'grilled,chicken' },
+        { name: 'سمك مشوي', query: 'grilled,fish' },
+        { name: 'مقلوبة لحم', query: 'maqluba,food' },
+        { name: 'مندي لحم', query: 'mandi,meat' },
+        { name: 'أرز بسمتي مع توابل', query: 'spiced,rice' },
+      ].map((item) => ({
+        ...item,
+        imageUrl: `https://source.unsplash.com/random/800x600?${item.query}`,
+      })),
     },
     {
       title: 'المشويات',
       items: [
-        'كباب دجاج',
-        'كباب لحم',
-        'شرائح لحم مشوية',
-        'دجاج مشوي على الفحم',
-        'سمك مشوي',
-      ],
+        { name: 'كباب دجاج', query: 'chicken,kebab' },
+        { name: 'كباب لحم', query: 'meat,kebab' },
+        { name: 'شرائح لحم مشوية', query: 'grilled,steak' },
+        { name: 'دجاج مشوي على الفحم', query: 'charcoal,chicken' },
+        { name: 'سمك مشوي', query: 'grilled,seafood' },
+      ].map((item) => ({
+        ...item,
+        imageUrl: `https://source.unsplash.com/random/800x600?${item.query}`,
+      })),
     },
     {
       title: 'الحلويات',
       items: [
-        'كنافة نابلسية',
-        'بقلاوة تركية',
-        'أم علي',
-        'قطايف',
-        'حلاوة طحينية',
-        'فواكه طازجة',
-      ],
+        { name: 'كنافة نابلسية', query: 'kunafa' },
+        { name: 'بقلاوة تركية', query: 'baklava' },
+        { name: 'أم علي', query: 'om,ali,dessert' },
+        { name: 'قطايف', query: 'qatayef' },
+        { name: 'حلاوة طحينية', query: 'halva' },
+        { name: 'فواكه طازجة', query: 'fruit,platter' },
+      ].map((item) => ({
+        ...item,
+        imageUrl: `https://source.unsplash.com/random/800x600?${item.query}`,
+      })),
     },
   ];
 
@@ -171,17 +183,28 @@ const MenuSection = () => {
                   {category.title}
                 </h4>
                 <Swiper
-                  modules={[Navigation]}
+                  modules={[Navigation, Autoplay]}
                   spaceBetween={10}
                   slidesPerView={1}
                   navigation
                   loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
                   className="w-full"
                 >
                   {category.items.map((item, itemIndex) => (
                     <SwiperSlide key={itemIndex}>
-                      <div className="text-white/80 text-sm text-center font-[var(--font-cairo)] p-4">
-                        {item}
+                      <div
+                        className="h-48 w-full bg-cover bg-center rounded-lg relative"
+                        style={{ backgroundImage: `url(${item.imageUrl})` }}
+                      >
+                        <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+                          <span className="text-white text-lg font-bold text-center font-[var(--font-cairo)] p-4">
+                            {item.name}
+                          </span>
+                        </div>
                       </div>
                     </SwiperSlide>
                   ))}
