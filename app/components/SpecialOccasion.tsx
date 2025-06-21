@@ -5,13 +5,13 @@ export default function SpecialOccasion() {
   return (
     <section
       id="about"
-      className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden"
+      className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden bg-white"
     >
       {/* Decorative Leaf */}
 
       {/* Restaurant Image */}
       <div className="md:w-1/3 w-full flex justify-center mb-8 md:mb-0 z-10">
-        <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-[var(--accent)] max-w-xs">
+        <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-[var(--theme-orange)] max-w-xs">
           {/* Replace src with your own image if desired */}
           <Image
             width={500}
@@ -23,14 +23,14 @@ export default function SpecialOccasion() {
         </div>
       </div>
       {/* Text Content */}
-      <div className="md:w-2/3 w-full flex flex-col items-start justify-center z-10">
-        <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
+      <div className="md:w-2/3 w-full flex flex-col items-start justify-center z-10 px-4">
+        <span className="uppercase text-xs tracking-widest text-[var(--theme-green)] mb-2 font-[var(--font-cairo)] text-right">
           بوفيه المناسبات والحفلات
         </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl font-[var(--font-cairo)] text-right">
+        <h2 className="text-2xl md:text-3xl font-bold text-[var(--theme-dark-teal)] mb-4 max-w-xl font-[var(--font-cairo)] text-right">
           بوفيهنا هو الخيار الأمثل لجميع مناسباتك، الحفلات والأعراس
         </h2>
-        <p className="text-base md:text-lg text-white/80 mb-8 max-w-md font-[var(--font-cairo)] text-right">
+        <p className="text-base md:text-lg text-gray-600 mb-8 max-w-md font-[var(--font-cairo)] text-right">
           نقدم لك أطباقاً متنوعة تناسب جميع الأذواق، مع جودة عالية وخدمة راقية
           في أجواء مميزة تناسب حفلاتك وأفراحك.
         </p>
@@ -45,7 +45,7 @@ export default function SpecialOccasion() {
           >
             <path
               d="M2 10 Q30 2,60 10 T118 10"
-              stroke="#e0b96a"
+              stroke="var(--theme-orange)"
               strokeWidth="2"
               fill="none"
             />

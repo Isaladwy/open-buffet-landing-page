@@ -13,7 +13,7 @@ export default function ChefRecommend() {
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-xl font-[var(--font-cairo)] text-right">
           الشيف يرشح لك
         </h2>
-        <p className="text-base md:text-lg text-white/80 mb-8 max-w-md font-[var(--font-cairo)] text-right">
+        <p className="text-base md:text-lg text-white/80 mb-8 mr-6 max-w-md font-[var(--font-cairo)] text-right">
           جرب طبق اليوم المختار بعناية من الشيف، يجمع بين النكهات الأصيلة
           والمكونات الطازجة.
         </p>
