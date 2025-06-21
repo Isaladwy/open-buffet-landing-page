@@ -13,7 +13,7 @@ export default function Header() {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <Image
-          src="/images/logo.png"
+          src="/images/logo.webp"
           alt="Khan Alrayhan Buffet Logo"
           width={60}
           height={60}
