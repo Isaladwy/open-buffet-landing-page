@@ -16,9 +16,9 @@ export default function Button({
   const baseClasses = 'rounded-md text-white';
   
   const variantClasses = {
-    primary: 'bg-purple-600 px-6 py-2',
-    secondary: 'bg-purple-700 px-4 py-2',
-    small: 'bg-purple-600 text-xs px-3 py-1'
+    primary: 'bg-[var(--logo-dark-blue)] px-6 py-2 hover:text-black',
+    secondary: 'bg-[var(--logo-dark-blue)] px-4 py-2 hover:text-black',
+    small: 'bg-[var(--logo-dark-blue)] text-xs px-3 py-1 hover:text-black'
   };
   
   return (
