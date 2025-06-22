@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './Button';
 
 interface CardProps {
   title: string;
@@ -39,7 +38,11 @@ export default function Card({
               <span className="text-sm text-gray-500 ml-1">({reviews})</span>
             )}
           </div>
-          {showOrderButton && <Button variant="small">Order</Button>}
+          {showOrderButton && (
+            <button className="rounded-md text-black drop-shadow-md bg-[var(--logo-green)] text-xs px-3 py-1 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+              Order
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -19,13 +19,13 @@ const MenuSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="uppercase text-xl tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)]">
+          <h1 className="uppercase text-xl tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
             بوفيه مفتوح
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 font-[var(--font-cairo)]">
+          </h1>
+          <h3 className="text-3xl md:text-4xl font-bold text-black mb-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
             باقات البوفيه المفتوح
-          </h2>
-          <p className="text-lg text-black max-w-2xl mx-auto font-[var(--font-cairo)]">
+          </h3>
+          <p className="text-lg text-black max-w-2xl mx-auto font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_10%)]">
             اختر الباقة المناسبة لمناسبتك. جميع الباقات تشمل أطباق متنوعة
             ومشروبات مع خدمة راقية ومميزة
           </p>
@@ -38,31 +38,31 @@ const MenuSection = () => {
               key={index}
               className="bg-[#233a45] rounded-2xl p-8 border border-[var(--accent)] hover:border-[var(--accent)]/60 transition-all duration-300"
             >
-              <h3 className="text-2xl font-bold text-[var(--accent)] mb-2 text-center font-[var(--font-cairo)]">
+              <h3 className="text-2xl font-bold text-[var(--accent)] mb-2 text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
                 {package_.title}
               </h3>
-              <p className="text-white/90 font-bold text-center mb-4 font-[var(--font-cairo)]">
+              <p className="text-white/90 font-bold text-center mb-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
                 {package_.description}
               </p>
               <div className="text-center mb-6">
-                <span className="text-3xl font-bold text-white font-[var(--font-cairo)]">
+                <span className="text-3xl font-bold text-white font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
                   {package_.price}
                 </span>
-                <p className="text-sm mt-2 text-[var(--accent)] font-[var(--font-cairo)]">
+                <p className="text-sm mt-2 text-[var(--accent)] font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
                   {package_.perPerson}
                 </p>
               </div>
               <ul className="space-y-3 mb-6">
                 {package_.includes.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start">
-                    <span className="text-[var(--accent)] mr-2 mt-1">✓</span>
-                    <span className="text-white/80 text-sm font-bold font-[var(--font-cairo)]">
+                    <span className="text-[var(--accent)] mr-2 mt-1 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">✓</span>
+                    <span className="text-white/80 text-sm font-bold font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
                       {item}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="text-l text-[var(--accent)] text-center font-[var(--font-cairo)]">
+              <p className="text-l text-[var(--accent)] text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
                 {package_.minGuests}
               </p>
             </div>
@@ -71,7 +71,7 @@ const MenuSection = () => {
 
         {/* Buffet Categories */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-black mb-8 text-center font-[var(--font-cairo)]">
+          <h3 className="text-2xl font-bold text-black mb-8 text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
             تشكيلة الأطباق المتوفرة
           </h3>
           <div className="flex flex-col gap-8">
@@ -80,7 +80,7 @@ const MenuSection = () => {
                 key={categoryIndex}
                 className="bg-[#233a45] rounded-2xl p-6 border border-[var(--accent)]/30"
               >
-                <h4 className="text-xl font-bold text-[var(--accent)] mb-4 text-center font-[var(--font-cairo)]">
+                <h4 className="text-xl font-bold text-[var(--accent)] mb-4 text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
                   {category.title}
                 </h4>
                 <Swiper
@@ -105,7 +105,7 @@ const MenuSection = () => {
                           className="object-cover rounded-lg"
                         />
                         <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
-                          <span className="text-white text-lg font-bold text-center font-[var(--font-cairo)] p-4">
+                          <span className="text-white text-lg font-bold text-center font-[var(--font-cairo)] p-4 [text-shadow:_2px_2px_4px_rgb(0_0_0_/_50%)]">
                             {item.name}
                           </span>
                         </div>
@@ -121,25 +121,25 @@ const MenuSection = () => {
         {/* Special Offers */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gradient-to-r from-[var(--accent)] to-yellow-400 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-[#181c1b] mb-4 font-[var(--font-cairo)]">
+            <h3 className="text-2xl font-bold text-[#181c1b] mb-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
               عرض العائلات
             </h3>
-            <p className="text-lg text-[#181c1b] mb-6 font-[var(--font-cairo)]">
+            <p className="text-lg text-[#181c1b] mb-6 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_15%)]">
               خصم 15% للعائلات المكونة من 15 شخص أو أكثر
             </p>
-            <button className="bg-[#181c1b] text-[var(--accent)] font-bold py-3 px-8 rounded-lg hover:bg-black/95 transition-colors font-[var(--font-cairo)]">
+            <button className="bg-[#181c1b] text-[var(--accent)] font-bold py-3 px-8 rounded-lg hover:bg-black/95 transition-colors font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
               احجز الآن
             </button>
           </div>
 
           <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4 font-[var(--font-cairo)]">
+            <h3 className="text-2xl font-bold text-white mb-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
               عرض الأعراس
             </h3>
-            <p className="text-lg text-white mb-6 font-[var(--font-cairo)]">
+            <p className="text-lg text-white mb-6 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
               باقة خاصة للأعراس مع ديكورات إضافية وخدمة مميزة
             </p>
-            <button className="bg-white text-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-colors font-[var(--font-cairo)]">
+            <button className="bg-white text-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-colors font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
               استفسر الآن
             </button>
           </div>
@@ -149,30 +149,30 @@ const MenuSection = () => {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-[#233a45] p-6 rounded-xl border border-[var(--accent)]">
             <div className="text-3xl mb-3">🍽️</div>
-            <h4 className="font-bold text-white mb-2 font-[var(--font-cairo)]">
+            <h4 className="font-bold text-white mb-2 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
               بوفيه مفتوح
             </h4>
-            <p className="text-sm text-white/70 font-[var(--font-cairo)]">
+            <p className="text-sm text-white/70 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
               تناول ما تريد من الأطباق المتنوعة المتوفرة
             </p>
           </div>
 
           <div className="bg-[#233a45] p-6 rounded-xl border border-[var(--accent)]">
             <div className="text-3xl mb-3">👨‍🍳</div>
-            <h4 className="font-bold text-white mb-2 font-[var(--font-cairo)]">
+            <h4 className="font-bold text-white mb-2 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
               شيف محترف
             </h4>
-            <p className="text-sm text-white/70 font-[var(--font-cairo)]">
+            <p className="text-sm text-white/70 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
               أطباق محضرة بأيدي شيف محترف مع خبرة 15 عام
             </p>
           </div>
 
           <div className="bg-[#233a45] p-6 rounded-xl border border-[var(--accent)]">
             <div className="text-3xl mb-3">🌱</div>
-            <h4 className="font-bold text-white mb-2 font-[var(--font-cairo)]">
+            <h4 className="font-bold text-white mb-2 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
               مكونات طازجة
             </h4>
-            <p className="text-sm text-white/70 font-[var(--font-cairo)]">
+            <p className="text-sm text-white/70 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
               جميع المكونات طازجة ومختارة بعناية يومياً
             </p>
           </div>

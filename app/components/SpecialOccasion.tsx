@@ -5,11 +5,12 @@ export default function SpecialOccasion() {
   return (
     <section
       id="about"
-      className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden bg-[var(--logo-beige)]"
+      className="w-full flex flex-col items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden bg-[var(--logo-beige)]"
     >
-      {/* Decorative Leaf */}
-
-      {/* Restaurant Image */}
+     <h1 className="uppercase text-5xl  text-[var(--logo-green)] mb-2 font-[var(--font-cairo)] text-right [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+          بوفيه المناسبات والحفلات
+        </h1>
+        
       <div className="md:w-1/3 w-full flex justify-center mb-8 md:mb-0 z-10">
         <div className="rounded-2xl overflow-hidden shadow-lg md:mr-6 border-4 border-[var(--accent)] max-w-xs">
           {/* Replace src with your own image if desired */}
@@ -24,13 +25,11 @@ export default function SpecialOccasion() {
       </div>
       {/* Text Content */}
       <div className="md:w-2/3 w-full flex flex-col items-start justify-center z-10">
-        <span className="uppercase text-xl tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
-          بوفيه المناسبات والحفلات
-        </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 max-w-xl font-[var(--font-cairo)] text-right">
+        
+        <h2 className="text-xl md:text-2xl font-bold text-[var(--logo-dark-blue)] mb-4 max-w-xl font-[var(--font-cairo)] text-right [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
           بوفيهنا هو الخيار الأمثل لجميع مناسباتك، الحفلات والأعراس
         </h2>
-        <p className="text-base md:text-lg text-black mb-8 max-w-md font-[var(--font-cairo)] text-right">
+        <p className="text-base md:text-lg text-black mb-8 max-w-md font-[var(--font-cairo)] text-right [text-shadow:_1px_1px_2px_rgb(0_0_0_/_10%)]">
           نقدم لك أطباقاً متنوعة تناسب جميع الأذواق، مع جودة عالية وخدمة راقية
           في أجواء مميزة تناسب حفلاتك وأفراحك.
         </p>

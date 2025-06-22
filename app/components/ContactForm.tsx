@@ -17,7 +17,7 @@ export default function ContactForm() {
       id="booking"
       className="py-16 px-6 md:px-0 flex flex-col items-center bg-[#233a45]"
     >
-      <h2 className="text-3xl font-bold mb-8 text-[var(--accent)] text-center font-[var(--font-cairo)]">
+      <h2 className="text-3xl font-bold mb-8 text-[var(--accent)] text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
         دعنا نتواصل معك
       </h2>
       <form
@@ -28,7 +28,7 @@ export default function ContactForm() {
         <div className="flex flex-col items-start">
           <label
             htmlFor="name"
-            className="mb-2 text-white font-[var(--font-cairo)]"
+            className="mb-2 text-white font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
           >
             الاسم
           </label>
@@ -45,7 +45,7 @@ export default function ContactForm() {
         <div className="flex flex-col items-start">
           <label
             htmlFor="phone"
-            className="mb-2 text-white font-[var(--font-cairo)]"
+            className="mb-2 text-white font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
           >
             رقم الجوال
           </label>
@@ -61,12 +61,12 @@ export default function ContactForm() {
         </div>
         <button
           type="submit"
-          className="bg-[var(--accent)] text-[#181c1b] font-bold py-3 rounded mt-4 hover:bg-white transition-colors font-[var(--font-cairo)]"
+          className="bg-[var(--accent)] text-[#181c1b] font-bold py-3 rounded mt-4 hover:bg-white transition-colors font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
         >
           إرسال
         </button>
         {submitted && (
-          <div className="text-green-400 text-center mt-4 font-[var(--font-cairo)]">
+          <div className="text-green-400 text-center mt-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
             تم إرسال طلبك بنجاح! سنقوم بالتواصل معك قريباً.
           </div>
         )}

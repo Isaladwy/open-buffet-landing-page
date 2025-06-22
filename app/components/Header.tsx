@@ -37,25 +37,25 @@ export default function Header() {
       <nav className="hidden md:flex space-x-8 ">
         <a
           href="#about"
-          className="text-black hover:text-[var(--accent)] transition-colors"
+          className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
         >
           عن البوفيه
         </a>
         <a
           href="#menu"
-          className="text-black hover:text-[var(--accent)] transition-colors"
+          className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
         >
           قائمة البوفيه
         </a>
         <a
           href="#reviews"
-          className="text-black hover:text-[var(--accent)] transition-colors"
+          className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
         >
           آراء العملاء
         </a>
         <a
           href="#booking"
-          className="text-black hover:text-[var(--accent)] transition-colors"
+          className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
         >
           احجز طاولتك
         </a>
@@ -88,28 +88,28 @@ export default function Header() {
           <nav className="flex flex-col space-y-8 text-2xl">
             <a
               href="#about"
-              className="text-black hover:text-[var(--accent)] transition-colors"
+              className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
               onClick={() => setMenuOpen(false)}
             >
               عن البوفيه
             </a>
             <a
               href="#menu"
-              className="text-black hover:text-[var(--accent)] transition-colors"
+              className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
               onClick={() => setMenuOpen(false)}
             >
               قائمة البوفيه
             </a>
             <a
               href="#reviews"
-              className="text-black hover:text-[var(--accent)] transition-colors"
+              className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
               onClick={() => setMenuOpen(false)}
             >
               آراء العملاء
             </a>
             <a
               href="#booking"
-              className="text-black hover:text-[var(--accent)] transition-colors"
+              className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
               onClick={() => setMenuOpen(false)}
             >
               احجز طاولتك

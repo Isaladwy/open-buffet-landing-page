@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './Button';
 import Image from 'next/image';
 
 export default function Hero() {
@@ -19,19 +18,18 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60 z-10" />
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center px-6 flex-1 justify-center w-full">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg font-[var(--font-cairo)] font-bold text-right">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg font-[var(--font-cairo)] font-bold text-right [text-shadow:_2px_2px_4px_rgb(0_0_0_/_50%)]">
           استمتع بتجربة البوفيه المفتوح
         </h1>
-        <p className="text-lg md:text-xl text-[var(--accent)] mb-8 font-medium font-[var(--font-cairo)] text-right">
+        <p className="text-lg md:text-xl text-[var(--accent)] mb-8 font-medium font-[var(--font-cairo)] text-right [text-shadow:_1px_1px_2px_rgb(0_0_0_/_50%)]">
           تشكيلة واسعة من الأطباق الطازجة يومياً. مثالي للحفلات، الأعراس، وجميع
           المناسبات.
         </p>
-        <Button
-          variant="primary"
-          className="bg-[var(--accent)] text-[#181c1b] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors"
+        <button
+          className="rounded-md text-black drop-shadow-md bg-[var(--logo-green)] text-[#181c1b] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
         >
           استعرض القائمة
-        </Button>
+        </button>
       </div>
     </section>
   );
