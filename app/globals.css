@@ -12,6 +12,11 @@ html {
   --primary-light: #ede9fe;
   --secondary: #232a28;
   --accent: #e0b96a;
+  --logo-teal: #5a8c99;
+  --logo-green: #5ca88d;
+  --logo-beige: #e0b96a;
+  --logo-dark-blue: #233a45;
+  --logo-white: #ffffff;
 }
 
 @theme inline {
