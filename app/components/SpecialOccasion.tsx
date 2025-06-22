@@ -5,7 +5,7 @@ export default function SpecialOccasion() {
   return (
     <section
       id="about"
-      className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden bg-[var(--logo-white)]"
+      className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 relative overflow-hidden bg-[var(--logo-beige)]"
     >
       {/* Decorative Leaf */}
 
@@ -30,7 +30,7 @@ export default function SpecialOccasion() {
         <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 max-w-xl font-[var(--font-cairo)] text-right">
           بوفيهنا هو الخيار الأمثل لجميع مناسباتك، الحفلات والأعراس
         </h2>
-        <p className="text-base md:text-lg text-black/80 mb-8 max-w-md font-[var(--font-cairo)] text-right">
+        <p className="text-base md:text-lg text-white/80 mb-8 max-w-md font-[var(--font-cairo)] text-right">
           نقدم لك أطباقاً متنوعة تناسب جميع الأذواق، مع جودة عالية وخدمة راقية
           في أجواء مميزة تناسب حفلاتك وأفراحك.
         </p>

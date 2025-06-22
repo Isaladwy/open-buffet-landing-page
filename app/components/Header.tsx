@@ -1,11 +1,24 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex flex-row items-center justify-between border-2 border-[rgba(224,185,106,0.15)] bg-[var(--logo-white)] transition-colors duration-300">
+    <header
+      className={`sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex flex-row items-center justify-between border-2 border-[rgba(224,185,106,0.15)] transition-colors duration-300 ${
+        scrolled ? 'bg-[rgba(247,247,254,0.7)]' : 'bg-[var(--logo-beige)]'
+      }`}
+    >
       {/* Logo */}
       <div
         className="flex flex-col leading-tight items-center cursor-pointer"
