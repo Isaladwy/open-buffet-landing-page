@@ -21,7 +21,7 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg text-center [text-shadow:_2px_2px_4px_rgb(0_0_0_/_50%)]">
           استمتع بتجربة البوفيه المفتوح
         </h1>
-        <p className="text-lg md:text-xl text-[var(--accent)] mb-8 font-medium text-center [text-shadow:_1px_1px_2px_rgb(0_0_0_/_50%)]">
+        <p className="text-lg md:text-xl text-[#fff] mb-8 font-medium text-center [text-shadow:_1px_1px_2px_rgb(0_0_0_/_50%)]">
           تشكيلة واسعة من الأطباق الطازجة يومياً. مثالي للحفلات، الأعراس، وجميع
           المناسبات.
         </p>
