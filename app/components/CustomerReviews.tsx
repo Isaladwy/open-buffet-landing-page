@@ -14,7 +14,7 @@ const reviews = [
   {
     name: 'ريم السبيعي',
     review: 'الطعام لذيذ والأجواء راقية. شكراً لفريق العمل على التنظيم الرائع.',
-    stars: 5,
+    stars: 4,
   },
 ];
 
@@ -31,7 +31,7 @@ export default function CustomerReviews() {
         {reviews.map((item, idx) => (
           <div
             key={idx}
-            className="bg-[#232a28] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)]"
+            className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)]"
           >
             <div className="w-16 h-16 rounded-full bg-[var(--accent)] flex items-center justify-center text-xl font-bold text-[#232a28] mb-4">
               {item.name[0]}
