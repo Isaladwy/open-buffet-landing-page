@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function ChefRecommend() {
   return (
-    <section className="w-full flex flex-col items-center justify-center pb-20 px-6 md:px-0 gap-12 bg-[var(--logo-beige)]">
+    <section className="w-full flex flex-col items-center justify-center  px-6 md:px-0 gap-12 bg-[var(--logo-beige)]">
       <h1 className="uppercase text-5xl  text-[var(--logo-green)] mb-2 font-[var(--font-cairo)] text-right [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
           طبق اليوم
         </h1>
@@ -34,7 +34,24 @@ export default function ChefRecommend() {
             className="w-full h-auto object-cover"
           />
         </div>
+        
       </div>
+      <div className="my-6">
+          <svg
+            width="120"
+            height="20"
+            viewBox="0 0 120 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 10 Q30 2,60 10 T118 10"
+              stroke="#e0b96a"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
+        </div>
     </section>
   );
 }
