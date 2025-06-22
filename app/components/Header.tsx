@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 export default function Header() {
@@ -24,15 +25,13 @@ export default function Header() {
         className="flex flex-col leading-tight items-center cursor-pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <span className="text-2xl font-bold text-black tracking-wide">
-          بوفيه
-        </span>
-        <span
-          className="text-xs text-[var(--accent)] tracking-widest uppercase"
-          style={{ letterSpacing: '0.1em', fontSize: '1em' }}
-        >
-          خان الريحان
-        </span>
+        <Image
+          width={100}
+          height={100}
+          src="/images/logo.webp"
+          alt="Open Buffet Logo"
+          className="w-24 h-auto"
+        />
       </div>
       {/* Desktop Nav */}
       <nav className="hidden md:flex space-x-8 ">
