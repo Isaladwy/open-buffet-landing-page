@@ -19,10 +19,10 @@ const MenuSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="uppercase text-xl tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+          <h1 className="uppercase text-5xl text-[var(--logo-green)] mb-10 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
             بوفيه مفتوح
           </h1>
-          <h3 className="text-3xl md:text-4xl font-bold text-black mb-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
+          <h3 className="text-xl md:text-2xl font-bold text-[var(--logo-dark-blue)] mb-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
             باقات البوفيه المفتوح
           </h3>
           <p className="text-lg text-black max-w-2xl mx-auto font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_10%)]">
