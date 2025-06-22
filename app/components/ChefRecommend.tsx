@@ -10,7 +10,7 @@ export default function ChefRecommend() {
       {/* Text Content */}
       <div className="md:w-1/2 w-full flex flex-col items-center text-center justify-center mb-8 md:mb-0">
         
-        <h2 className="text-xl md:text-2xl font-bold text-[var(--logo-dark-blue)] mb-4 max-w-xl font-[var(--font-cairo)] text-right [text-shadow:_1px_1px_3px_rgb(0_0_0_/_20%)]">
+        <h2 className="text-xl md:text-2xl font-bold text-[var(--logo-dark-blue)] mb-4 max-w-xl text-right [text-shadow:_1px_1px_3px_rgb(0_0_0_/_20%)]">
           الشيف يرشح لك
         </h2>
         <p className="text-base md:text-lg text-black mb-8 mr-6 max-w-md font-[var(--font-cairo)] text-center [text-shadow:_1px_1px_2px_rgb(0_0_0_/_15%)]">
@@ -18,7 +18,7 @@ export default function ChefRecommend() {
           والمكونات الطازجة.
         </p>
         <button 
-          className="rounded-md text-black drop-shadow-md bg-[var(--logo-green)] text-[#181c1b] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
+          className="rounded-md text-black drop-shadow-md bg-[var(--logo-green)] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
         >
           اكتشف المزيد
         </button>
