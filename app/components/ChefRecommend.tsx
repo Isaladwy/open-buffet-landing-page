@@ -9,7 +9,15 @@ export default function ChefRecommend() {
         </h1>
       {/* Text Content */}
       <div className="md:w-1/2 w-full flex flex-col items-center text-center justify-center mb-8 md:mb-0">
-        
+        <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-[var(--accent)] max-w-xs mb-10">
+          <Image
+            width={500}
+            height={500}
+            src="/images/photo-1547573854-74d2a71d0826.png"
+            alt="طبق من اختيار الشيف"
+            className="w-full h-auto object-cover"
+          />
+        </div>
         <h2 className="text-xl md:text-2xl font-bold text-[var(--logo-dark-blue)] mb-4 max-w-xl text-right [text-shadow:_1px_1px_3px_rgb(0_0_0_/_20%)]">
           الشيف يرشح لك
         </h2>
@@ -25,15 +33,7 @@ export default function ChefRecommend() {
       </div>
       {/* Food Photo */}
       <div className="md:w-1/2 w-full flex justify-center z-10">
-        <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-[var(--accent)] max-w-xs">
-          <Image
-            width={500}
-            height={500}
-            src="/images/photo-1547573854-74d2a71d0826.png"
-            alt="طبق من اختيار الشيف"
-            className="w-full h-auto object-cover"
-          />
-        </div>
+        
         
       </div>
       <div className="my-6">
