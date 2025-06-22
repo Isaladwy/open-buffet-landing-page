@@ -15,17 +15,17 @@ export default function ContactForm() {
   return (
     <section
       id="booking"
-      className="py-16 px-6 md:px-0 flex flex-col items-center bg-[#232a28]"
+      className="py-16 px-6 md:px-0 flex flex-col items-center bg-[#233a45]"
     >
       <h2 className="text-3xl font-bold mb-8 text-[var(--accent)] text-center font-[var(--font-cairo)]">
         دعنا نتواصل معك
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-[var(--background)] p-8 rounded-2xl shadow-lg border border-[var(--accent)] flex flex-col gap-6"
+        className="w-full max-w-md bg-[(--secondary)] p-8 rounded-2xl shadow-lg border border-[var(--accent)] flex flex-col gap-6"
         dir="rtl"
       >
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-start">
           <label
             htmlFor="name"
             className="mb-2 text-white font-[var(--font-cairo)]"
@@ -42,7 +42,7 @@ export default function ContactForm() {
             placeholder="أدخل اسمك"
           />
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-start">
           <label
             htmlFor="phone"
             className="mb-2 text-white font-[var(--font-cairo)]"
