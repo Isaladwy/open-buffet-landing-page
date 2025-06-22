@@ -28,7 +28,7 @@ export default function SpecialOccasion() {
         <h2 className="text-xl md:text-2xl font-bold text-[var(--logo-dark-blue)] mb-4 max-w-xl text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
           بوفيهنا هو الخيار الأمثل لجميع مناسباتك، الحفلات والأعراس
         </h2>
-        <p className="text-base md:text-lg text-black mb-8 max-w-md font-[var(--font-cairo)] text-right [text-shadow:_1px_1px_2px_rgb(0_0_0_/_10%)]">
+        <p className="text-base md:text-lg text-black mb-8 max-w-md font-[var(--font-cairo)] text-center [text-shadow:_1px_1px_2px_rgb(0_0_0_/_10%)]">
           نقدم لك أطباقاً متنوعة تناسب جميع الأذواق، مع جودة عالية وخدمة راقية
           في أجواء مميزة تناسب حفلاتك وأفراحك.
         </p>

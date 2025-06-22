@@ -134,14 +134,14 @@ const MenuSection = () => {
             </button>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-r from-teal-900 to-teal-700 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-4 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
               عرض الأعراس
             </h3>
             <p className="text-lg text-white mb-6 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
               باقة خاصة للأعراس مع ديكورات إضافية وخدمة مميزة
             </p>
-            <button className="bg-white text-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+            <button className="bg-white text-[#233a45] font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
               استفسر الآن
             </button>
           </div>
