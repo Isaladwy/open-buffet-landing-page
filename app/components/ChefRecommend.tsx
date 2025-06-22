@@ -7,17 +7,17 @@ export default function ChefRecommend() {
     <section className="w-full flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-0 gap-12 bg-[var(--logo-beige)]">
       {/* Text Content */}
       <div className="md:w-1/2 w-full flex flex-col items-center text-center justify-center mb-8 md:mb-0">
-        <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
+        <span className="uppercase text-xl tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
           طبق اليوم
         </span>
         <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 max-w-xl font-[var(--font-cairo)] text-right">
           الشيف يرشح لك
         </h2>
-        <p className="text-base md:text-lg text-white/80 mb-8 mr-6 max-w-md font-[var(--font-cairo)] text-right">
+        <p className="text-base md:text-lg text-black mb-8 mr-6 max-w-md font-[var(--font-cairo)] text-right">
           جرب طبق اليوم المختار بعناية من الشيف، يجمع بين النكهات الأصيلة
           والمكونات الطازجة.
         </p>
-        <Button
+        <Button 
           variant="primary"
           className="bg-[var(--accent)] text-[#181c1b] font-semibold px-8 py-3 text-lg shadow-md hover:bg-yellow-400 transition-colors"
         >

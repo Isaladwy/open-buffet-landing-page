@@ -24,13 +24,13 @@ export default function SpecialOccasion() {
       </div>
       {/* Text Content */}
       <div className="md:w-2/3 w-full flex flex-col items-start justify-center z-10">
-        <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
+        <span className="uppercase text-xl tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)] text-right">
           بوفيه المناسبات والحفلات
         </span>
         <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 max-w-xl font-[var(--font-cairo)] text-right">
           بوفيهنا هو الخيار الأمثل لجميع مناسباتك، الحفلات والأعراس
         </h2>
-        <p className="text-base md:text-lg text-white/80 mb-8 max-w-md font-[var(--font-cairo)] text-right">
+        <p className="text-base md:text-lg text-black mb-8 max-w-md font-[var(--font-cairo)] text-right">
           نقدم لك أطباقاً متنوعة تناسب جميع الأذواق، مع جودة عالية وخدمة راقية
           في أجواء مميزة تناسب حفلاتك وأفراحك.
         </p>
