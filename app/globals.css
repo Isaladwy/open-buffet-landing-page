@@ -42,6 +42,7 @@ html {
 body {
   color: var(--foreground);
   background-color: var(--background);
+  font-family: 'GE SS Two', var(--font-sans), sans-serif;
 }
 
 .swiper-button-next,
@@ -55,4 +56,54 @@ body {
 
 .swiper-pagination {
   bottom: 0px !important;
+}
+
+/* GE SS Two Arabic font faces */
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/ArbFONTS-GE_SS_Two_Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/ArbFONTS-GE_SS_Two_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/ArbFONTS-GE_SS_Two_Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/ArbFONTS-GE_SS_Two_Bold-1.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/ArbFONTS-GE_SS_Two_Light-1.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/ArbFONTS-GE_SS_Two_Medium-1.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/ArbFONTS-GE-SS-Text-Medium.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/ArbFONTS-GE-SS-Two-Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
 }
