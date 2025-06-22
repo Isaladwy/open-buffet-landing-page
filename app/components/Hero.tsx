@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60 z-10" />
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center px-6 flex-1 justify-center w-full">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg font-[var(--font-cairo)] font-bold text-right [text-shadow:_2px_2px_4px_rgb(0_0_0_/_50%)]">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg font-[var(--font-cairo)] font-bold text-center [text-shadow:_2px_2px_4px_rgb(0_0_0_/_50%)]">
           استمتع بتجربة البوفيه المفتوح
         </h1>
         <p className="text-lg md:text-xl text-[var(--accent)] mb-8 font-medium font-[var(--font-cairo)] text-right [text-shadow:_1px_1px_2px_rgb(0_0_0_/_50%)]">
