@@ -5,13 +5,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex flex-row items-center justify-between border-2 border-[rgba(224,185,106,0.15)] bg-black transition-colors duration-300">
+    <header className="sticky top-0 left-0 w-full z-30 py-6 px-6 md:px-16 flex flex-row items-center justify-between border-2 border-[rgba(224,185,106,0.15)] bg-[var(--logo-white)] transition-colors duration-300">
       {/* Logo */}
       <div
         className="flex flex-col leading-tight items-center cursor-pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <span className="text-2xl font-bold text-white tracking-wide">
+        <span className="text-2xl font-bold text-black tracking-wide">
           بوفيه
         </span>
         <span
@@ -25,25 +25,25 @@ export default function Header() {
       <nav className="hidden md:flex space-x-8 ">
         <a
           href="#about"
-          className="text-white hover:text-[var(--accent)] transition-colors"
+          className="text-black hover:text-[var(--accent)] transition-colors"
         >
           عن البوفيه
         </a>
         <a
           href="#menu"
-          className="text-white hover:text-[var(--accent)] transition-colors"
+          className="text-black hover:text-[var(--accent)] transition-colors"
         >
           قائمة البوفيه
         </a>
         <a
           href="#reviews"
-          className="text-white hover:text-[var(--accent)] transition-colors"
+          className="text-black hover:text-[var(--accent)] transition-colors"
         >
           آراء العملاء
         </a>
         <a
           href="#booking"
-          className="text-white hover:text-[var(--accent)] transition-colors"
+          className="text-black hover:text-[var(--accent)] transition-colors"
         >
           احجز طاولتك
         </a>
@@ -55,49 +55,49 @@ export default function Header() {
         onClick={() => setMenuOpen((open) => !open)}
       >
         <span
-          className={`block w-6 h-0.5 bg-white mb-1 transition-all duration-300 ${
+          className={`block w-6 h-0.5 bg-black mb-1 transition-all duration-300 ${
             menuOpen ? 'rotate-45 translate-y-2' : ''
           }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 bg-white mb-1 transition-all duration-300 ${
+          className={`block w-6 h-0.5 bg-black mb-1 transition-all duration-300 ${
             menuOpen ? 'opacity-0' : ''
           }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+          className={`block w-6 h-0.5 bg-black transition-all duration-300 ${
             menuOpen ? '-rotate-45 -translate-y-2' : ''
           }`}
         ></span>
       </button>
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-black/90 z-30 flex flex-col items-center justify-center md:hidden transition-all">
+        <div className="fixed inset-0 bg-[rgba(255,255,255,0.9)] z-30 flex flex-col items-center justify-center md:hidden transition-all">
           <nav className="flex flex-col space-y-8 text-2xl">
             <a
               href="#about"
-              className="text-white hover:text-[var(--accent)] transition-colors"
+              className="text-black hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               عن البوفيه
             </a>
             <a
               href="#menu"
-              className="text-white hover:text-[var(--accent)] transition-colors"
+              className="text-black hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               قائمة البوفيه
             </a>
             <a
               href="#reviews"
-              className="text-white hover:text-[var(--accent)] transition-colors"
+              className="text-black hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               آراء العملاء
             </a>
             <a
               href="#booking"
-              className="text-white hover:text-[var(--accent)] transition-colors"
+              className="text-black hover:text-[var(--accent)] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               احجز طاولتك
