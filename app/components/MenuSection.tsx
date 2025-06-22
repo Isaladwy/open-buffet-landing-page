@@ -19,13 +19,13 @@ const MenuSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="uppercase text-xs tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)]">
+          <span className="uppercase text-xl tracking-widest text-[var(--accent)] mb-2 font-[var(--font-cairo)]">
             بوفيه مفتوح
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-[var(--font-cairo)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 font-[var(--font-cairo)]">
             باقات البوفيه المفتوح
           </h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto font-[var(--font-cairo)]">
+          <p className="text-lg text-black max-w-2xl mx-auto font-[var(--font-cairo)]">
             اختر الباقة المناسبة لمناسبتك. جميع الباقات تشمل أطباق متنوعة
             ومشروبات مع خدمة راقية ومميزة
           </p>

@@ -20,7 +20,7 @@ html {
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-background: #f7f7fe;
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
@@ -33,7 +33,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #f7f7fe;
     --foreground: #ededed;
     --secondary: #2d1a45;
   }
