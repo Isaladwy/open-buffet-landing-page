@@ -13,12 +13,12 @@ export default function Button({
   onClick,
   className = '',
 }: ButtonProps) {
-  const baseClasses = 'rounded-md text-white';
+  const baseClasses = 'rounded-md text-black drop-shadow-md';
 
   const variantClasses = {
-    primary: 'bg-[var(--logo-dark-blue)] px-6 py-2 hover:text-black',
-    secondary: 'bg-[var(--logo-dark-blue)] px-4 py-2 hover:text-black',
-    small: 'bg-[var(--logo-dark-blue)] text-xs px-3 py-1 hover:text-black',
+    primary: 'bg-[var(--logo-green)] px-6 py-2',
+    secondary: 'bg-[var(--logo-green)] px-4 py-2',
+    small: 'bg-[var(--logo-green)] text-xs px-3 py-1',
   };
 
   return (
