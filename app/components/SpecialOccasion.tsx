@@ -17,7 +17,7 @@ export default function SpecialOccasion() {
           <Image
             width={500}
             height={500}
-            src="/images/photo-1617201835781-615e57a8b71d.png"
+            src="/images/photo-1617201835781-615e57a8b71d.webp"
             alt="مطعم ويلما"
             className="w-full h-auto object-cover"
           />

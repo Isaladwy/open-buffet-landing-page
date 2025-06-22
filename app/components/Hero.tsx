@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Full-page background image */}
       <Image
         fill
-        src="/images/buffet1.png"
+        src="/images/buffet1.webp"
         alt="Buffet Food"
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
       />
