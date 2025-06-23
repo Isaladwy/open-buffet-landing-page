@@ -34,6 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:slnt,wght@0,400;0,500;0,600;0,700;0,800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} bg-[var(--background)] text-[var(--foreground)] min-h-screen antialiased`}
         style={{
