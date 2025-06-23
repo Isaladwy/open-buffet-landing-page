@@ -32,7 +32,7 @@ html {
 body {
   color: var(--foreground);
   background-color: var(--background);
-  font-family: sans-serif;
+  font-family: 'Cairo', sans-serif;
 }
 
 .swiper-button-next,
