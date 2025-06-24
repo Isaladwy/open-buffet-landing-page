@@ -22,7 +22,7 @@ export default function CustomerReviews() {
   return (
     <section
       id="reviews"
-      className="py-16 px-6 md:px-12 bg-[var(--background)]"
+      className="py-16 px-6 md:px-12 bg-[#f7f7fe]"
     >
       <h2 className="text-3xl font-bold mb-10 text-[var(--logo-green)] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_25%)]">
         آراء العملاء

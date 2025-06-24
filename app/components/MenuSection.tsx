@@ -15,7 +15,7 @@ interface MenuItem {
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="py-20 px-6 md:px-12 bg-[var(--background)]">
+    <section id="menu" className="py-20 px-6 md:px-12 bg-[#f7f7fe]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
