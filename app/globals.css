@@ -21,14 +21,6 @@ html {
 
 /* Removed invalid @theme block. If you need these variables, add them to :root or another selector. */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #f7f7fe;
-    --foreground: #ededed;
-    --secondary: #2d1a45;
-  }
-}
-
 body {
   color: var(--foreground);
   background-color: var(--background);
