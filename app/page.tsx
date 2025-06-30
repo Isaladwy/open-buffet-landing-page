@@ -6,9 +6,9 @@ import Header from './components/Header';
 // import SpecialOccasion from './components/SpecialOccasion';
 // import ChefRecommend from './components/ChefRecommend';
 import MenuSection from './components/Menu/MenuSection';
-import CustomerReviews from './components/CustomerReviews';
+import CustomerReviews from './components/CustomerReviews/CustomerReviews';
 import Footer from './components/Footer';
-import ContactForm from './components/ContactForm';
+import ContactForm from './components/ContactForm/ContactForm';
 
 export default function Home() {
   return (

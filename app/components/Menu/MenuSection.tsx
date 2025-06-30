@@ -2,7 +2,7 @@
 import React from 'react';
 
 
-import { buffetPackages, buffetCategories } from '../menuData';
+import { buffetPackages, buffetCategories } from './menuData';
 import BuffetPackages from './BuffetPackages';
 import BuffetCategories from './BuffetCategories';
 import SpecialOffers from './SpecialOffers';
