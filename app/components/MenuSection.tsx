@@ -148,7 +148,7 @@ const MenuSection = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        {/* <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-[#233a45] p-6 rounded-xl border border-[var(--accent)]">
             <div className="text-3xl mb-3">🍽️</div>
             <h4 className="font-bold text-white mb-2 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
@@ -178,7 +178,7 @@ const MenuSection = () => {
               جميع المكونات طازجة ومختارة بعناية يومياً
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
