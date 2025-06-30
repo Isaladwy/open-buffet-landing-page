@@ -57,9 +57,9 @@ const BuffetPackages: React.FC<BuffetPackagesProps> = ({ buffetPackages }) => (
                 {package_.perPerson}
               </p>
             </div>
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-3  mb-6">
               {package_.includes.map((item, itemIndex) => (
-                <li key={itemIndex} className="flex items-start">
+                <li key={itemIndex} className="flex items-center">
                   <span className="text-[var(--accent)] mr-2 mt-1 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">✓</span>
                   <span className="text-white/80 text-sm font-bold [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">{item}</span>
                 </li>
