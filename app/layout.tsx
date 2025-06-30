@@ -26,6 +26,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/images/logo.webp" type="image/webp" />
       </head>
       <body className="bg-[var(--background)] text-[var(--foreground)] min-h-screen antialiased">
         {children}
