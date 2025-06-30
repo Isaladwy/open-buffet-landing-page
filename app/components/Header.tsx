@@ -36,12 +36,6 @@ export default function Header() {
       {/* Desktop Nav */}
       <nav className="hidden md:flex space-x-8 ">
         <a
-          href="#about"
-          className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
-        >
-          عن البوفيه
-        </a>
-        <a
           href="#menu"
           className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
         >
