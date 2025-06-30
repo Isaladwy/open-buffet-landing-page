@@ -15,14 +15,14 @@ export default function ContactForm() {
   return (
     <section
       id="booking"
-      className="py-16 px-6 md:px-0 flex flex-col items-center bg-[#233a45]"
+      className="py-16 px-6 md:px-0 flex flex-col items-center bg-[#efeff1]"
     >
-      <h2 className="text-3xl font-bold mb-8 text-[var(--accent)] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
+      <h2 className="text-3xl font-bold mb-8 text-[#5ca88d] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
         دعنا نتواصل معك
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-[(--secondary)] p-8 rounded-2xl shadow-lg border border-[var(--accent)] flex flex-col gap-6"
+        className="w-full bg-[#233a45] max-w-md  p-8 rounded-2xl shadow-lg border border-[var(--accent)] flex flex-col gap-6"
         dir="rtl"
       >
         <div className="flex flex-col items-start">
