@@ -42,7 +42,7 @@ const BuffetPackages: React.FC<BuffetPackagesProps> = ({ buffetPackages }) => (
     <Slider {...sliderSettings}>
       {buffetPackages.map((package_, index) => (
         <div key={index}>
-          <div className="bg-[#233a45] rounded-2xl p-8 border border-[var(--accent)] hover:border-[var(--accent)]/60 transition-all duration-300 mx-4">
+          <div className="bg-[#233a45] rounded-2xl p-8 border border-[var(--accent)] hover:border-[var(--accent)]/60 transition-all duration-300 mx-4 h-[500px] w-full flex flex-col justify-between">
             <h3 className="text-2xl font-bold text-[var(--accent)] mb-2 text-center [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
               {package_.title}
             </h3>
