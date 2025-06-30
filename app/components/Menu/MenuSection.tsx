@@ -11,10 +11,10 @@ import SpecialOffers from './SpecialOffers';
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="py-20 px-6 md:px-12 bg-[#f7f7fe]">
+    <section id="menu" className="py-10 px-6 md:px-12 bg-[#f7f7fe]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <h1 className="uppercase text-5xl text-[var(--logo-green)] mb-10 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
             بوفيه مفتوح
           </h1>
