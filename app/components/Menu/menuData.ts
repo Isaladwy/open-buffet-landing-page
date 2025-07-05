@@ -47,7 +47,7 @@ export const buffetPackages = [
 
 export const buffetCategories = [
   {
-    title: 'الأطباق الرئيسية',
+    title: 'البوفيه الأساسي',
     path: 'main-dishes',
     items: [
       { name: 'كباب لحم ضأن', imageName: 'kebab-lamb.webp' },
@@ -59,7 +59,7 @@ export const buffetCategories = [
     ],
   },
   {
-    title: 'المشويات',
+    title: 'البوفيه المميز',
     path: 'grills',
     items: [
       { name: 'كباب دجاج', imageName: 'kebab-chicken.webp' },
@@ -70,7 +70,7 @@ export const buffetCategories = [
     ],
   },
   {
-    title: 'المقبلات والسلطات',
+    title: 'البوفيه الفاخر',
     path: 'appetizers-and-salads',
     items: [
       { name: 'حمص بالطحينة', imageName: 'hummus.webp' },
@@ -79,18 +79,6 @@ export const buffetCategories = [
       { name: 'متبل باذنجان', imageName: 'mutabbal.webp' },
       { name: 'سلطة خضراء طازجة', imageName: 'green-salad.webp' },
       { name: 'سلطة فتوش', imageName: 'fattoush.webp' },
-    ],
-  },
-  {
-    title: 'الحلويات',
-    path: 'desserts',
-    items: [
-      { name: 'كنافة نابلسية', imageName: 'kunafa.webp' },
-      { name: 'بقلاوة تركية', imageName: 'baklava.webp' },
-      { name: 'أم علي', imageName: 'om-ali.webp' },
-      { name: 'قطايف', imageName: 'qatayef.webp' },
-      { name: 'حلاوة طحينية', imageName: 'halva.webp' },
-      { name: 'فواكه طازجة', imageName: 'fruit-platter.webp' },
     ],
   },
 ].map((category) => ({
