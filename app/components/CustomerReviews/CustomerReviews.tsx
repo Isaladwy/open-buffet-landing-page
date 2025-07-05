@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -24,6 +24,25 @@ const initialReviews = [
 
 export default function CustomerReviews() {
   const [allReviews, setAllReviews] = useState(initialReviews);
+
+  // Load reviews from API on component mount
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch('/api/reviews');
+        if (response.ok) {
+          const reviews = await response.json();
+          setAllReviews(reviews);
+        } else {
+          console.error('Failed to fetch reviews');
+        }
+      } catch (error) {
+        console.error('Error loading reviews:', error);
+      }
+    };
+
+    fetchReviews();
+  }, []);
   const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({
     name: '',
@@ -44,7 +63,7 @@ export default function CustomerReviews() {
     adaptiveHeight: true,
   };
 
-  const handleSubmitReview = (e: React.FormEvent) => {
+  const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (newReview.name.trim() && newReview.review.trim()) {
@@ -54,16 +73,43 @@ export default function CustomerReviews() {
         review: newReview.review.trim(),
       };
 
-      // Add to the reviews array and update state
-      setAllReviews((prev) => [reviewToAdd, ...prev]);
-      setNewReview({ name: '', review: '', stars: 5 });
-      setShowForm(false);
-      setSubmitted(true);
+      try {
+        // Send review to API
+        const response = await fetch('/api/reviews', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(reviewToAdd),
+        });
 
-      // Hide success message after 3 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 3000);
+        if (response.ok) {
+          const result = await response.json();
+          console.log('Review saved successfully:', result);
+
+          // Refresh reviews from API
+          const reviewsResponse = await fetch('/api/reviews');
+          if (reviewsResponse.ok) {
+            const updatedReviews = await reviewsResponse.json();
+            setAllReviews(updatedReviews);
+          }
+
+          setNewReview({ name: '', review: '', stars: 5 });
+          setShowForm(false);
+          setSubmitted(true);
+
+          // Hide success message after 3 seconds
+          setTimeout(() => {
+            setSubmitted(false);
+          }, 3000);
+        } else {
+          console.error('Failed to save review');
+          alert('فشل في حفظ المراجعة. يرجى المحاولة مرة أخرى.');
+        }
+      } catch (error) {
+        console.error('Error saving review:', error);
+        alert('حدث خطأ أثناء حفظ المراجعة. يرجى المحاولة مرة أخرى.');
+      }
     }
   };
 
@@ -76,6 +122,15 @@ export default function CustomerReviews() {
       <h2 className="text-3xl font-bold mb-10 text-[var(--logo-green)] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_25%)]">
         آراء العملاء
       </h2>
+
+      {/* Success Message */}
+      {submitted && (
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="bg-green-600 text-white p-4 rounded-lg text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
+            شكراً لك! تم إضافة رأيك بنجاح. (عدد المراجعات: {allReviews.length})
+          </div>
+        </div>
+      )}
 
       {/* Reviews Slider */}
       <div className="max-w-2xl mx-auto">
@@ -197,15 +252,6 @@ export default function CustomerReviews() {
               </button>
             </div>
           </form>
-        </div>
-      )}
-
-      {/* Success Message */}
-      {submitted && (
-        <div className="max-w-2xl mx-auto mb-8">
-          <div className="bg-green-600 text-white p-4 rounded-lg text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
-            شكراً لك! تم إضافة رأيك بنجاح.
-          </div>
         </div>
       )}
     </section>
