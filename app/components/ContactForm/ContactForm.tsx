@@ -4,10 +4,64 @@ import React, { useState } from 'react';
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [phoneError, setPhoneError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  // Function to validate Saudi phone numbers
+  const validateSaudiPhone = (phoneNumber: string): boolean => {
+    // Remove all non-digit characters
+    const cleanNumber = phoneNumber.replace(/\D/g, '');
+
+    // Saudi phone number patterns:
+    // 1. +966xxxxxxxxx (11 digits starting with 966)
+    // 2. 966xxxxxxxxx (12 digits starting with 966)
+    // 3. 05xxxxxxxx (10 digits starting with 05)
+    // 4. 5xxxxxxxx (9 digits starting with 5)
+
+    if (cleanNumber.length === 11 && cleanNumber.startsWith('966')) {
+      return true;
+    }
+    if (cleanNumber.length === 12 && cleanNumber.startsWith('966')) {
+      return true;
+    }
+    if (cleanNumber.length === 10 && cleanNumber.startsWith('05')) {
+      return true;
+    }
+    if (cleanNumber.length === 9 && cleanNumber.startsWith('5')) {
+      return true;
+    }
+
+    return false;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setPhone(value);
+
+    // Clear error when user starts typing
+    if (phoneError) {
+      setPhoneError('');
+    }
+
+    // Validate if user has entered something
+    if (value && !validateSaudiPhone(value)) {
+      setPhoneError(
+        'يرجى إدخال رقم جوال سعودي صحيح (مثال: 05xxxxxxxx)'
+      );
+    } else {
+      setPhoneError('');
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate phone number before submission
+    if (!validateSaudiPhone(phone)) {
+      setPhoneError('يرجى إدخال رقم جوال سعودي صحيح');
+      return;
+    }
+
     setSubmitted(true);
     // Here you can handle sending the data to your backend or service
   };
@@ -47,21 +101,35 @@ export default function ContactForm() {
             htmlFor="phone"
             className="mb-2 text-white font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
           >
-            رقم الجوال
+            رقم الجوال السعودي
           </label>
           <input
             id="phone"
             type="tel"
             required
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="w-full p-3 rounded bg-[#181c1b] text-white border border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] font-[var(--font-cairo)] text-right"
+            onChange={handlePhoneChange}
+            className={`w-full p-3 rounded bg-[#181c1b] text-white border font-[var(--font-cairo)] text-right focus:outline-none focus:ring-2 ${
+              phoneError
+                ? 'border-red-500 focus:ring-red-500'
+                : 'border-[var(--accent)] focus:ring-[var(--accent)]'
+            }`}
             placeholder="05xxxxxxxx"
           />
+          {phoneError && (
+            <p className="text-red-400 text-sm mt-1 font-[var(--font-cairo)]">
+              {phoneError}
+            </p>
+          )}
         </div>
         <button
           type="submit"
-          className="bg-[var(--accent)] text-[#181c1b] font-bold py-3 rounded mt-4 hover:bg-white transition-colors  [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+          disabled={!!phoneError}
+          className={`font-bold py-3 rounded mt-4 transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)] ${
+            phoneError
+              ? 'bg-gray-500 text-gray-300 cursor-not-allowed'
+              : 'bg-[var(--accent)] text-[#181c1b] hover:bg-white'
+          }`}
         >
           إرسال
         </button>
