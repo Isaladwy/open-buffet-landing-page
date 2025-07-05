@@ -76,11 +76,35 @@ export default function CustomerReviews() {
         آراء العملاء
       </h2>
 
+      {/* Reviews Slider */}
+      <div className="max-w-2xl mx-auto">
+        <Slider {...sliderSettings}>
+          {allReviews.map((item, idx) => (
+            <div key={idx}>
+              <div className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)] min-h-[320px]">
+                <div className="w-16 h-16 rounded-full bg-[var(--accent)] flex items-center justify-center text-xl font-bold text-[#232a28] mb-4 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+                  {item.name[0]}
+                </div>
+                <h3 className="font-bold text-white mb-2 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
+                  {item.name}
+                </h3>
+                <div className="text-[var(--accent)] mb-2 text-lg [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
+                  {'★'.repeat(item.stars)}
+                </div>
+                <p className="text-white/80 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+                  {item.review}
+                </p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
       {/* Add Review Button */}
-      <div className="text-center mb-8">
+      <div className="text-center mt-14">
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-[var(--accent)] text-[#181c1b] font-bold py-3 px-6 rounded-lg hover:bg-white transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+          className="bg-[var(--accent)] text-[#181c1b] font-bold py-3 px-6 mb-4 rounded-lg hover:bg-white transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
         >
           {showForm ? 'إلغاء إضافة رأي' : 'أضف رأيك'}
         </button>
@@ -183,30 +207,6 @@ export default function CustomerReviews() {
           </div>
         </div>
       )}
-
-      {/* Reviews Slider */}
-      <div className="max-w-2xl mx-auto">
-        <Slider {...sliderSettings}>
-          {allReviews.map((item, idx) => (
-            <div key={idx}>
-              <div className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)] min-h-[320px]">
-                <div className="w-16 h-16 rounded-full bg-[var(--accent)] flex items-center justify-center text-xl font-bold text-[#232a28] mb-4 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
-                  {item.name[0]}
-                </div>
-                <h3 className="font-bold text-white mb-2 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
-                  {item.name}
-                </h3>
-                <div className="text-[var(--accent)] mb-2 text-lg [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
-                  {'★'.repeat(item.stars)}
-                </div>
-                <p className="text-white/80 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
-                  {item.review}
-                </p>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
     </section>
   );
 }
