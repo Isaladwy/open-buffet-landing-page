@@ -88,13 +88,7 @@ export default function CustomerReviews() {
       <h2 className="text-3xl font-bold mb-10 text-[var(--logo-green)] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_25%)]">
         آراء العملاء
       </h2>
-      {submitted && (
-        <div className="max-w-2xl mx-auto mb-8">
-          <div className="bg-green-600 text-white p-4 rounded-lg text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
-            شكراً لك! تم إضافة رأيك بنجاح. (عدد المراجعات: {allReviews.length})
-          </div>
-        </div>
-      )}
+
       <div className="max-w-2xl mx-auto">
         <ReviewSlider reviews={allReviews} />
       </div>
@@ -115,6 +109,13 @@ export default function CustomerReviews() {
             onCancel={() => setShowForm(false)}
             loading={loading}
           />
+        </div>
+      )}
+      {submitted && (
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="bg-green-600 text-white p-4 rounded-lg text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
+            شكراً لك! تم إضافة رأيك بنجاح. 
+          </div>
         </div>
       )}
     </section>
