@@ -2,7 +2,7 @@ export const buffetPackages = [
   {
     title: 'البوفيه الأساسي',
     description: 'تشكيلة متنوعة من الأطباق العربية التقليدية',
-    price: '75 ريال',
+    price: '35 ريال',
     perPerson: 'للشخص الواحد',
     includes: [
       'مقبلات متنوعة (حمص، تبولة، سلطات)',
@@ -16,7 +16,7 @@ export const buffetPackages = [
   {
     title: 'البوفيه المميز',
     description: 'بوفيه فاخر مع أطباق إضافية ومشويات متنوعة',
-    price: '95 ريال',
+    price: '55 ريال',
     perPerson: 'للشخص الواحد',
     includes: [
       'جميع أطباق البوفيه الأساسي',
@@ -31,7 +31,7 @@ export const buffetPackages = [
   {
     title: 'البوفيه الفاخر',
     description: 'تجربة بوفيه استثنائية مع أطباق فاخرة ومتنوعة',
-    price: '125 ريال',
+    price: '75 ريال',
     perPerson: 'للشخص الواحد',
     includes: [
       'جميع أطباق البوفيه المميز',

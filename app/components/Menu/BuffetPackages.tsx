@@ -25,7 +25,7 @@ const sliderSettings = {
   arrows: true,
   adaptiveHeight: true,
   autoplay: true,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 8000,
   responsive: [
     {
       breakpoint: 1024,
