@@ -16,7 +16,6 @@ interface BuffetPackagesProps {
   buffetPackages: BuffetPackage[];
 }
 
-
 const sliderSettings = {
   dots: true,
   infinite: true,
@@ -42,7 +41,7 @@ const BuffetPackages: React.FC<BuffetPackagesProps> = ({ buffetPackages }) => (
     <Slider {...sliderSettings}>
       {buffetPackages.map((package_, index) => (
         <div key={index}>
-          <div className="bg-[#233a45] rounded-2xl p-8 border border-[var(--accent)] hover:border-[var(--accent)]/60 transition-all duration-300 mx-4 h-[500px] flex flex-col justify-between">
+          <div className="bg-[#233a45] mb-2 rounded-2xl p-8 border border-[var(--accent)] hover:border-[var(--accent)]/60 transition-all duration-300 mx-4 h-[550px] flex flex-col justify-between">
             <h3 className="text-2xl font-bold text-[var(--accent)] mb-2 text-center [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
               {package_.title}
             </h3>
@@ -59,10 +58,14 @@ const BuffetPackages: React.FC<BuffetPackagesProps> = ({ buffetPackages }) => (
             </div>
             <ul className="space-y-3 mb-6" dir="rtl">
               {package_.includes.map((item, itemIndex) => (
-              <li key={itemIndex} className="flex items-center">
-                <span className="text-[var(--accent)] mr-2 mt-1 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">✓</span>
-                <span className="text-white/80 text-sm font-bold [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">{item}</span>
-              </li>
+                <li key={itemIndex} className="flex items-center">
+                  <span className="text-[var(--accent)] mr-2 mt-1 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
+                    ✓
+                  </span>
+                  <span className="text-white/80 text-sm font-bold [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+                    {item}
+                  </span>
+                </li>
               ))}
             </ul>
             <p className="text-l text-[var(--accent)] text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
