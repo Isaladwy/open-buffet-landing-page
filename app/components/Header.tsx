@@ -26,11 +26,11 @@ export default function Header() {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <Image
-          width={100}
-          height={100}
+          width={50}
+          height={50}
           src="/images/logo.webp"
           alt="Open Buffet Logo"
-          className="w-18 md:w-24 h-auto"
+          className="w-14 md:w-16 h-auto"
         />
       </div>
       {/* Desktop Nav */}
