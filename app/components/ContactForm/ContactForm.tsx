@@ -63,6 +63,8 @@ export default function ContactForm() {
     }
 
     setSubmitted(true);
+    setName('')
+    setPhone('')
     // Here you can handle sending the data to your backend or service
   };
 
