@@ -25,31 +25,30 @@ const initialReviews = [
 export default function CustomerReviews() {
   const [allReviews, setAllReviews] = useState(initialReviews);
 
-  // Load reviews from localStorage on component mount
+  // Load reviews from API on component mount
   useEffect(() => {
-    const loadReviews = () => {
+    const fetchReviews = async () => {
       try {
-        console.log('Loading reviews from localStorage...');
-        const savedReviews = localStorage.getItem('buffetReviews');
+        console.log('Fetching reviews from API...');
+        const response = await fetch('/api/reviews');
 
-        if (savedReviews) {
-          const parsedReviews = JSON.parse(savedReviews);
-          console.log('Reviews loaded from localStorage:', parsedReviews);
-          setAllReviews(parsedReviews);
+        if (response.ok) {
+          const reviews = await response.json();
+          console.log('Reviews loaded from API:', reviews);
+          setAllReviews(reviews);
         } else {
-          // If no saved reviews, use initial reviews and save them
-          console.log('No saved reviews found, using initial reviews');
-          localStorage.setItem('buffetReviews', JSON.stringify(initialReviews));
+          console.error('Failed to fetch reviews, status:', response.status);
+          // Fallback to initial reviews
           setAllReviews(initialReviews);
         }
       } catch (error) {
-        console.error('Error loading reviews from localStorage:', error);
+        console.error('Error loading reviews from API:', error);
         // Fallback to initial reviews
         setAllReviews(initialReviews);
       }
     };
 
-    loadReviews();
+    fetchReviews();
   }, []);
   const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({
@@ -71,30 +70,58 @@ export default function CustomerReviews() {
     adaptiveHeight: true,
   };
 
-  const handleSubmitReview = (e: React.FormEvent) => {
+  const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (newReview.name.trim() && newReview.review.trim()) {
-      const reviewToAdd = {
-        ...newReview,
-        name: newReview.name.trim(),
-        review: newReview.review.trim(),
-        date: new Date().toISOString(),
-      };
+    console.log('Form submitted');
+    console.log('Current newReview state:', newReview);
 
-      try {
-        console.log('Adding new review:', reviewToAdd);
+    if (!newReview.name.trim()) {
+      console.error('Name is empty');
+      alert('يرجى إدخال الاسم');
+      return;
+    }
 
-        // Add to reviews array and save to localStorage
-        setAllReviews((prev) => {
-          const newReviews = [reviewToAdd, ...prev];
-          console.log('Updated reviews array:', newReviews);
+    if (!newReview.review.trim()) {
+      console.error('Review is empty');
+      alert('يرجى إدخال الرأي');
+      return;
+    }
 
-          // Save to localStorage
-          localStorage.setItem('buffetReviews', JSON.stringify(newReviews));
+    if (newReview.stars < 1 || newReview.stars > 5) {
+      console.error('Invalid stars rating');
+      alert('يرجى اختيار تقييم صحيح');
+      return;
+    }
 
-          return newReviews;
-        });
+    const reviewToAdd = {
+      ...newReview,
+      name: newReview.name.trim(),
+      review: newReview.review.trim(),
+    };
+
+    console.log('Review to add:', reviewToAdd);
+
+    try {
+      // Send review to API
+      const response = await fetch('/api/reviews', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reviewToAdd),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Review saved successfully:', result);
+
+        // Refresh reviews from API
+        const reviewsResponse = await fetch('/api/reviews');
+        if (reviewsResponse.ok) {
+          const updatedReviews = await reviewsResponse.json();
+          setAllReviews(updatedReviews);
+        }
 
         setNewReview({ name: '', review: '', stars: 5 });
         setShowForm(false);
@@ -106,10 +133,14 @@ export default function CustomerReviews() {
         }, 3000);
 
         console.log('Review added successfully');
-      } catch (error) {
-        console.error('Error saving review:', error);
-        alert('حدث خطأ أثناء حفظ المراجعة. يرجى المحاولة مرة أخرى.');
+      } else {
+        const errorData = await response.json();
+        console.error('Failed to save review:', errorData);
+        alert('فشل في حفظ المراجعة. يرجى المحاولة مرة أخرى.');
       }
+    } catch (error) {
+      console.error('Error saving review:', error);
+      alert(`حدث خطأ أثناء حفظ المراجعة: ${String(error)}`);
     }
   };
 
