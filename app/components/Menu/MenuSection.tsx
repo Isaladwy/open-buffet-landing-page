@@ -16,7 +16,7 @@ const MenuSection = () => {
         {/* Header */}
         <div className="text-center mb-6">
           <h1 className="uppercase text-5xl text-[var(--logo-green)] mb-10 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
-            بوفيه خان المفتوح
+            بوفيه خان الريحان
           </h1>
           <h3 className="text-xl md:text-2xl font-bold text-[var(--logo-dark-blue)] mb-4  [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
             باقات البوفيه المفتوح
