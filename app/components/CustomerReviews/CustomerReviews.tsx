@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const reviews = [
+const initialReviews = [
   {
     name: 'سارة الأحمد',
     review: 'تجربة رائعة! تنوع الأطباق وجودة الخدمة جعلت الحفل مميزاً جداً.',
@@ -23,7 +23,7 @@ const reviews = [
 ];
 
 export default function CustomerReviews() {
-  const [allReviews, setAllReviews] = useState(reviews);
+  const [allReviews, setAllReviews] = useState(initialReviews);
   const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({
     name: '',
@@ -54,6 +54,7 @@ export default function CustomerReviews() {
         review: newReview.review.trim(),
       };
 
+      // Add to the reviews array and update state
       setAllReviews((prev) => [reviewToAdd, ...prev]);
       setNewReview({ name: '', review: '', stars: 5 });
       setShowForm(false);
