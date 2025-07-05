@@ -81,13 +81,6 @@ export default function Header() {
         <div className="fixed inset-0 bg-[rgba(255,255,255,0.9)] z-30 flex flex-col items-center justify-center md:hidden transition-all">
           <nav className="flex flex-col space-y-8 text-2xl">
             <a
-              href="#about"
-              className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
-              onClick={() => setMenuOpen(false)}
-            >
-              عن البوفيه
-            </a>
-            <a
               href="#menu"
               className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
               onClick={() => setMenuOpen(false)}
