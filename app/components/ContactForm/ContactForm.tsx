@@ -45,9 +45,7 @@ export default function ContactForm() {
 
     // Validate if user has entered something
     if (value && !validateSaudiPhone(value)) {
-      setPhoneError(
-        'يرجى إدخال رقم جوال سعودي صحيح (مثال: 05xxxxxxxx)'
-      );
+      setPhoneError('يرجى إدخال رقم جوال سعودي صحيح (مثال: 05xxxxxxxx)');
     } else {
       setPhoneError('');
     }
@@ -63,8 +61,14 @@ export default function ContactForm() {
     }
 
     setSubmitted(true);
-    setName('')
-    setPhone('')
+    setName('');
+    setPhone('');
+
+    // Hide the success message after 5 seconds
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
+
     // Here you can handle sending the data to your backend or service
   };
 
