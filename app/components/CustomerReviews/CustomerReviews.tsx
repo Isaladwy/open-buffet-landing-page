@@ -4,52 +4,15 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const initialReviews = [
-  {
-    name: 'سارة الأحمد',
-    review: 'تجربة رائعة! تنوع الأطباق وجودة الخدمة جعلت الحفل مميزاً جداً.',
-    stars: 5,
-  },
-  {
-    name: 'محمد العتيبي',
-    review: 'بوفيه غني بالأصناف الطازجة. أنصح به للحفلات والأعراس.',
-    stars: 5,
-  },
-  {
-    name: 'ريم السبيعي',
-    review: 'الطعام لذيذ والأجواء راقية. شكراً لفريق العمل على التنظيم الرائع.',
-    stars: 4,
-  },
-];
+interface Review {
+  name: string;
+  review: string;
+  stars: number;
+  date?: string;
+}
 
 export default function CustomerReviews() {
-  const [allReviews, setAllReviews] = useState(initialReviews);
-
-  // Load reviews from API on component mount
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        console.log('Fetching reviews from API...');
-        const response = await fetch('/api/reviews');
-
-        if (response.ok) {
-          const reviews = await response.json();
-          console.log('Reviews loaded from API:', reviews);
-          setAllReviews(reviews);
-        } else {
-          console.error('Failed to fetch reviews, status:', response.status);
-          // Fallback to initial reviews
-          setAllReviews(initialReviews);
-        }
-      } catch (error) {
-        console.error('Error loading reviews from API:', error);
-        // Fallback to initial reviews
-        setAllReviews(initialReviews);
-      }
-    };
-
-    fetchReviews();
-  }, []);
+  const [allReviews, setAllReviews] = useState<Review[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({
     name: '',
@@ -57,6 +20,24 @@ export default function CustomerReviews() {
     stars: 5,
   });
   const [submitted, setSubmitted] = useState(false);
+
+  // Load reviews from API on component mount
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch('/api/reviews');
+        if (response.ok) {
+          const reviews = await response.json();
+          setAllReviews(reviews);
+        } else {
+          setAllReviews([]);
+        }
+      } catch {
+        setAllReviews([]);
+      }
+    };
+    fetchReviews();
+  }, []);
 
   const sliderSettings = {
     dots: true,
@@ -72,38 +53,24 @@ export default function CustomerReviews() {
 
   const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    console.log('Form submitted');
-    console.log('Current newReview state:', newReview);
-
     if (!newReview.name.trim()) {
-      console.error('Name is empty');
       alert('يرجى إدخال الاسم');
       return;
     }
-
     if (!newReview.review.trim()) {
-      console.error('Review is empty');
       alert('يرجى إدخال الرأي');
       return;
     }
-
     if (newReview.stars < 1 || newReview.stars > 5) {
-      console.error('Invalid stars rating');
       alert('يرجى اختيار تقييم صحيح');
       return;
     }
-
     const reviewToAdd = {
       ...newReview,
       name: newReview.name.trim(),
       review: newReview.review.trim(),
     };
-
-    console.log('Review to add:', reviewToAdd);
-
     try {
-      // Send review to API
       const response = await fetch('/api/reviews', {
         method: 'POST',
         headers: {
@@ -111,36 +78,23 @@ export default function CustomerReviews() {
         },
         body: JSON.stringify(reviewToAdd),
       });
-
       if (response.ok) {
-        const result = await response.json();
-        console.log('Review saved successfully:', result);
-
-        // Refresh reviews from API
         const reviewsResponse = await fetch('/api/reviews');
         if (reviewsResponse.ok) {
           const updatedReviews = await reviewsResponse.json();
           setAllReviews(updatedReviews);
         }
-
         setNewReview({ name: '', review: '', stars: 5 });
         setShowForm(false);
         setSubmitted(true);
-
-        // Hide success message after 3 seconds
         setTimeout(() => {
           setSubmitted(false);
         }, 3000);
-
-        console.log('Review added successfully');
       } else {
-        const errorData = await response.json();
-        console.error('Failed to save review:', errorData);
         alert('فشل في حفظ المراجعة. يرجى المحاولة مرة أخرى.');
       }
-    } catch (error) {
-      console.error('Error saving review:', error);
-      alert(`حدث خطأ أثناء حفظ المراجعة: ${String(error)}`);
+    } catch {
+      alert('حدث خطأ أثناء حفظ المراجعة. يرجى المحاولة مرة أخرى.');
     }
   };
 
@@ -153,8 +107,6 @@ export default function CustomerReviews() {
       <h2 className="text-3xl font-bold mb-10 text-[var(--logo-green)] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_25%)]">
         آراء العملاء
       </h2>
-
-      {/* Success Message */}
       {submitted && (
         <div className="max-w-2xl mx-auto mb-8">
           <div className="bg-green-600 text-white p-4 rounded-lg text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
@@ -162,8 +114,6 @@ export default function CustomerReviews() {
           </div>
         </div>
       )}
-
-      {/* Reviews Slider */}
       <div className="max-w-2xl mx-auto">
         <Slider {...sliderSettings}>
           {allReviews.map((item, idx) => (
@@ -186,8 +136,6 @@ export default function CustomerReviews() {
           ))}
         </Slider>
       </div>
-
-      {/* Add Review Button */}
       <div className="text-center mt-14">
         <button
           onClick={() => setShowForm(!showForm)}
@@ -196,8 +144,6 @@ export default function CustomerReviews() {
           {showForm ? 'إلغاء إضافة رأي' : 'أضف رأيك'}
         </button>
       </div>
-
-      {/* Review Submission Form */}
       {showForm && (
         <div className="max-w-2xl mx-auto mb-12">
           <form
@@ -208,7 +154,6 @@ export default function CustomerReviews() {
             <h3 className="text-2xl font-bold mb-6 text-white text-center [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
               أضف رأيك
             </h3>
-
             <div className="mb-6">
               <label className="block text-white mb-2 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
                 الاسم
@@ -224,7 +169,6 @@ export default function CustomerReviews() {
                 placeholder="أدخل اسمك"
               />
             </div>
-
             <div className="mb-6">
               <label className="block text-white mb-2 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
                 التقييم
@@ -250,7 +194,6 @@ export default function CustomerReviews() {
                 ))}
               </div>
             </div>
-
             <div className="mb-6">
               <label className="block text-white mb-2 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
                 الرأي
@@ -266,7 +209,6 @@ export default function CustomerReviews() {
                 placeholder="اكتب رأيك عن تجربتك معنا..."
               />
             </div>
-
             <div className="flex gap-4">
               <button
                 type="submit"
