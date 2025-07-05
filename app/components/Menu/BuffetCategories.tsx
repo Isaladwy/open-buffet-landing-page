@@ -23,7 +23,7 @@ interface BuffetCategoriesProps {
 const BuffetCategories: React.FC<BuffetCategoriesProps> = ({ buffetCategories }) => (
   <div className="mb-16">
     <h3 className="text-2xl font-bold text-[var(--logo-green)] mb-8 text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
-      تشكيلة الأطباق المتوفرة
+      تشكيلة الأطباق لكل باقة
     </h3>
     <div className="flex flex-col gap-8">
       {buffetCategories.map((category, categoryIndex) => (
