@@ -67,7 +67,7 @@ export default function ContactForm() {
         </button>
         {submitted && (
           <div className="text-green-400 text-center mt-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
-            تم إرسال طلبك بنجاح! سنقوم بالتواصل معك قريباً.
+            تم إرسال طلبك بنجاح! سنقوم بالتواصل معك في اقرب وقت.
           </div>
         )}
       </form>
