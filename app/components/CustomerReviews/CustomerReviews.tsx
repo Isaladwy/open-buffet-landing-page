@@ -1,19 +1,19 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import ReviewSlider from './ReviewSlider';
-import ReviewForm from './ReviewForm';
+// import ReviewForm from './ReviewForm';
 import type { Review } from './ReviewCard';
 
 export default function CustomerReviews() {
   const [allReviews, setAllReviews] = useState<Review[]>([]);
-  const [showForm, setShowForm] = useState(false);
-  const [newReview, setNewReview] = useState({
-    name: '',
-    review: '',
-    stars: 5,
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // const [showForm, setShowForm] = useState(false);
+  // const [newReview, setNewReview] = useState({
+  //   name: '',
+  //   review: '',
+  //   stars: 5,
+  // });
+  // const [submitted, setSubmitted] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   // Load reviews from API on component mount
   useEffect(() => {
@@ -33,60 +33,60 @@ export default function CustomerReviews() {
     fetchReviews();
   }, []);
 
-  const handleSubmitReview = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newReview.name.trim()) {
-      alert('يرجى إدخال الاسم');
-      return;
-    }
-    if (!newReview.review.trim()) {
-      alert('يرجى إدخال الرأي');
-      return;
-    }
-    if (newReview.stars < 1 || newReview.stars > 5) {
-      alert('يرجى اختيار تقييم صحيح');
-      return;
-    }
-    setLoading(true);
-    const reviewToAdd = {
-      ...newReview,
-      name: newReview.name.trim(),
-      review: newReview.review.trim(),
-    };
-    try {
-      const response = await fetch('/api/reviews', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(reviewToAdd),
-      });
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Review saved successfully:', result);
+  // const handleSubmitReview = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!newReview.name.trim()) {
+  //     alert('يرجى إدخال الاسم');
+  //     return;
+  //   }
+  //   if (!newReview.review.trim()) {
+  //     alert('يرجى إدخال الرأي');
+  //     return;
+  //   }
+  //   if (newReview.stars < 1 || newReview.stars > 5) {
+  //     alert('يرجى اختيار تقييم صحيح');
+  //     return;
+  //   }
+  //   setLoading(true);
+  //   const reviewToAdd = {
+  //     ...newReview,
+  //     name: newReview.name.trim(),
+  //     review: newReview.review.trim(),
+  //   };
+  //   try {
+  //     const response = await fetch('/api/reviews', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(reviewToAdd),
+  //     });
+  //     if (response.ok) {
+  //       const result = await response.json();
+  //       console.log('Review saved successfully:', result);
 
-        const reviewsResponse = await fetch('/api/reviews');
-        if (reviewsResponse.ok) {
-          const updatedReviews = await reviewsResponse.json();
-          setAllReviews(updatedReviews);
-        }
-        setNewReview({ name: '', review: '', stars: 5 });
-        setShowForm(false);
-        setSubmitted(true);
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 3000);
-      } else {
-        const errorData = await response.json();
-        console.error('Failed to save review:', errorData);
-        alert(`فشل في حفظ المراجعة: ${errorData.error || 'خطأ غير معروف'}`);
-      }
-    } catch {
-      alert('حدث خطأ أثناء حفظ المراجعة. يرجى المحاولة مرة أخرى.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  //       const reviewsResponse = await fetch('/api/reviews');
+  //       if (reviewsResponse.ok) {
+  //         const updatedReviews = await reviewsResponse.json();
+  //         setAllReviews(updatedReviews);
+  //       }
+  //       setNewReview({ name: '', review: '', stars: 5 });
+  //       setShowForm(false);
+  //       setSubmitted(true);
+  //       setTimeout(() => {
+  //         setSubmitted(false);
+  //       }, 3000);
+  //     } else {
+  //       const errorData = await response.json();
+  //       console.error('Failed to save review:', errorData);
+  //       alert(`فشل في حفظ المراجعة: ${errorData.error || 'خطأ غير معروف'}`);
+  //     }
+  //   } catch {
+  //     alert('حدث خطأ أثناء حفظ المراجعة. يرجى المحاولة مرة أخرى.');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <section id="reviews" className="py-16 px-6 md:px-12 bg-[#f7f7fe]">
@@ -97,7 +97,7 @@ export default function CustomerReviews() {
       <div className="max-w-2xl mx-auto">
         <ReviewSlider reviews={allReviews} />
       </div>
-      <div className="text-center mt-14">
+      {/* <div className="text-center mt-14">
         <button
           onClick={() => setShowForm(!showForm)}
           className="bg-[var(--accent)] text-[#181c1b] font-bold py-3 px-6 mb-4 rounded-lg hover:bg-white transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
@@ -122,7 +122,7 @@ export default function CustomerReviews() {
             شكراً لك! تم إضافة رأيك بنجاح.
           </div>
         </div>
-      )}
+      )} */}
     </section>
   );
 }
