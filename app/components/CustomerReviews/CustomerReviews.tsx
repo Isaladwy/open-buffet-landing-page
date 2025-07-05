@@ -62,6 +62,9 @@ export default function CustomerReviews() {
         body: JSON.stringify(reviewToAdd),
       });
       if (response.ok) {
+        const result = await response.json();
+        console.log('Review saved successfully:', result);
+
         const reviewsResponse = await fetch('/api/reviews');
         if (reviewsResponse.ok) {
           const updatedReviews = await reviewsResponse.json();
@@ -74,7 +77,9 @@ export default function CustomerReviews() {
           setSubmitted(false);
         }, 3000);
       } else {
-        alert('فشل في حفظ المراجعة. يرجى المحاولة مرة أخرى.');
+        const errorData = await response.json();
+        console.error('Failed to save review:', errorData);
+        alert(`فشل في حفظ المراجعة: ${errorData.error || 'خطأ غير معروف'}`);
       }
     } catch {
       alert('حدث خطأ أثناء حفظ المراجعة. يرجى المحاولة مرة أخرى.');
@@ -114,7 +119,7 @@ export default function CustomerReviews() {
       {submitted && (
         <div className="max-w-2xl mx-auto mb-8">
           <div className="bg-green-600 text-white p-4 rounded-lg text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
-            شكراً لك! تم إضافة رأيك بنجاح. 
+            شكراً لك! تم إضافة رأيك بنجاح.
           </div>
         </div>
       )}

@@ -56,43 +56,54 @@ export async function GET() {
 // POST - Add a new review
 export async function POST(request: Request) {
   try {
+    console.log('POST /api/reviews - Starting request');
+    
     await ensureFileExists();
-
+    console.log('File exists check completed');
+    
     const newReview = await request.json();
-
+    console.log('Received review data:', newReview);
+    
     // Validate the review data
     if (!newReview.name || !newReview.review || !newReview.stars) {
+      console.error('Validation failed - missing fields:', { name: !!newReview.name, review: !!newReview.review, stars: !!newReview.stars });
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Missing required fields', received: newReview },
         { status: 400 }
       );
     }
-
+    
     // Add timestamp to the review
     const reviewWithDate = {
       ...newReview,
-      date: new Date().toISOString(),
+      date: new Date().toISOString()
     };
-
+    console.log('Review with date:', reviewWithDate);
+    
     // Read existing reviews
     const data = await fs.readFile(reviewsFile, 'utf8');
+    console.log('Current file data length:', data.length);
+    
     const reviews = JSON.parse(data);
-
+    console.log('Current reviews count:', reviews.length);
+    
     // Add new review to the beginning
     reviews.unshift(reviewWithDate);
-
+    console.log('Updated reviews count:', reviews.length);
+    
     // Write back to file
     await fs.writeFile(reviewsFile, JSON.stringify(reviews, null, 2));
-
-    return NextResponse.json({
-      success: true,
+    console.log('File written successfully');
+    
+    return NextResponse.json({ 
+      success: true, 
       message: 'Review added successfully',
-      review: reviewWithDate,
+      review: reviewWithDate
     });
   } catch (error) {
     console.error('Error saving review:', error);
     return NextResponse.json(
-      { error: 'Failed to save review' },
+      { error: 'Failed to save review', details: String(error) },
       { status: 500 }
     );
   }
