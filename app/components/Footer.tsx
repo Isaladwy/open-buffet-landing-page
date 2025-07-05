@@ -41,34 +41,38 @@ export default function Footer() {
           <h3 className="font-bold mb-4 text-[var(--accent)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
             ساعات العمل
           </h3>
-          <p className="text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
-            الأحد - الخميس: 11 صباحاً - 10 مساءً
-          </p>
-          <p className="text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
-            الجمعة - السبت: 10 صباحاً - 11 مساءً
-          </p>
+          <div className="flex flex-col gap-2">
+            <p className="text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+              الأحد - الخميس: 11 صباحاً - 10 مساءً
+            </p>
+            <p className="text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+              الجمعة - السبت: 10 صباحاً - 11 مساءً
+            </p>
+          </div>
         </div>
         <div>
           <h3 className="font-bold mb-4 text-[var(--accent)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
             تواصل معنا
           </h3>
-          <Link
-            target="_blank"
-            href="https://maps.app.goo.gl/xDauMUbiEV7DSTs67"
-            className="text-sm hover:text-[#e0b96a] hover:underline text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
-          >
-            طريق الخليج، الغادر، سيهات
-          </Link>
-          <p className="hover:text-[#e0b96a] hover:underline text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+          <div className="flex flex-col gap-2">
+            <Link
+              target="_blank"
+              href="https://maps.app.goo.gl/xDauMUbiEV7DSTs67"
+              className="text-sm hover:text-[#e0b96a] hover:underline text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
+            >
+              طريق الخليج، الغادر، سيهات
+            </Link>
+            {/* <p className="hover:text-[#e0b96a] hover:underline text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
             info@openbuffet.com
-          </p>
-          <Link
-            target="_blank"
-            href="tel:0593366301"
-            className="hover:text-[#e0b96a] hover:underline text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
-          >
-            0593366301
-          </Link>
+            </p> */}
+            <Link
+              target="_blank"
+              href="tel:0593366301"
+              className="hover:text-[#e0b96a] hover:underline text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
+            >
+              0593366301
+            </Link>
+          </div>
         </div>
       </div>
       <div className="border-t border-[var(--accent)] pt-6 text-center text-sm text-white/60">
