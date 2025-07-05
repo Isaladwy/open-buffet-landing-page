@@ -60,7 +60,7 @@ export default function Footer() {
               href="https://maps.app.goo.gl/xDauMUbiEV7DSTs67"
               className="text-sm hover:text-[#e0b96a] hover:underline text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
             >
-              طريق الخليج، الغادر، سيهات
+              طريق الخليج، الغدير، سيهات
             </Link>
             {/* <p className="hover:text-[#e0b96a] hover:underline text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
             info@openbuffet.com
