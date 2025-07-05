@@ -48,7 +48,7 @@ export const buffetPackages = [
 export const buffetCategories = [
   {
     title: 'البوفيه الأساسي',
-    path: 'main-dishes',
+    path: 'main-buffet',
     items: [
       { name: 'كباب لحم ضأن', imageName: 'kebab-lamb.webp' },
       { name: 'دجاج مشوي', imageName: 'grilled-chicken.webp' },
@@ -60,7 +60,7 @@ export const buffetCategories = [
   },
   {
     title: 'البوفيه المميز',
-    path: 'grills',
+    path: 'special-buffet',
     items: [
       { name: 'كباب دجاج', imageName: 'kebab-chicken.webp' },
       { name: 'كباب لحم', imageName: 'kebab-meat.webp' },
@@ -71,7 +71,7 @@ export const buffetCategories = [
   },
   {
     title: 'البوفيه الفاخر',
-    path: 'appetizers-and-salads',
+    path: 'elegant-buffet',
     items: [
       { name: 'حمص بالطحينة', imageName: 'hummus.webp' },
       { name: 'تبولة', imageName: 'tabbouleh.webp' },
