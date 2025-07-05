@@ -25,23 +25,31 @@ const initialReviews = [
 export default function CustomerReviews() {
   const [allReviews, setAllReviews] = useState(initialReviews);
 
-  // Load reviews from API on component mount
+  // Load reviews from localStorage on component mount
   useEffect(() => {
-    const fetchReviews = async () => {
+    const loadReviews = () => {
       try {
-        const response = await fetch('/api/reviews');
-        if (response.ok) {
-          const reviews = await response.json();
-          setAllReviews(reviews);
+        console.log('Loading reviews from localStorage...');
+        const savedReviews = localStorage.getItem('buffetReviews');
+
+        if (savedReviews) {
+          const parsedReviews = JSON.parse(savedReviews);
+          console.log('Reviews loaded from localStorage:', parsedReviews);
+          setAllReviews(parsedReviews);
         } else {
-          console.error('Failed to fetch reviews');
+          // If no saved reviews, use initial reviews and save them
+          console.log('No saved reviews found, using initial reviews');
+          localStorage.setItem('buffetReviews', JSON.stringify(initialReviews));
+          setAllReviews(initialReviews);
         }
       } catch (error) {
-        console.error('Error loading reviews:', error);
+        console.error('Error loading reviews from localStorage:', error);
+        // Fallback to initial reviews
+        setAllReviews(initialReviews);
       }
     };
 
-    fetchReviews();
+    loadReviews();
   }, []);
   const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({
@@ -63,7 +71,7 @@ export default function CustomerReviews() {
     adaptiveHeight: true,
   };
 
-  const handleSubmitReview = async (e: React.FormEvent) => {
+  const handleSubmitReview = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (newReview.name.trim() && newReview.review.trim()) {
@@ -71,41 +79,33 @@ export default function CustomerReviews() {
         ...newReview,
         name: newReview.name.trim(),
         review: newReview.review.trim(),
+        date: new Date().toISOString(),
       };
 
       try {
-        // Send review to API
-        const response = await fetch('/api/reviews', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(reviewToAdd),
+        console.log('Adding new review:', reviewToAdd);
+
+        // Add to reviews array and save to localStorage
+        setAllReviews((prev) => {
+          const newReviews = [reviewToAdd, ...prev];
+          console.log('Updated reviews array:', newReviews);
+
+          // Save to localStorage
+          localStorage.setItem('buffetReviews', JSON.stringify(newReviews));
+
+          return newReviews;
         });
 
-        if (response.ok) {
-          const result = await response.json();
-          console.log('Review saved successfully:', result);
+        setNewReview({ name: '', review: '', stars: 5 });
+        setShowForm(false);
+        setSubmitted(true);
 
-          // Refresh reviews from API
-          const reviewsResponse = await fetch('/api/reviews');
-          if (reviewsResponse.ok) {
-            const updatedReviews = await reviewsResponse.json();
-            setAllReviews(updatedReviews);
-          }
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 3000);
 
-          setNewReview({ name: '', review: '', stars: 5 });
-          setShowForm(false);
-          setSubmitted(true);
-
-          // Hide success message after 3 seconds
-          setTimeout(() => {
-            setSubmitted(false);
-          }, 3000);
-        } else {
-          console.error('Failed to save review');
-          alert('فشل في حفظ المراجعة. يرجى المحاولة مرة أخرى.');
-        }
+        console.log('Review added successfully');
       } catch (error) {
         console.error('Error saving review:', error);
         alert('حدث خطأ أثناء حفظ المراجعة. يرجى المحاولة مرة أخرى.');
