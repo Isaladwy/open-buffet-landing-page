@@ -1,5 +1,4 @@
 import React from 'react';
-import { Review } from './ReviewCard';
 
 interface ReviewFormProps {
   newReview: { name: string; review: string; stars: number };
