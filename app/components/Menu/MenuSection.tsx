@@ -1,8 +1,5 @@
 'use client';
 import React from 'react';
-
-
-import {  buffetCategories } from './menuData';
 // import BuffetPackages from './BuffetPackages';
 import BuffetCategories from './BuffetCategories';
 import SpecialOffers from './SpecialOffers';
@@ -11,7 +8,7 @@ import SpecialOffers from './SpecialOffers';
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="py-10 px-6 md:px-12 bg-[var(--background)]">
+    <section id="menu" className="py-10 px-6 md:px-12 bg-[#f7f7fe] ">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         {/* <div className="text-center mb-6">
@@ -31,7 +28,9 @@ const MenuSection = () => {
         {/* <BuffetPackages buffetPackages={buffetPackages} /> */}
 
         {/* Buffet Categories */}
-        <BuffetCategories buffetCategories={buffetCategories} />
+        <BuffetCategories />
+
+        {/* Separator */}
 
         {/* Special Offers */}
         <SpecialOffers />
