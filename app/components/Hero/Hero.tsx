@@ -6,17 +6,17 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[60vh] md:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[50vh] lg:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Full-page background image */}
       <Image
         fill
-        src="/images/buffet1.webp"
+        src="/images/hero.jpg"
         alt="Buffet Food"
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
       />
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
       {/* Content */}
       <div className="relative z-20 flex flex-col items-start pr-10 w-full">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg text-center [text-shadow:_2px_2px_4px_rgb(0_0_0_/_50%)]">

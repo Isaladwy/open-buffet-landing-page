@@ -7,6 +7,15 @@ import 'swiper/css/pagination';
 import { Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 
+const buffetItems = [
+  { src: '/images/plates/1.jpg', alt: 'فتوش', label: 'فتوش' },
+  { src: '/images/plates/2.jpg', alt: 'سلطة يونانية', label: 'سلطة يونانية' },
+  { src: '/images/plates/3.jpg', alt: 'سلطة خضراء', label: 'سلطة خضراء' },
+  { src: '/images/plates/4.jpg', alt: 'حمص', label: 'حمص' },
+  { src: '/images/elegant-buffet/mutabbal.webp', alt: 'متبل', label: 'متبل' },
+  { src: '/images/elegant-buffet/tabbouleh.webp', alt: 'تبولة', label: 'تبولة' },
+  { src: '/images/main-buffet/grilled-chicken.webp', alt: 'دجاج مشوي', label: 'دجاج مشوي' },
+];
 
 
 const BuffetCategories = () => (
@@ -38,123 +47,29 @@ const BuffetCategories = () => (
         1250: {
           slidesPerView: 5,
         },
-      1440: {
+        1440: {
           slidesPerView: 6,
         },
       }}
     >
-      <SwiperSlide>
-        <div className="flex flex-col items-center">
-          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-xl mb-3 relative flex items-center justify-center">
-            <Image
-              src="/images/elegant-buffet/fattoush.webp"
-              alt="فتوش"
-              fill
-              className="object-cover"
-              style={{ borderRadius: '1rem' }}
-            />
+      {buffetItems.map((item, idx) => (
+        <SwiperSlide key={idx}>
+          <div className="flex flex-col items-center">
+            <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover"
+                style={{ borderRadius: '1rem' }}
+              />
+            </div>
+            <span className="text-[var(--logo-green)] text-2xl font-bold text-center px-2 pb-2">
+              {item.label}
+            </span>
           </div>
-          <span className="text-[var(--logo-green)] text-2xl font-bold text-center px-2 pb-2">
-            فتوش
-          </span>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="flex flex-col items-center">
-          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
-            <Image
-              src="/images/elegant-buffet/greek-salad.webp"
-              alt="سلطة يونانية"
-              fill
-              className="object-cover"
-              style={{ borderRadius: '1rem' }}
-            />
-          </div>
-          <span className="text-[var(--logo-green)] text-2xl font-bold text-center px-2 pb-2">
-            سلطة يونانية
-          </span>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="flex flex-col items-center">
-          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
-            <Image
-              src="/images/elegant-buffet/green-salad.webp"
-              alt="سلطة خضراء"
-              fill
-              className="object-cover"
-              style={{ borderRadius: '1rem' }}
-            />
-          </div>
-          <span className="text-[var(--logo-green)] text-2xl font-bold text-center px-2 pb-2">
-            سلطة خضراء
-          </span>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="flex flex-col items-center">
-          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
-            <Image
-              src="/images/elegant-buffet/hummus.webp"
-              alt="حمص"
-              fill
-              className="object-cover"
-              style={{ borderRadius: '1rem' }}
-            />
-          </div>
-          <span className="text-[var(--logo-green)] text-2xl font-bold text-center px-2 pb-2">
-            حمص
-          </span>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="flex flex-col items-center">
-          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
-            <Image
-              src="/images/elegant-buffet/mutabbal.webp"
-              alt="متبل"
-              fill
-              className="object-cover"
-              style={{ borderRadius: '1rem' }}
-            />
-          </div>
-          <span className="text-[var(--logo-green)] text-2xl font-bold text-center px-2 pb-2">
-            متبل
-          </span>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="flex flex-col items-center">
-          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
-            <Image
-              src="/images/elegant-buffet/tabbouleh.webp"
-              alt="تبولة"
-              fill
-              className="object-cover"
-              style={{ borderRadius: '1rem' }}
-            />
-          </div>
-          <span className="text-[var(--logo-green)] text-2xl font-bold text-center px-2 pb-2">
-            تبولة
-          </span>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="flex flex-col items-center">
-          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
-            <Image
-              src="/images/main-buffet/grilled-chicken.webp"
-              alt="دجاج مشوي"
-              fill
-              className="object-cover"
-              style={{ borderRadius: '1rem' }}
-            />
-          </div>
-          <span className="text-[var(--logo-green)] text-2xl font-bold text-center px-2 pb-2">
-            دجاج مشوي
-          </span>
-        </div>
-      </SwiperSlide>
+        </SwiperSlide>
+      ))}
     </Swiper>
   </div>
 );
