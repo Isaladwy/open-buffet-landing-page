@@ -37,7 +37,7 @@ export default function Footer() {
             </a>
           </div> */}
         </div>
-        <div>
+        {/* <div>
           <h3 className="font-bold mb-4 text-[var(--accent)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
             ساعات العمل
           </h3>
@@ -49,7 +49,7 @@ export default function Footer() {
               الجمعة - السبت: 10 صباحاً - 11 مساءً
             </p>
           </div>
-        </div>
+        </div> */}
         <div>
           <h3 className="font-bold mb-4 text-[var(--accent)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
             تواصل معنا

@@ -2,9 +2,9 @@ import React from 'react';
 
 // Import all components
 import Header from './components/Header';
-// import Hero from './components/Hero';
+import Hero from './components/Hero/Hero';
 // import SpecialOccasion from './components/SpecialOccasion';
-// import ChefRecommend from './components/ChefRecommend';
+// import ChefRecommend from './components/ChefRecommend/ChefRecommend';
 import MenuSection from './components/Menu/MenuSection';
 import CustomerReviews from './components/CustomerReviews/CustomerReviews';
 import Footer from './components/Footer';
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      {/* <Hero /> */}
+      <Hero />
       {/* <SpecialOccasion /> */}
       {/* <ChefRecommend /> */}
       <MenuSection />

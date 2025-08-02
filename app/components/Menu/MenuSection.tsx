@@ -2,8 +2,8 @@
 import React from 'react';
 
 
-import { buffetPackages, buffetCategories } from './menuData';
-import BuffetPackages from './BuffetPackages';
+import {  buffetCategories } from './menuData';
+// import BuffetPackages from './BuffetPackages';
 import BuffetCategories from './BuffetCategories';
 import SpecialOffers from './SpecialOffers';
 
@@ -28,7 +28,7 @@ const MenuSection = () => {
         </div>
 
         {/* Buffet Packages */}
-        <BuffetPackages buffetPackages={buffetPackages} />
+        {/* <BuffetPackages buffetPackages={buffetPackages} /> */}
 
         {/* Buffet Categories */}
         <BuffetCategories buffetCategories={buffetCategories} />
