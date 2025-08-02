@@ -16,9 +16,9 @@ const BuffetCategories = () => (
     </h3>
     <Swiper
       modules={[Navigation, Autoplay]}
-      spaceBetween={24}
-      slidesPerView={1}
-      navigation
+      spaceBetween={18}
+      slidesPerView={1.5}
+      
       loop={true}
       autoplay={{
         delay: 2500,
@@ -27,7 +27,8 @@ const BuffetCategories = () => (
       className="w-full"
       breakpoints={{
         768: {
-          slidesPerView: 3,
+          slidesPerView: 4,
+          navigation: true,
         },
       }}
     >

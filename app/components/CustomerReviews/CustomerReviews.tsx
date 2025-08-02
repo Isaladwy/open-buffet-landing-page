@@ -27,14 +27,14 @@ const reviews = [
 export default function CustomerReviews() {
   return (
     <section id="reviews" className="py-16   ">
-      <h2 className="text-3xl font-bold mb-10 text-[var(--logo-green)] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_25%)]">
+      <h2 className="text-3xl font-bold mb-10 text-[#233a45] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_25%)]">
         آراء العملاء
       </h2>
       <Swiper
         modules={[Navigation, Autoplay]}
-        spaceBetween={24}
+        spaceBetween={18}
         slidesPerView={1}
-        navigation
+        
         loop={true}
         autoplay={{
           delay: 3500,
@@ -44,9 +44,11 @@ export default function CustomerReviews() {
         breakpoints={{
           768: {
             slidesPerView: 2,
+            navigation: true,
           },
           1024: {
             slidesPerView: 3,
+            navigation: true,
           },
         }}
       >
