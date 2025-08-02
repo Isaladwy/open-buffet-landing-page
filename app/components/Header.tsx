@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Header() {
         />
       </div>
       {/* Desktop Nav */}
-      <nav className="hidden md:flex space-x-8 ">
+      {/* <nav className="hidden md:flex space-x-8 ">
         <a
           href="#menu"
           className="text-black hover:text-[var(--accent)] transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
@@ -53,9 +53,9 @@ export default function Header() {
         >
           احجز طاولتك
         </a>
-      </nav>
+      </nav> */}
       {/* Hamburger Icon for Mobile */}
-      <button
+      {/* <button
         className="md:hidden flex flex-col justify-center items-center w-10 h-10 ml-4 z-40"
         aria-label="Open menu"
         onClick={() => setMenuOpen((open) => !open)}
@@ -75,9 +75,9 @@ export default function Header() {
             menuOpen ? '-rotate-45 -translate-y-2' : ''
           }`}
         ></span>
-      </button>
+      </button> */}
       {/* Mobile Menu Overlay */}
-      {menuOpen && (
+      {/* {menuOpen && (
         <div className="fixed inset-0 bg-[rgba(255,255,255,0.9)] z-30 flex flex-col items-center justify-center md:hidden transition-all">
           <nav className="flex flex-col space-y-8 text-2xl">
             <a
@@ -103,7 +103,7 @@ export default function Header() {
             </a>
           </nav>
         </div>
-      )}
+      )} */}
     </header>
   );
 }
