@@ -59,7 +59,7 @@ export default function CustomerReviews() {
         }}
         className="w-full"
         breakpoints={{
-          768: {
+          770: {
             slidesPerView: 2,
           },
           1250: {
@@ -71,7 +71,7 @@ export default function CustomerReviews() {
       >
         {reviews.map((review, idx) => (
           <SwiperSlide key={idx}>
-            <div className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)] min-h-[320px] w-80 mx-auto">
+            <div className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)] h-[320px]  mx-auto">
             <div className="w-24 h-24 rounded-full overflow-hidden bg-[var(--accent)] flex items-center justify-center mb-4 shadow-lg border-4 border-[var(--accent)]">
               <Image
                 src={review.image}

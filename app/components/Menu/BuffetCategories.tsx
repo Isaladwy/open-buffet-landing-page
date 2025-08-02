@@ -26,7 +26,7 @@ const BuffetCategories = () => (
     <Swiper
       modules={[Navigation, Autoplay]}
       spaceBetween={18}
-      slidesPerView={1.66}
+      slidesPerView={1.4}
       // navigation
       loop={true}
       autoplay={{
@@ -35,6 +35,9 @@ const BuffetCategories = () => (
       }}
       className="w-full"
       breakpoints={{
+        380: {
+          slidesPerView: 1.66,
+        },
         550: {
           slidesPerView: 2,
         },
