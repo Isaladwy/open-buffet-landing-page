@@ -13,31 +13,31 @@ const reviews = [
     name: 'ماجــد مسفــر',
     review: 'المشويات طعمها لذيذ والاكل بشكل عام لذيذ',
     stars: 4,
-    image: '/images/customers/image.png',
+    image: '/customers/image.png',
   },
   {
     name: 'Hind (Vip)',
     review: 'الأكل ماشاء الله طعم مرررا ..',
     stars: 5,
-    image: '/images/customers/image1.png',
+    image: '/customers/image1.png',
   },
   {
     name: 'abu yousef',
     review: 'مازالوا محافظين على جودة الأكل .. كما اخص بالشكر الجزيل طاقم الموظفين على حسن الضيافة والاستقبال',
     stars: 3,
-    image: '/images/customers/image2.png',
+    image: '/customers/image2.png',
   },
   {
     name: 'WAFA RAMADAN',
     review: 'طبعا أكلهم مو طبيعي خياااال تبولة خان و المنسف !!! قمة باللذاذة و الأسعار جدا مناسبة',
     stars: 5,
-    image: '/images/customers/image3.png',
+    image: '/customers/image3.png',
   },
   {
     name: 'dana abdulla',
     review: 'الاستقبال منظم وتقديم الطلب سريع وراهي والاسعار جداااااااا خياليه .. من الاخر زبونه دايمه عندكم',
     stars: 5,
-    image: '/images/customers/image4.png',
+    image: '/customers/image4.png',
   },
 ];
 

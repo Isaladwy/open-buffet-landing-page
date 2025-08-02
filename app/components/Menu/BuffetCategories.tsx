@@ -8,13 +8,13 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 
 const buffetItems = [
-  { src: '/images/plates/1.jpg', alt: 'فتوش', label: 'فتوش' },
-  { src: '/images/plates/2.jpg', alt: 'سلطة يونانية', label: 'سلطة يونانية' },
-  { src: '/images/plates/3.jpg', alt: 'سلطة خضراء', label: 'سلطة خضراء' },
-  { src: '/images/plates/4.jpg', alt: 'حمص', label: 'حمص' },
-  { src: '/images/plates/1.jpg', alt: 'متبل', label: 'متبل' },
-  { src: '/images/plates/2.jpg', alt: 'تبولة', label: 'تبولة' },
-  { src: '/images/plates/3.jpg', alt: 'دجاج مشوي', label: 'دجاج مشوي' },
+  { src: '/plates/1.jpg', alt: 'فتوش', label: 'فتوش' },
+  { src: '/plates/2.jpg', alt: 'سلطة يونانية', label: 'سلطة يونانية' },
+  { src: '/plates/3.jpg', alt: 'سلطة خضراء', label: 'سلطة خضراء' },
+  { src: '/plates/4.jpg', alt: 'حمص', label: 'حمص' },
+  { src: '/plates/1.jpg', alt: 'متبل', label: 'متبل' },
+  { src: '/plates/2.jpg', alt: 'تبولة', label: 'تبولة' },
+  { src: '/plates/3.jpg', alt: 'دجاج مشوي', label: 'دجاج مشوي' },
 ];
 
 
