@@ -11,7 +11,7 @@ import SpecialOffers from './SpecialOffers';
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="py-10 px-6 md:px-12 bg-[#f7f7fe]">
+    <section id="menu" className="py-10 px-6 md:px-12 bg-[var(--background)]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6">
