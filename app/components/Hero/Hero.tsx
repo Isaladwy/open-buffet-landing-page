@@ -11,6 +11,7 @@ export default function Hero() {
       {/* Full-page background image */}
       <Image
         fill
+        priority
         src="/hero.jpg"
         alt="Buffet Food"
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
