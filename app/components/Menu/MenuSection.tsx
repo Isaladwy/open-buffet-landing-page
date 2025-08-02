@@ -14,7 +14,7 @@ const MenuSection = () => {
     <section id="menu" className="py-10 px-6 md:px-12 bg-[var(--background)]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-6">
+        {/* <div className="text-center mb-6">
           <h1 className="uppercase text-5xl text-[var(--logo-green)] mb-10 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
             بوفيه خان الريحان
           </h1>
@@ -25,7 +25,7 @@ const MenuSection = () => {
             اختر الباقة المناسبة لمناسبتك. جميع الباقات تشمل أطباق متنوعة
             ومشروبات مع خدمة راقية ومميزة
           </p>
-        </div>
+        </div> */}
 
         {/* Buffet Packages */}
         {/* <BuffetPackages buffetPackages={buffetPackages} /> */}
