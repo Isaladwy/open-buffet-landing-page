@@ -77,7 +77,7 @@ export default function ContactForm() {
       id="booking"
       className="pb-12 flex flex-col items-center"
     >
-      <h2 className="text-3xl font-bold mb-8 text-[#233a45] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
+      <h2 className="text-3xl font-bold mb-10 text-[#233a45] text-center">
         دعنا نتواصل معك
       </h2>
       <form
@@ -107,7 +107,7 @@ export default function ContactForm() {
             htmlFor="phone"
             className="mb-2 text-white [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
           >
-            رقم الجوال السعودي
+          رقم الجوال 
           </label>
           <input
             id="phone"
