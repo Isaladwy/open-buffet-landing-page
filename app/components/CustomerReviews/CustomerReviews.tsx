@@ -42,18 +42,16 @@ export default function CustomerReviews() {
         // navigation
         loop={true}
         autoplay={{
-          delay: 3500,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         className="w-full"
         breakpoints={{
           768: {
             slidesPerView: 2,
-           
           },
-          1024: {
+          1250: {
             slidesPerView: 3,
-            
           },
         }}
       >
@@ -64,8 +62,8 @@ export default function CustomerReviews() {
               <Image
                 src={review.image}
                 alt={review.name}
-                width={96}
-                height={96}
+                width={112}
+                height={112}
                 className="object-cover w-full h-full"
               />
             </div>

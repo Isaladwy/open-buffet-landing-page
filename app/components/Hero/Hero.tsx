@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-20 flex flex-col items-start pr-10 w-full">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg text-center [text-shadow:_2px_2px_4px_rgb(0_0_0_/_50%)]">
-        أطلب أول بوفيه الان
+        أطلب أول بوفيه الآن
         </h1>
         <p className="text-3xl md:text-5xl text-[#fff] mb-8  text-center [text-shadow:_1px_1px_2px_rgb(0_0_0_/_50%)]">
           وخلنا نهتم بكل التفاصيل!

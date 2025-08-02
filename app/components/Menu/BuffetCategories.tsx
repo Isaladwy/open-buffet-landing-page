@@ -26,9 +26,20 @@ const BuffetCategories = () => (
       }}
       className="w-full"
       breakpoints={{
+        550: {
+          slidesPerView: 2,
+        },
         768: {
+          slidesPerView: 3,
+        },
+        1024: {
           slidesPerView: 4,
-          
+        },
+        1250: {
+          slidesPerView: 5,
+        },
+      1440: {
+          slidesPerView: 6,
         },
       }}
     >
