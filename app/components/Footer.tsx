@@ -67,10 +67,10 @@ export default function Footer() {
             </p> */}
             <Link
               target="_blank"
-              href="tel:0593366301"
+              href="tel:0596301336"
               className="hover:text-[#e0b96a] hover:underline text-sm text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]"
             >
-              0593366301
+              0596301336
             </Link>
           </div>
         </div>
