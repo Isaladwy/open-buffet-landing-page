@@ -6,21 +6,26 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation, Autoplay } from 'swiper/modules';
 
+import Image from 'next/image';
+
 const reviews = [
   {
     name: 'أحمد علي',
     review: 'الطعام كان لذيذًا جدًا والخدمة ممتازة. سأعود بالتأكيد!',
     stars: 5,
+    image: '/images/customers/ahmed.jpg',
   },
   {
     name: 'سارة محمد',
     review: 'تنوع الأطباق رائع والأسعار مناسبة. أنصح الجميع بالتجربة.',
     stars: 4,
+    image: '/images/customers/sara.jpg',
   },
   {
     name: 'خالد حسن',
     review: 'تجربة رائعة من جميع النواحي. فريق العمل ودود جدًا.',
     stars: 5,
+    image: '/images/customers/khaled.jpg',
   },
 ];
 
@@ -40,7 +45,7 @@ export default function CustomerReviews() {
           delay: 3500,
           disableOnInteraction: false,
         }}
-        className="w-full max-w-2xl"
+        className="w-full"
         breakpoints={{
           768: {
             slidesPerView: 2,
@@ -55,9 +60,15 @@ export default function CustomerReviews() {
         {reviews.map((review, idx) => (
           <SwiperSlide key={idx}>
             <div className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)] min-h-[320px] w-80 mx-auto">
-              <div className="w-16 h-16 rounded-full bg-[var(--accent)] flex items-center justify-center text-xl font-bold text-[#232a28] mb-4 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
-                {review.name[0]}
-              </div>
+            <div className="w-24 h-24 rounded-full overflow-hidden bg-[var(--accent)] flex items-center justify-center mb-4 shadow-lg border-4 border-[var(--accent)]">
+              <Image
+                src={review.image}
+                alt={review.name}
+                width={96}
+                height={96}
+                className="object-cover w-full h-full"
+              />
+            </div>
               <h3 className="font-bold text-white mb-2 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
                 {review.name}
               </h3>

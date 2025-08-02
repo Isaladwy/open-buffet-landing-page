@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const SpecialOffers = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div className="flex md:flex-row flex-col items-center justify-center gap-8">
     <div className="bg-gradient-to-r from-[var(--accent)] to-yellow-400 rounded-2xl p-8 text-center">
       <h3 className="text-2xl font-bold text-[#181c1b] mb-4 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
         عرض العائلات
