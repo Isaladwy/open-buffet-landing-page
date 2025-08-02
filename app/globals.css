@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-arabic: 'IBM Plex Sans Arabic', Arial, sans-serif;
+}
+
+html, body {
+  font-family: var(--font-arabic);
+}
 @import 'tailwindcss';
 @import './ibm-plex-arabic.css';
 
