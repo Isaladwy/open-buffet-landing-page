@@ -17,7 +17,7 @@ const BuffetCategories = () => (
     <Swiper
       modules={[Navigation, Autoplay]}
       spaceBetween={18}
-      slidesPerView={1.5}
+      slidesPerView={1.66}
       // navigation
       loop={true}
       autoplay={{
@@ -45,7 +45,7 @@ const BuffetCategories = () => (
     >
       <SwiperSlide>
         <div className="flex flex-col items-center">
-          <div className="w-48 h-48 bg-[#21505a] rounded-2xl overflow-hidden border-4 border-[var(--accent)] shadow-lg mb-3 relative flex items-center justify-center">
+          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-xl mb-3 relative flex items-center justify-center">
             <Image
               src="/images/elegant-buffet/fattoush.webp"
               alt="فتوش"
@@ -61,7 +61,7 @@ const BuffetCategories = () => (
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex flex-col items-center">
-          <div className="w-48 h-48 bg-[#21505a] rounded-2xl overflow-hidden border-4 border-[var(--accent)] shadow-lg mb-3 relative flex items-center justify-center">
+          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
             <Image
               src="/images/elegant-buffet/greek-salad.webp"
               alt="سلطة يونانية"
@@ -77,7 +77,7 @@ const BuffetCategories = () => (
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex flex-col items-center">
-          <div className="w-48 h-48 bg-[#21505a] rounded-2xl overflow-hidden border-4 border-[var(--accent)] shadow-lg mb-3 relative flex items-center justify-center">
+          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
             <Image
               src="/images/elegant-buffet/green-salad.webp"
               alt="سلطة خضراء"
@@ -93,7 +93,7 @@ const BuffetCategories = () => (
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex flex-col items-center">
-          <div className="w-48 h-48 bg-[#21505a] rounded-2xl overflow-hidden border-4 border-[var(--accent)] shadow-lg mb-3 relative flex items-center justify-center">
+          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
             <Image
               src="/images/elegant-buffet/hummus.webp"
               alt="حمص"
@@ -109,7 +109,7 @@ const BuffetCategories = () => (
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex flex-col items-center">
-          <div className="w-48 h-48 bg-[#21505a] rounded-2xl overflow-hidden border-4 border-[var(--accent)] shadow-lg mb-3 relative flex items-center justify-center">
+          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
             <Image
               src="/images/elegant-buffet/mutabbal.webp"
               alt="متبل"
@@ -125,7 +125,7 @@ const BuffetCategories = () => (
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex flex-col items-center">
-          <div className="w-48 h-48 bg-[#21505a] rounded-2xl overflow-hidden border-4 border-[var(--accent)] shadow-lg mb-3 relative flex items-center justify-center">
+          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
             <Image
               src="/images/elegant-buffet/tabbouleh.webp"
               alt="تبولة"
@@ -141,7 +141,7 @@ const BuffetCategories = () => (
       </SwiperSlide>
       <SwiperSlide>
         <div className="flex flex-col items-center">
-          <div className="w-48 h-48 bg-[#21505a] rounded-2xl overflow-hidden border-4 border-[var(--accent)] shadow-lg mb-3 relative flex items-center justify-center">
+          <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg mb-3 relative flex items-center justify-center">
             <Image
               src="/images/main-buffet/grilled-chicken.webp"
               alt="دجاج مشوي"
