@@ -16,7 +16,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-6">
 
       {/* <SpecialOccasion /> */}
       {/* <ChefRecommend /> */}

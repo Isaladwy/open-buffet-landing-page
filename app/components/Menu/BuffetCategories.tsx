@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 
 const BuffetCategories = () => (
-  <div className="mb-16  ">
+  <div className="my-16  ">
     <h3 className="text-2xl font-bold text-[#233a45] mb-8 text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_15%)]">
       تشكيلة الأطباق
     </h3>

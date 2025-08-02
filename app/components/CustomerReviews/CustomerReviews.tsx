@@ -1,128 +1,74 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import ReviewSlider from './ReviewSlider';
-// import ReviewForm from './ReviewForm';
-import type { Review } from './ReviewCard';
+
+'use client'
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation, Autoplay } from 'swiper/modules';
+
+const reviews = [
+  {
+    name: 'أحمد علي',
+    review: 'الطعام كان لذيذًا جدًا والخدمة ممتازة. سأعود بالتأكيد!',
+    stars: 5,
+  },
+  {
+    name: 'سارة محمد',
+    review: 'تنوع الأطباق رائع والأسعار مناسبة. أنصح الجميع بالتجربة.',
+    stars: 4,
+  },
+  {
+    name: 'خالد حسن',
+    review: 'تجربة رائعة من جميع النواحي. فريق العمل ودود جدًا.',
+    stars: 5,
+  },
+];
 
 export default function CustomerReviews() {
-  const [allReviews, setAllReviews] = useState<Review[]>([]);
-  // const [showForm, setShowForm] = useState(false);
-  // const [newReview, setNewReview] = useState({
-  //   name: '',
-  //   review: '',
-  //   stars: 5,
-  // });
-  // const [submitted, setSubmitted] = useState(false);
-  // const [loading, setLoading] = useState(false);
-
-  // Load reviews from API on component mount
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await fetch('/api/reviews');
-        if (response.ok) {
-          const reviews = await response.json();
-          setAllReviews(reviews);
-        } else {
-          setAllReviews([]);
-        }
-      } catch {
-        setAllReviews([]);
-      }
-    };
-    fetchReviews();
-  }, []);
-
-  // const handleSubmitReview = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (!newReview.name.trim()) {
-  //     alert('يرجى إدخال الاسم');
-  //     return;
-  //   }
-  //   if (!newReview.review.trim()) {
-  //     alert('يرجى إدخال الرأي');
-  //     return;
-  //   }
-  //   if (newReview.stars < 1 || newReview.stars > 5) {
-  //     alert('يرجى اختيار تقييم صحيح');
-  //     return;
-  //   }
-  //   setLoading(true);
-  //   const reviewToAdd = {
-  //     ...newReview,
-  //     name: newReview.name.trim(),
-  //     review: newReview.review.trim(),
-  //   };
-  //   try {
-  //     const response = await fetch('/api/reviews', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(reviewToAdd),
-  //     });
-  //     if (response.ok) {
-  //       const result = await response.json();
-  //       console.log('Review saved successfully:', result);
-
-  //       const reviewsResponse = await fetch('/api/reviews');
-  //       if (reviewsResponse.ok) {
-  //         const updatedReviews = await reviewsResponse.json();
-  //         setAllReviews(updatedReviews);
-  //       }
-  //       setNewReview({ name: '', review: '', stars: 5 });
-  //       setShowForm(false);
-  //       setSubmitted(true);
-  //       setTimeout(() => {
-  //         setSubmitted(false);
-  //       }, 3000);
-  //     } else {
-  //       const errorData = await response.json();
-  //       console.error('Failed to save review:', errorData);
-  //       alert(`فشل في حفظ المراجعة: ${errorData.error || 'خطأ غير معروف'}`);
-  //     }
-  //   } catch {
-  //     alert('حدث خطأ أثناء حفظ المراجعة. يرجى المحاولة مرة أخرى.');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
   return (
-    <section id="reviews" className="py-16 px-6 md:px-12 bg-[#f7f7fe]">
+    <section id="reviews" className="py-16   bg-[#f7f7fe]">
       <h2 className="text-3xl font-bold mb-10 text-[var(--logo-green)] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_25%)]">
         آراء العملاء
       </h2>
-
-      <div className="max-w-2xl mx-auto">
-        <ReviewSlider reviews={allReviews} />
-      </div>
-      {/* <div className="text-center mt-14">
-        <button
-          onClick={() => setShowForm(!showForm)}
-          className="bg-[var(--accent)] text-[#181c1b] font-bold py-3 px-6 mb-4 rounded-lg hover:bg-white transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
-        >
-          {showForm ? 'إلغاء إضافة رأي' : 'أضف رأيك'}
-        </button>
-      </div>
-      {showForm && (
-        <div className="max-w-2xl mx-auto mb-12">
-          <ReviewForm
-            newReview={newReview}
-            setNewReview={setNewReview}
-            onSubmit={handleSubmitReview}
-            onCancel={() => setShowForm(false)}
-            loading={loading}
-          />
-        </div>
-      )}
-      {submitted && (
-        <div className="max-w-2xl mx-auto mb-8">
-          <div className="bg-green-600 text-white p-4 rounded-lg text-center font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
-            شكراً لك! تم إضافة رأيك بنجاح.
-          </div>
-        </div>
-      )} */}
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        spaceBetween={24}
+        slidesPerView={1}
+        navigation
+        loop={true}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
+        className="w-full max-w-2xl"
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+      >
+        {reviews.map((review, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)] min-h-[320px] w-80 mx-auto">
+              <div className="w-16 h-16 rounded-full bg-[var(--accent)] flex items-center justify-center text-xl font-bold text-[#232a28] mb-4 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+                {review.name[0]}
+              </div>
+              <h3 className="font-bold text-white mb-2 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
+                {review.name}
+              </h3>
+              <div className="text-[var(--accent)] mb-2 text-lg [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
+                {'★'.repeat(review.stars)}
+              </div>
+              <p className="text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
+                {review.review}
+              </p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }
