@@ -13,11 +13,10 @@ import SpecialOffers from './components/Menu/SpecialOffers';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[url('/Catering-Services-Landing-Page-Background.png')] bg-cover bg-center ">
       <Header />
       <Hero />
-      <div className="max-w-6xl mx-auto px-6">
-
+      <div className="w-[80%] mx-auto ">
       {/* <SpecialOccasion /> */}
       {/* <ChefRecommend /> */}
       <BuffetCategories />

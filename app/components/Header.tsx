@@ -16,8 +16,8 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 w-full z-30  px-6 md:px-16 flex flex-row items-center justify-center border-2 border-[rgba(224,185,106,0.15)] transition-colors duration-300 ${
-        scrolled ? 'bg-[rgba(247,247,254,0.9)]' : 'bg-[var(--logo-beige)]'
+      className={`sticky top-0 left-0 w-full z-30  px-6 md:px-16 flex flex-row items-center justify-start border-2 border-[rgba(224,185,106,0.15)] transition-colors duration-300 ${
+        scrolled ? 'bg-[rgba(247,247,254,0.9)]' : ''
       }`}
     >
       {/* Logo */}

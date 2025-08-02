@@ -75,7 +75,7 @@ export default function ContactForm() {
   return (
     <section
       id="booking"
-      className="py-16 px-6 md:px-0 flex flex-col items-center bg-[#f7f7fe]"
+      className="py-16 px-6 md:px-0 flex flex-col items-center"
     >
       <h2 className="text-3xl font-bold mb-8 text-[#5ca88d] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
         دعنا نتواصل معك
