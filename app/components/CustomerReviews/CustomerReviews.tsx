@@ -10,34 +10,34 @@ import Image from 'next/image';
 
 const reviews = [
   {
-    name: 'أحمد علي',
-    review: 'الطعام كان لذيذًا جدًا والخدمة ممتازة. سأعود بالتأكيد!',
-    stars: 5,
-    image: '/images/customers/ahmed.jpg',
-  },
-  {
-    name: 'سارة محمد',
-    review: 'تنوع الأطباق رائع والأسعار مناسبة. أنصح الجميع بالتجربة.',
+    name: 'ماجــد مسفــر',
+    review: 'المشويات طعمها لذيذ والاكل بشكل عام لذيذ',
     stars: 4,
-    image: '/images/customers/sara.jpg',
+    image: '/images/customers/image.png',
   },
   {
-    name: 'خالد حسن',
-    review: 'تجربة رائعة من جميع النواحي. فريق العمل ودود جدًا.',
+    name: 'Hind (Vip)',
+    review: 'الأكل ماشاء الله طعم مرررا ..',
     stars: 5,
-    image: '/images/customers/khaled.jpg',
+    image: '/images/customers/image1.png',
   },
   {
-    name: 'أحمد علي',
-    review: 'الطعام كان لذيذًا جدًا والخدمة ممتازة. سأعود بالتأكيد!',
+    name: 'abu yousef',
+    review: 'مازالوا محافظين على جودة الأكل .. كما اخص بالشكر الجزيل طاقم الموظفين على حسن الضيافة والاستقبال',
+    stars: 3,
+    image: '/images/customers/image2.png',
+  },
+  {
+    name: 'WAFA RAMADAN',
+    review: 'طبعا أكلهم مو طبيعي خياااال تبولة خان و المنسف !!! قمة باللذاذة و الأسعار جدا مناسبة',
     stars: 5,
-    image: '/images/customers/ahmed.jpg',
+    image: '/images/customers/image3.png',
   },
   {
-    name: 'نجوى حمدان',
-    review: 'تنوع الأطباق رائع والأسعار مناسبة. أنصح الجميع بالتجربة.',
-    stars: 4,
-    image: '/images/customers/sara.jpg',
+    name: 'dana abdulla',
+    review: 'الاستقبال منظم وتقديم الطلب سريع وراهي والاسعار جداااااااا خياليه .. من الاخر زبونه دايمه عندكم',
+    stars: 5,
+    image: '/images/customers/image4.png',
   },
 ];
 
