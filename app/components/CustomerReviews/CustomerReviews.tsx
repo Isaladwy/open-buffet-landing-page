@@ -27,6 +27,18 @@ const reviews = [
     stars: 5,
     image: '/images/customers/khaled.jpg',
   },
+  {
+    name: 'أحمد علي',
+    review: 'الطعام كان لذيذًا جدًا والخدمة ممتازة. سأعود بالتأكيد!',
+    stars: 5,
+    image: '/images/customers/ahmed.jpg',
+  },
+  {
+    name: 'نجوى حمدان',
+    review: 'تنوع الأطباق رائع والأسعار مناسبة. أنصح الجميع بالتجربة.',
+    stars: 4,
+    image: '/images/customers/sara.jpg',
+  },
 ];
 
 export default function CustomerReviews() {
@@ -52,6 +64,8 @@ export default function CustomerReviews() {
           },
           1250: {
             slidesPerView: 3,
+          },
+          1600: {slidesPerView: 4,
           },
         }}
       >
