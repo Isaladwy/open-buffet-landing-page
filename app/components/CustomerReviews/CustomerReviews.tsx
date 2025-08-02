@@ -34,7 +34,7 @@ export default function CustomerReviews() {
         modules={[Navigation, Autoplay]}
         spaceBetween={18}
         slidesPerView={1}
-        
+        // navigation
         loop={true}
         autoplay={{
           delay: 3500,
@@ -44,11 +44,11 @@ export default function CustomerReviews() {
         breakpoints={{
           768: {
             slidesPerView: 2,
-            navigation: true,
+           
           },
           1024: {
             slidesPerView: 3,
-            navigation: true,
+            
           },
         }}
       >

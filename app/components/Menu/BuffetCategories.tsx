@@ -18,7 +18,7 @@ const BuffetCategories = () => (
       modules={[Navigation, Autoplay]}
       spaceBetween={18}
       slidesPerView={1.5}
-      
+      // navigation
       loop={true}
       autoplay={{
         delay: 2500,
@@ -28,7 +28,7 @@ const BuffetCategories = () => (
       breakpoints={{
         768: {
           slidesPerView: 4,
-          navigation: true,
+          
         },
       }}
     >

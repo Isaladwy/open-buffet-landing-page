@@ -75,7 +75,7 @@ export default function ContactForm() {
   return (
     <section
       id="booking"
-      className="py-16 px-6 md:px-0 flex flex-col items-center"
+      className="py-12 flex flex-col items-center"
     >
       <h2 className="text-3xl font-bold mb-8 text-[#233a45] text-center [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
         دعنا نتواصل معك
@@ -88,7 +88,7 @@ export default function ContactForm() {
         <div className="flex flex-col items-start">
           <label
             htmlFor="name"
-            className="mb-2 text-white font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+            className="mb-2 text-white  [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
           >
             الاسم
           </label>
@@ -98,14 +98,14 @@ export default function ContactForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full p-3 rounded bg-[#181c1b] text-white border border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] font-[var(--font-cairo)] text-right"
+            className="w-full p-3 rounded bg-[#181c1b] text-white border border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] text-right"
             placeholder="أدخل اسمك"
           />
         </div>
         <div className="flex flex-col items-start">
           <label
             htmlFor="phone"
-            className="mb-2 text-white font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+            className="mb-2 text-white [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
           >
             رقم الجوال السعودي
           </label>
@@ -115,7 +115,7 @@ export default function ContactForm() {
             required
             value={phone}
             onChange={handlePhoneChange}
-            className={`w-full p-3 rounded bg-[#181c1b] text-white border font-[var(--font-cairo)] text-right focus:outline-none focus:ring-2 ${
+            className={`w-full p-3 rounded bg-[#181c1b] text-white border  text-right focus:outline-none focus:ring-2 ${
               phoneError
                 ? 'border-red-500 focus:ring-red-500'
                 : 'border-[var(--accent)] focus:ring-[var(--accent)]'
@@ -123,7 +123,7 @@ export default function ContactForm() {
             placeholder="05xxxxxxxx"
           />
           {phoneError && (
-            <p className="text-red-400 text-sm mt-1 font-[var(--font-cairo)]">
+            <p className="text-red-400 text-sm mt-1 ">
               {phoneError}
             </p>
           )}
@@ -140,7 +140,7 @@ export default function ContactForm() {
           إرسال
         </button>
         {submitted && (
-          <div className="text-green-400 text-center mt-4 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
+          <div className="text-green-400 text-center mt-4 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
             تم إرسال طلبك بنجاح! سنقوم بالتواصل معك في اقرب وقت.
           </div>
         )}
