@@ -4,22 +4,23 @@ import pool from '../../../../lib/db';
 // GET /api/submissions/[id] - Get specific submission
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    console.log('Fetching submission with ID:', params.id);
+    const resolvedParams = await params;
+    console.log('Fetching submission with ID:', resolvedParams.id);
     const client = await pool.connect();
     
     const result = await client.query(
       'SELECT * FROM form_submissions WHERE id = $1',
-      [parseInt(params.id)]
+      [parseInt(resolvedParams.id)]
     );
     
     console.log('Query result:', result.rows);
     client.release();
     
     if (result.rows.length === 0) {
-      console.log('No submission found with ID:', params.id);
+      console.log('No submission found with ID:', resolvedParams.id);
       return NextResponse.json(
         { error: 'Submission not found' },
         { status: 404 }
@@ -39,9 +40,10 @@ export async function GET(
 // PUT /api/submissions/[id] - Update submission
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const resolvedParams = await params;
     const { status, name, phone, message } = await request.json();
     
     const client = await pool.connect();
@@ -78,7 +80,7 @@ export async function PUT(
     }
     
     query += ` WHERE id = $${paramCount} RETURNING *`;
-    values.push(parseInt(params.id));
+    values.push(parseInt(resolvedParams.id));
     
     const result = await client.query(query, values);
     
@@ -104,14 +106,15 @@ export async function PUT(
 // DELETE /api/submissions/[id] - Delete submission
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const resolvedParams = await params;
     const client = await pool.connect();
     
     const result = await client.query(
       'DELETE FROM form_submissions WHERE id = $1 RETURNING *',
-      [parseInt(params.id)]
+      [parseInt(resolvedParams.id)]
     );
     
     client.release();

@@ -8,13 +8,16 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 
 const buffetItems = [
-  { src: '/plates/1.jpg', alt: 'فتوش', label: 'فتوش' },
-  { src: '/plates/2.jpg', alt: 'سلطة يونانية', label: 'سلطة يونانية' },
-  { src: '/plates/3.jpg', alt: 'سلطة خضراء', label: 'سلطة خضراء' },
-  { src: '/plates/4.jpg', alt: 'حمص', label: 'حمص' },
-  { src: '/plates/1.jpg', alt: 'متبل', label: 'متبل' },
-  { src: '/plates/2.jpg', alt: 'تبولة', label: 'تبولة' },
-  { src: '/plates/3.jpg', alt: 'دجاج مشوي', label: 'دجاج مشوي' },
+  { src: '/plates/أرز-شعريه.webp', alt: 'أرز شعرية', label: 'أرز شعرية' },
+  { src: '/plates/باستا-بشاميل.webp', alt: 'باستا بشاميل', label: 'باستا بشاميل' },
+  { src: '/plates/بطاطا-حاره.webp', alt: 'بطاطا حاره', label: 'بطاطا حاره' },
+  { src: '/plates/خاروف-نعيمي.webp', alt: 'خاروف نعيمي', label: 'خاروف نعيمي' },
+  { src: '/plates/داود-باشا.webp', alt: 'داود باشا', label: 'داود باشا' },
+  { src: '/plates/شوربة-عدس.webp', alt: 'شوربة عدس', label: 'شوربة عدس' },
+  { src: '/plates/كوسه-باللبن.webp', alt: 'كوسه باللبن', label: 'كوسه باللبن' },
+  { src: '/plates/مشكل-محاشي.webp', alt: 'مشكل محاشي', label: 'مشكل محاشي' },
+  { src: '/plates/مشكل-مقبلات-مقليه.webp', alt: 'مشكل مقبلات مقليه', label: 'مشكل مقبلات مقليه' },
+  { src: '/plates/ميكس-كباب.webp', alt: 'ميكس كباب', label: 'ميكس كباب' },
 ];
 
 
