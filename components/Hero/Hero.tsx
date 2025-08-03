@@ -1,8 +1,12 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 // import Link from 'next/link';
 
 export default function Hero() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <section
       id="home"
@@ -34,13 +38,28 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              src="/Offer-Shape1.png"
-              alt="Buffet Food"
-              width={220}
-              height={250}
-              className="object-fill z-20 lg:w-[500px] lg:h-[580px] w-[220px] h-[250px] transition-transform duration-300 ease-in-out hover:scale-110 animate-bounce hover:animate-none"
-            />
+            <motion.div
+              initial={{ scale: 1 }}
+              animate={isHovered ? { scale: 1, rotate: 0 } : { 
+                scale: [1, 1.2, 1],
+                rotate: [0, 5, -5, 0]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: isHovered ? 0 : Infinity,
+                ease: "easeInOut"
+              }}
+              onHoverStart={() => setIsHovered(true)}
+              onHoverEnd={() => setIsHovered(false)}
+            >
+              <Image
+                src="/Offer-Shape1.png"
+                alt="Buffet Food"
+                width={220}
+                height={250}
+                className="object-fill z-20 lg:w-[500px] lg:h-[580px] w-[220px] h-[250px]"
+              />
+            </motion.div>
           </a>
         </div>
       </div>
