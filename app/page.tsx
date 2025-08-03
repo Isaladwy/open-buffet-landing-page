@@ -16,7 +16,7 @@ export default function Home() {
     <div className="min-h-screen bg-[url('/Catering-Services-Landing-Page-Background.png')] bg-cover bg-center relative">
       {/* WhatsApp CTA Button */}
       <a
-        href="https://wa.me/+966596301336" // Replace with your WhatsApp number
+        href="https://wa.me/+966593366301" // Replace with your WhatsApp number
         target="_blank"
         rel="noopener noreferrer"
         className="fixed left-4 bottom-[30%] z-50 flex items-center justify-center w-16 h-16 rounded-full bg-green-500 shadow-lg hover:bg-green-600 transition-colors"
