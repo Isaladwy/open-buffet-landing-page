@@ -7,16 +7,19 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
+    console.log('Fetching submission with ID:', params.id);
     const client = await pool.connect();
     
     const result = await client.query(
       'SELECT * FROM form_submissions WHERE id = $1',
-      [params.id]
+      [parseInt(params.id)]
     );
     
+    console.log('Query result:', result.rows);
     client.release();
     
     if (result.rows.length === 0) {
+      console.log('No submission found with ID:', params.id);
       return NextResponse.json(
         { error: 'Submission not found' },
         { status: 404 }
@@ -75,7 +78,7 @@ export async function PUT(
     }
     
     query += ` WHERE id = $${paramCount} RETURNING *`;
-    values.push(params.id);
+    values.push(parseInt(params.id));
     
     const result = await client.query(query, values);
     
@@ -108,7 +111,7 @@ export async function DELETE(
     
     const result = await client.query(
       'DELETE FROM form_submissions WHERE id = $1 RETURNING *',
-      [params.id]
+      [parseInt(params.id)]
     );
     
     client.release();

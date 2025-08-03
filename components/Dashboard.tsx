@@ -34,9 +34,11 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
+        console.log('Fetching submissions from dashboard...');
         const response = await fetch('/api/submissions');
         if (response.ok) {
           const data = await response.json();
+          console.log('Submissions received:', data);
           setSubmissions(data);
         } else {
           console.error('Failed to fetch submissions');
@@ -99,7 +101,7 @@ const Dashboard = () => {
   };
 
   const handleLogin = () => {
-    if (password === 'mega741@@') {
+    if (password === 'megaart741@@') {
       setIsAuthenticated(true);
       setPassword('');
       localStorage.setItem('dashboardAuthenticated', 'true');
@@ -239,7 +241,7 @@ const Dashboard = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-megaart-black via-gray-900 to-megaart-black flex items-center justify-center p-6">
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

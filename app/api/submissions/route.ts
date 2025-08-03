@@ -4,7 +4,9 @@ import pool from '../../../lib/db';
 // GET /api/submissions - Get all submissions
 export async function GET() {
   try {
+    console.log('Fetching all submissions...');
     const client = await pool.connect();
+    console.log('Database connected successfully');
     
     // Create table if it doesn't exist
     await client.query(`
@@ -17,11 +19,13 @@ export async function GET() {
         status VARCHAR(20) DEFAULT 'new' CHECK (status IN ('new', 'contacted', 'completed'))
       )
     `);
+    console.log('Table created/verified successfully');
 
     const result = await client.query(
       'SELECT * FROM form_submissions ORDER BY timestamp DESC'
     );
     
+    console.log(`Found ${result.rows.length} submissions:`, result.rows);
     client.release();
     
     return NextResponse.json(result.rows);

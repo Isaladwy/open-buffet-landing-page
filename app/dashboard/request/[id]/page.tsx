@@ -34,11 +34,15 @@ export default function RequestDetailPage({
   const [resolvedParams, setResolvedParams] = useState<{ id: string } | null>(
     null
   );
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Resolve params
     params.then((resolved) => {
+      console.log('Resolved params:', resolved);
       setResolvedParams(resolved);
+    }).catch((error) => {
+      console.error('Error resolving params:', error);
     });
   }, [params]);
 
@@ -74,19 +78,24 @@ export default function RequestDetailPage({
     // Get submission data from API
     const fetchSubmission = async () => {
       try {
-        const response = await fetch('/api/submissions');
+        setIsLoading(true);
+        console.log('Fetching submission with ID:', resolvedParams.id);
+        const response = await fetch(`/api/submissions/${resolvedParams.id}`);
+        console.log('Response status:', response.status);
+        
         if (response.ok) {
-          const submissions = await response.json();
-          const foundSubmission = submissions.find(
-            (s: FormSubmission) => s.id === resolvedParams.id
-          );
-          if (foundSubmission) {
-            setSubmission(foundSubmission);
-            setEditedMessage(foundSubmission.message);
-          }
+          const foundSubmission = await response.json();
+          console.log('Submission found:', foundSubmission);
+          setSubmission(foundSubmission);
+          setEditedMessage(foundSubmission.message);
+        } else {
+          const errorData = await response.json();
+          console.error('Failed to fetch submission:', errorData);
         }
       } catch (error) {
         console.error('Error fetching submission:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -202,12 +211,32 @@ export default function RequestDetailPage({
   };
 
   if (!isAuthenticated) {
-    return null; // Will redirect to dashboard
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-white font-myriad mb-4">
+            جاري التحقق من الصلاحيات...
+          </h2>
+        </div>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-white font-myriad mb-4">
+            جاري تحميل البيانات...
+          </h2>
+        </div>
+      </div>
+    );
   }
 
   if (!submission) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-megaart-black via-gray-900 to-megaart-black flex items-center justify-center">
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-white font-myriad mb-4">
             الطلب غير موجود
@@ -225,7 +254,7 @@ export default function RequestDetailPage({
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-megaart-black via-gray-900 to-megaart-black"
+      className="min-h-screen bg-gray-900 text-white"
       dir="rtl"
     >
       <div className="max-w-4xl mx-auto px-6 py-8">
