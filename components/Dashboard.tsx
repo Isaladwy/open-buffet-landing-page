@@ -101,7 +101,7 @@ const Dashboard = () => {
   };
 
   const handleLogin = () => {
-    if (password === 'megaart741@@') {
+    if (password === 'mega741@@') {
       setIsAuthenticated(true);
       setPassword('');
       localStorage.setItem('dashboardAuthenticated', 'true');
