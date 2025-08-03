@@ -21,7 +21,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/images/logo.webp" type="image/webp" />
+        <link rel="icon" href="/logo.webp" type="image/webp" />
       </head>
       <body className="bg-[var(--background)] text-[var(--foreground)] min-h-screen antialiased">
         {children}
