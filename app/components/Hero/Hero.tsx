@@ -29,14 +29,19 @@ export default function Hero() {
           </p>
         </div>
         <div className="z-20 w-full flex items-center justify-center">
-          <Image
-            src="/Offer-Shape1.png"
-            alt="Buffet Food"
-            width={220}
-            height={220}
-            className="object-fill hover:scale-120 z-20 lg:w-[500px] lg:h-[500px] w-[220px] h-[220px]"
-            
-          />
+          <a
+            href="https://wa.me/+966593366301"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/Offer-Shape1.png"
+              alt="Buffet Food"
+              width={220}
+              height={220}
+              className="object-fill z-20 lg:w-[500px] lg:h-[500px] w-[250px] h-[250px] transition-transform duration-800 ease-in-out hover:scale-110 animate-pulse"
+            />
+          </a>
         </div>
       </div>
     </section>
