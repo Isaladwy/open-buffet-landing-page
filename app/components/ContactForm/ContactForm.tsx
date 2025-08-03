@@ -131,7 +131,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={!!phoneError}
-          className={`font-bold py-3 rounded mt-4 transition-colors [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)] ${
+          className={`font-bold py-3 rounded mt-4 transition-colors ${
             phoneError
               ? 'bg-gray-500 text-gray-300 cursor-not-allowed'
               : 'bg-[var(--accent)] text-[#181c1b] hover:bg-white'
