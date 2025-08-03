@@ -15,14 +15,14 @@ const buffetItems = [
   { src: '/plates/داود-باشا.webp', alt: 'داود باشا', label: 'داود باشا' },
   { src: '/plates/شوربة-عدس.webp', alt: 'شوربة عدس', label: 'شوربة عدس' },
   { src: '/plates/كوسه-باللبن.webp', alt: 'كوسه باللبن', label: 'كوسه باللبن' },
-  { src: '/plates/مشكل-محاشي.webp', alt: 'مشكل محاشي', label: 'مشكل محاشي' },
+  { src: '/plates/مشكل-محاشي.webp', alt: 'مشكل محاشي', label: 'مشكل محاشـي' },
   { src: '/plates/مشكل-مقبلات-مقليه.webp', alt: 'مشكل مقبلات مقليه', label: 'مشكل مقبلات مقليه' },
   { src: '/plates/ميكس-كباب.webp', alt: 'ميكس كباب', label: 'ميكس كباب' },
 ];
 
 
 const BuffetCategories = () => (
-  <div className="my-16  ">
+  <div className="mt-16  ">
     <h3 className="text-3xl font-bold mb-10 text-[#233a45] text-center">
       تشكيلة الأطباق
     </h3>

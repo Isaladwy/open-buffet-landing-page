@@ -20,11 +20,11 @@ export default function Hero() {
       <div className=" inset-0 bg-black/40 " />
       {/* Content */}
       <div className=" flex flex-col xl:flex-row w-[80%]">
-        <div className="z-20 absolute flex flex-col bottom-8 rounded-2xl bg-black/50 text-[#fff] drop-shadow-md p-5 mr-5 items-start ">
+        <div className="z-20 absolute flex flex-col bottom-8 rounded-2xl bg-black/35 text-[#fff] drop-shadow-md p-5 mr-5 items-start ">
           <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight text-center ">
             أطلب أول بوفيه الآن
           </h1>
-          <p className="text-3xl lg:text-5xl text-center font-bold">
+          <p className="text-3xl lg:text-5xl text-center font-medium">
             وخلنا نهتم بكل التفاصيل!
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function Hero() {
               alt="Buffet Food"
               width={220}
               height={250}
-              className="object-fill z-20 lg:w-[500px] lg:h-[580px] w-[220px] h-[250px] transition-transform duration-300 ease-in hover:scale-110 animate-pulse"
+              className="object-fill z-20 lg:w-[500px] lg:h-[580px] w-[220px] h-[250px] transition-transform duration-300 ease-in-out hover:scale-110 animate-bounce hover:animate-none"
             />
           </a>
         </div>
