@@ -9,6 +9,7 @@ import CustomerReviews from './components/CustomerReviews/CustomerReviews';
 import Footer from './components/Footer';
 import ContactForm from './components/ContactForm/ContactForm';
 import BuffetCategories from './components/Menu/BuffetCategories';
+import BuffetInfoCard from './components/Menu/BuffetInfoCard';
 import SpecialOffers from './components/Menu/SpecialOffers';
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
           {/* <SpecialOccasion /> */}
           {/* <ChefRecommend /> */}
           <BuffetCategories />
+          <BuffetInfoCard />
           <SpecialOffers />
           <CustomerReviews />
           <ContactForm />
