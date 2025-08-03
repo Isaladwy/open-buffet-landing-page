@@ -51,7 +51,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validate phone number before submission
@@ -60,16 +60,36 @@ export default function ContactForm() {
       return;
     }
 
-    setSubmitted(true);
-    setName('');
-    setPhone('');
+    try {
+      const response = await fetch('/api/submissions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          message: '', // Optional message field
+        }),
+      });
 
-    // Hide the success message after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 3000);
+      if (response.ok) {
+        setSubmitted(true);
+        setName('');
+        setPhone('');
 
-    // Here you can handle sending the data to your backend or service
+        // Hide the success message after 5 seconds
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        console.error('Failed to submit form');
+        alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.');
+    }
   };
 
   return (
