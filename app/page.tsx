@@ -19,7 +19,7 @@ export default function Home() {
         href="https://wa.me/+966593366301" // Replace with your WhatsApp number
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed left-4 bottom-[30%] z-50 flex items-center justify-center w-16 h-16 rounded-full bg-green-500 shadow-lg hover:bg-green-600 transition-colors"
+        className="fixed left-4 bottom-[10%] z-50 flex items-center justify-center w-16 h-16 rounded-full bg-green-500 shadow-lg hover:bg-green-600 transition-colors"
         style={{ boxShadow: '0 4px 24px 0 rgba(0,0,0,0.18)' }}
         aria-label="تواصل عبر واتساب"
       >
