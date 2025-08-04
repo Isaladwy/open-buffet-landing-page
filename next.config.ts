@@ -1,9 +1,19 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // no `output` set
-  experimental: {
-    serverActions: true // optional, only if you use server actions
-  }
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  output: 'export', // Enable static export
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  // Custom export path map to exclude dynamic routes
+  async exportPathMap() {
+    return {
+      '/': { page: '/' },
+      '/dashboard': { page: '/dashboard' },
+      // Exclude dynamic routes like /dashboard/request/[id]
+    };
+  },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
