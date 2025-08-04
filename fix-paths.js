@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 // Function to convert absolute paths to relative paths
 function fixPaths(directory) {
@@ -37,5 +37,5 @@ function fixPaths(directory) {
 
 // Start fixing paths from the out directory
 console.log('Converting absolute paths to relative paths...');
-fixPaths('./out');
+fixPaths('./deployment');
 console.log('Done! You can now open index.html locally.');
