@@ -1,11 +1,9 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
-  // Removed output: 'export' to enable API routes
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // no `output` set
+  experimental: {
+    serverActions: true // optional, only if you use server actions
+  }
 };
 
-export default nextConfig;
+module.exports = nextConfig;
