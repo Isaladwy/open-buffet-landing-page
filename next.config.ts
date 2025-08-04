@@ -6,14 +6,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Custom export path map to exclude dynamic routes
-  async exportPathMap() {
-    return {
-      '/': { page: '/' },
-      '/dashboard': { page: '/dashboard' },
-      // Exclude dynamic routes like /dashboard/request/[id]
-    };
-  },
 };
 
 export default nextConfig;
