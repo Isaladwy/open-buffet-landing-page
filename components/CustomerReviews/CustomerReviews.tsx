@@ -49,9 +49,10 @@ export default function CustomerReviews() {
       </h2>
       <Swiper
         modules={[Navigation, Autoplay]}
-        spaceBetween={18}
-        slidesPerView={1}
+        spaceBetween={24}
+        slidesPerView={1.2}
         // navigation
+        speed={900}
         loop={true}
         autoplay={{
           delay: 2000,
@@ -65,27 +66,60 @@ export default function CustomerReviews() {
           1250: {
             slidesPerView: 3,
           },
-          1600: {slidesPerView: 4,
-          },
+          1600: { slidesPerView: 4 },
         }}
       >
         {reviews.map((review, idx) => (
           <SwiperSlide key={idx}>
             <div className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)] h-[320px]  mx-auto">
-            <div className="w-24 h-24 rounded-full overflow-hidden bg-[var(--accent)] flex items-center justify-center mb-4 shadow-lg border-4 border-[var(--accent)]">
-              <Image
-                src={review.image}
-                alt={review.name}
-                width={112}
-                height={112}
-                className="object-cover w-full h-full"
-              />
-            </div>
+              <div className="w-30 h-24 rounded-full overflow-hidden bg-[var(--accent)] flex items-center justify-center mb-4 shadow-lg border-4 border-[var(--accent)]">
+                <Image
+                  src={review.image}
+                  alt={review.name}
+                  width={1200}
+                  height={1200}
+                  className="object-cover w-full h-full"
+                />
+              </div>
               <h3 className="font-bold text-white mb-2 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]">
                 {review.name}
               </h3>
-              <div className="text-[var(--accent)] mb-2 text-lg [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
-                {'★'.repeat(review.stars)}
+              <div className="mb-2 text-lg flex justify-center gap-1 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
+                {Array.from({ length: 5 }).map((_, i) =>
+                  i < review.stars ? (
+                    <span key={i} className="text-[var(--accent)]">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="var(--accent)"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style={{ display: 'inline', verticalAlign: 'middle' }}
+                      >
+                        <polygon points="10,2 12.472,7.236 18,7.854 13.75,11.764 15.236,17.146 10,14.2 4.764,17.146 6.25,11.764 2,7.854 7.528,7.236" />
+                      </svg>
+                    </span>
+                  ) : (
+                    <span key={i} className="text-[var(--accent)] ">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style={{ display: 'inline', verticalAlign: 'middle' }}
+                      >
+                        <polygon points="10,2 12.472,7.236 18,7.854 13.75,11.764 15.236,17.146 10,14.2 4.764,17.146 6.25,11.764 2,7.854 7.528,7.236" />
+                      </svg>
+                    </span>
+                  )
+                )}
               </div>
               <p className="text-white/80 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
                 {review.review}
