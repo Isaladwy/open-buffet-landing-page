@@ -50,7 +50,7 @@ export default function CustomerReviews() {
       <Swiper
         modules={[Navigation, Autoplay]}
         spaceBetween={24}
-        slidesPerView={1.2}
+        slidesPerView={1}
         // navigation
         speed={900}
         loop={true}
@@ -72,7 +72,7 @@ export default function CustomerReviews() {
         {reviews.map((review, idx) => (
           <SwiperSlide key={idx}>
             <div className="bg-[#233a45] p-8 rounded-2xl shadow-lg flex flex-col items-center text-center border border-[var(--accent)] h-[320px]  mx-auto">
-              <div className="w-30 h-24 rounded-full overflow-hidden bg-[var(--accent)] flex items-center justify-center mb-4 shadow-lg border-4 border-[var(--accent)]">
+              <div className="w-24 h-24 rounded-full overflow-hidden bg-[var(--accent)] flex items-center justify-center mb-4 shadow-lg border-4 border-[var(--accent)]">
                 <Image
                   src={review.image}
                   alt={review.name}
