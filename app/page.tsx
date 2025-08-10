@@ -12,7 +12,7 @@ import SpecialOffers from '../components/Menu/SpecialOffers';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[url('/green-abstract-pastel-tones-background1.webp')] bg-cover bg-center relative">
+    <div className="min-h-screen bg-[url('/green-abstract-pastel-tones-background.webp')] bg-cover bg-center relative">
       <div
         className="absolute inset-0 bg-white/70 z-0"
         aria-hidden="true"
