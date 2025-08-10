@@ -53,7 +53,7 @@ export default function Hero() {
               onHoverEnd={() => setIsHovered(false)}
             >
               <Image
-                src="/Offer-Shape1.png"
+                src="/Offer-Shape2.png"
                 alt="Buffet Food"
                 width={220}
                 height={250}
