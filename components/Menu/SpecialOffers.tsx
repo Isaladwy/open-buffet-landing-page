@@ -3,7 +3,7 @@ import React from 'react';
 
 const SpecialOffers = () => (
   <div className="flex md:flex-row flex-col mt-16 items-center justify-center gap-8">
-    <div className="bg-gradient-to-r from-[var(--accent)] to-yellow-400 rounded-2xl p-8 text-center">
+    <div className="bg-yellow-400 rounded-2xl p-8 text-center">
       <h3 className="text-2xl font-bold text-[#181c1b] mb-4 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_20%)]">
         عرض العائلات
       </h3>
@@ -17,12 +17,12 @@ const SpecialOffers = () => (
         احجز الآن
       </Link>
     </div>
-    <div className="bg-gradient-to-r from-teal-900 to-teal-700 rounded-2xl p-8 text-center">
+    <div className="bg-teal-700 rounded-2xl p-8 text-center">
       <h3 className="text-2xl font-bold text-white mb-4 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_30%)]">
-        عرض الأعراس
+        عرض الأفراح
       </h3>
       <p className="text-lg text-white mb-6 font-[var(--font-cairo)] [text-shadow:_1px_1px_2px_rgb(0_0_0_/_25%)]">
-        باقة خاصة للأعراس مع ديكورات إضافية وخدمة مميزة
+        باقة خاصة للأفراح مع ديكورات إضافية وخدمة مميزة
       </p>
       <Link
         href="#booking"

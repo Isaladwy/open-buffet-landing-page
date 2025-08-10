@@ -3,8 +3,6 @@ import React from 'react';
 // Import all components
 import Header from '../components/Header';
 import Hero from '../components/Hero/Hero';
-// import SpecialOccasion from './components/SpecialOccasion';
-// import ChefRecommend from './components/ChefRecommend/ChefRecommend';
 import CustomerReviews from '../components/CustomerReviews/CustomerReviews';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm/ContactForm';
@@ -42,8 +40,6 @@ export default function Home() {
         <Header />
         <Hero />
         <div className="w-[80%] mx-auto ">
-          {/* <SpecialOccasion /> */}
-          {/* <ChefRecommend /> */}
           <BuffetCategories />
           <BuffetInfoCard />
           <SpecialOffers />
