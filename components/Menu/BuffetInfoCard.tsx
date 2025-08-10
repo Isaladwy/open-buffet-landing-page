@@ -9,7 +9,7 @@ export default function BuffetInfoCard() {
           {/* Photo div for mobile */}
           <div className="absolute w-full h-[60%] rounded-2xl overflow-hidden">
             <Image
-              src="/DSC09743.jpg"
+              src="/مقبلات.webp"
               alt="حلويات البوفيه"
               fill
               className="object-cover"
@@ -63,7 +63,7 @@ export default function BuffetInfoCard() {
           {/* Photo for desktop */}
           <div className="absolute w-[50%] sm:w-[65%] lg:w-3/4 h-full left-0 rounded-2xl overflow-hidden z-0">
             <Image
-              src="/DSC09743.jpg"
+              src="/مقبلات.webp"
               alt="حلويات البوفيه"
               fill
               className="object-cover"
