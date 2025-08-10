@@ -50,7 +50,7 @@ export default function CustomerReviews() {
       <Swiper
         modules={[Navigation, Autoplay]}
         spaceBetween={24}
-        slidesPerView={1}
+        slidesPerView={1.2}
         // navigation
         speed={900}
         loop={true}
