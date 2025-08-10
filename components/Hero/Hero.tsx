@@ -57,7 +57,7 @@ export default function Hero() {
                 alt="Buffet Food"
                 width={220}
                 height={250}
-                className="object-fill z-20 xl:w-[500px] xl:h-[580px] lg:w-[400px] lg:h-[480px] w-[220px] h-[250px]"
+                className="object-fill z-20 lg:w-[400px] lg:h-[480px] w-[220px] h-[250px]"
               />
             </motion.div>
           </a>
